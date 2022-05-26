@@ -1,8 +1,9 @@
 # Timers
 
 
-`local timer = mjrequire "common/timer"`
-
+```lua
+local timer = mjrequire "common/timer"
+```
 
 ```lua
 timer:addCallbackTimer(delay * 0.25, function()
