@@ -23,11 +23,10 @@ export default {
         text: 'Documentation',
         collapsible: true,
         items: [
-          { text: 'Entities', link: '/docs/adding-entities' },
-          { text: 'C Bridge', link: '/docs/bridge' },
+          { text: 'Mobs', link: '/docs/mobs' },
+          { text: 'C++ Bridges', link: '/docs/bridge' },
           { text: 'Cheats', link: '/docs/cheat' },
           { text: 'User Interface', link: '/docs/adding-ui' },
-          { text: 'Engine Callbacks', link: '/docs/engine-callbacks' },
           { text: 'Game Saves', link: '/docs/game-saves' },
           { text: 'Input', link: '/docs/handling-input' },
           { text: 'Notes', link: '/docs/notes' },

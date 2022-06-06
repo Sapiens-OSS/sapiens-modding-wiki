@@ -1,6 +1,10 @@
 # Save Games
 
-### Step by Step
+## Hammerstone
+
+Hammerstone contains a wrapper for saving, [which you can find here](https://github.com/SirLich/hammerstone-framework/blob/master/hammerstone/scripts/hammerstone/state/saveState.lua)
+
+## Step by Step
 
 Get bridge from `world.lua` `world:setBridge`
 

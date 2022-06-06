@@ -2,6 +2,10 @@
 
 Input handling is the ability to listen and react to key strikes, mouse movements, and other physical-input.
 
+## Hammerstone
+
+Hammerstone API contains an input handling wrapper, [which you can find here.](https://github.com/SirLich/hammerstone-framework/blob/master/hammerstone/scripts/hammerstone/input/inputManager.lua)
+
 ## Adding your action to the KeyMap
 
 The first step is overwriting `scripts/mainThread/keyBinding.lua`. I think it's also possible to add bindings from other files, but I think there may be an ordering dependency here, so I suggest overwriting in-place.
