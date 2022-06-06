@@ -1,1 +1,0 @@
-import{_ as e,c as o,o as a,a as t}from"./app.346aa5a2.js";const h='{"title":"Adding Mobs","description":"","frontmatter":{},"headers":[],"relativePath":"docs/adding-entities.md"}',d={name:"docs/adding-entities.md"},i=t("",4),c=[i];function l(s,r,n,m,p,u){return a(),o("div",null,c)}var b=e(d,[["render",l]]);export{h as __pageData,b as default};

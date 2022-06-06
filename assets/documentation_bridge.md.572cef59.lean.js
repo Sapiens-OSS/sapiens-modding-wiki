@@ -1,0 +1,1 @@
+import{_ as e,c as a,o,a as t}from"./app.00978e16.js";const _='{"title":"Bridge","description":"","frontmatter":{},"headers":[{"level":2,"title":"Example","slug":"example"}],"relativePath":"documentation/bridge.md"}',i={name:"documentation/bridge.md"},d=t("",7),r=[d];function c(s,n,l,h,u,p){return o(),a("div",null,r)}var g=e(i,[["render",c]]);export{_ as __pageData,g as default};

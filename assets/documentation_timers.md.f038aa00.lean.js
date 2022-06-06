@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as e}from"./app.00978e16.js";const C='{"title":"Timers","description":"","frontmatter":{},"headers":[],"relativePath":"documentation/timers.md"}',l={name:"documentation/timers.md"},o=e("",4),p=[o];function t(c,r,i,d,y,A){return n(),a("div",null,p)}var _=s(l,[["render",t]]);export{C as __pageData,_ as default};
