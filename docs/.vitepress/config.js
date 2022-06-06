@@ -1,6 +1,7 @@
 export default {
   title: "Sapiens Modding Wiki",
   description: "Mod docs for the Sapiens video game.",
+  base: "/sapiens-modding-wiki/",
   themeConfig: {
     nav: [
       { text: 'Hammerstone', link: 'https://github.com/SirLich/hammerstone-framework' },
