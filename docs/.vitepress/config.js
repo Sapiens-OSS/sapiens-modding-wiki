@@ -4,8 +4,8 @@ export default {
   base: "/sapiens-modding-wiki/",
   themeConfig: {
     nav: [
-      { text: 'Hammerstone', link: 'https://github.com/SirLich/hammerstone-framework' },
-      { text: 'Sapiens', link: 'https://www.playsapiens.com/' }
+      { text: 'Sapiens Website', link: 'https://www.playsapiens.com/' },
+      { text: 'Official Sapiens Wiki', link: 'https://wiki.playsapiens.com/' }
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/SirLich/sapiens-modding-wiki' },
@@ -13,7 +13,7 @@ export default {
     ],
     sidebar: [
       {
-        text: 'Getting Started',
+        text: 'Guides',
         collapsible: false,
         items: [
           { text: 'Getting Started', link: '/guide/getting-started' }
@@ -33,6 +33,14 @@ export default {
           { text: 'Threading', link: '/docs/thread-management' },
           { text: 'Timers', link: '/docs/timers' },
 
+        ]
+      },
+      {
+        text: 'Hammerstone',
+        collapsible: false,
+        items: [
+          { text: 'Introduction', link: '/hammerstone/introduction' },
+          { text: 'Getting Started', link: '/hammerstone/getting-started' }
         ]
       }
     ]
