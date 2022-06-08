@@ -5,5 +5,3 @@ Hammerstone is a mod for Sapiens, just like any mod. Download the mods folder fr
 
 ### What's `%appdata`?
 `%appdata%` is a path shortcut in Windows. It is resolved to `C:\Users\[username]\AppData\Roaming`. If it doesn't resolve for you, just use this path.
-
-### [Add more entries here]

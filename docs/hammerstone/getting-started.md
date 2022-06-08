@@ -43,10 +43,10 @@ return exampleMod
 
 ## Components
 
-Get started with logging with [logger](logger.md).
+Get started with logging with [Logger](logger.md).
 
-Get started with UI with [uiManager](uiManager.md).
+Get started with UI with [UI Manager](ui-manager.md).
 
-Get started with input with [inputManager](inputManager.md)
+Get started with input with [Input Manager](input-manager.md)
 
-Get started with localisation with [localeManager](localeManager.md)
+Get started with localisation with [Locale Manager](locale-manager.md)

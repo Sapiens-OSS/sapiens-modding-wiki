@@ -30,7 +30,7 @@ Hammerstone has support for adding a group like this:
 ```lua
 inputManager:addGroup("groupName")
 ```
-To make sure it shows up properly in game, use the [localeManager](localeManager.md)
+To make sure it shows up properly in game, use the [localeManager](locale-manager.md)
 
 #### Key Codes
 Sapiens uses key codes instead of strings to determine default keys. The keyCodes can be accessed with:
@@ -285,7 +285,7 @@ The full process for adding a mapping is as follows. First, add the mapping:
 ```lua
 inputManager:addMapping("groupName", "keyBindName", keyCodes.[default key], keyCodes.[secondary key] or nil)
 ```
-Next, use the [localeManager](localeManager.md) to make sure the names show up properly in-game. Then, bind a function to it:
+Next, use the [localeManager](locale-manager.md) to make sure the names show up properly in-game. Then, bind a function to it:
 ```lua
 inputManager:addKeyChangedCallback("groupName", "keyBindName", function (isDown, isRepeat)
    -- Do whatever you want
