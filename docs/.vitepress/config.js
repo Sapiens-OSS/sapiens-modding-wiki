@@ -40,7 +40,12 @@ export default {
         collapsible: false,
         items: [
           { text: 'Introduction', link: '/hammerstone/introduction' },
-          { text: 'Getting Started', link: '/hammerstone/getting-started' }
+          { text: 'Getting Started', link: '/hammerstone/getting-started' },
+          { text: 'Installing', link: '/hammerstone/installing' },
+          { text: 'Logger', link: '/hammerstone/logger' },
+          { text: 'UI Manager', link: '/hammerstone/ui-manager' },
+          { text: 'Locale Manager', link: '/hammerstone/locale-manager' },
+          { text: 'Input Manager', link: '/hammerstone/input-manager' }
         ]
       }
     ]
