@@ -26,7 +26,7 @@ export default {
           { text: 'Mobs', link: '/docs/mobs' },
           { text: 'C++ Bridges', link: '/docs/bridge' },
           { text: 'Cheats', link: '/docs/cheat' },
-          { text: 'User Interface', link: '/docs/adding-ui' },
+          { text: 'User Interface', link: '/docs/creating-ui' },
           { text: 'Game Saves', link: '/docs/game-saves' },
           { text: 'Input', link: '/docs/handling-input' },
           { text: 'Notes', link: '/docs/notes' },
