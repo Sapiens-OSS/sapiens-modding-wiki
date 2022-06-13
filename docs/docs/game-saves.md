@@ -2,7 +2,7 @@
 
 ## Hammerstone
 
-Hammerstone contains a wrapper for saving, [which you can find here](https://github.com/SirLich/hammerstone-framework/blob/master/hammerstone/scripts/hammerstone/state/saveState.lua)
+Hammerstone contains a wrapper for saving, which you can find [here](../hammerstone/save-state.md)
 
 ## Step by Step
 

@@ -1,15 +1,14 @@
 # Input Manager (inputManager)
 The inputManager is provides an easy way to add input to your mod. 
-
-### Including
+## Including
 ```lua
-local uiManager = mjrequire "hammerstone/input/inputManager"
+local inputManager = mjrequire "hammerstone/input/inputManager"
 ```
 
-### Using
+## Using
 The input system in Sapiens is fully rebindable, so we have to use strings to keep track of inputs. There are also categorisation in the form of groups.
 
-#### Groups
+## Groups
 The built in groups for Sapiens are as follows:
 * Menu [`menu`]: Contains menu navigation controls
 * Game [`game`]: Contains hotkeys for opening various in-game menus
@@ -25,14 +24,14 @@ When adding a key mapping, you have to use one of these groups:
 inputManager:addMapping("groupName", ...
 ```
 
-##### Adding a group
+#### Adding a group
 Hammerstone has support for adding a group like this:
 ```lua
 inputManager:addGroup("groupName")
 ```
 To make sure it shows up properly in game, use the [localeManager](locale-manager.md)
 
-#### Key Codes
+## Key Codes
 Sapiens uses key codes instead of strings to determine default keys. The keyCodes can be accessed with:
 ```lua
 local keyCodes = mjrequire "mainThread/keyMapping".keyCodes
@@ -40,7 +39,6 @@ local keyCodes = mjrequire "mainThread/keyMapping".keyCodes
 <details>
   <summary>Full list of all keycodes</summary>
 
-### Every key code
 * backspace
 * tab
 * key_return
@@ -277,10 +275,9 @@ local keyCodes = mjrequire "mainThread/keyMapping".keyCodes
 * eject
 * sleep
 
-
 </details>
 
-#### Adding a mapping
+## Adding a mapping
 The full process for adding a mapping is as follows. First, add the mapping:
 ```lua
 inputManager:addMapping("groupName", "keyBindName", keyCodes.[default key], keyCodes.[secondary key] or nil)

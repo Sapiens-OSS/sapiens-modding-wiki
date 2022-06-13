@@ -14,7 +14,7 @@ export default {
     sidebar: [
       {
         text: 'Guides',
-        collapsible: false,
+        collapsible: true,
         items: [
           { text: 'Getting Started', link: '/guide/getting-started' }
         ]
@@ -37,7 +37,7 @@ export default {
       },
       {
         text: 'Hammerstone',
-        collapsible: false,
+        collapsible: true,
         items: [
           { text: 'Introduction', link: '/hammerstone/introduction' },
           { text: 'Getting Started', link: '/hammerstone/getting-started' },
@@ -45,7 +45,8 @@ export default {
           { text: 'Logger', link: '/hammerstone/logger' },
           { text: 'UI Manager', link: '/hammerstone/ui-manager' },
           { text: 'Locale Manager', link: '/hammerstone/locale-manager' },
-          { text: 'Input Manager', link: '/hammerstone/input-manager' }
+          { text: 'Input Manager', link: '/hammerstone/input-manager' },
+          { text: 'Save State', link: '/hammerstone/save-state' }
         ]
       }
     ]
