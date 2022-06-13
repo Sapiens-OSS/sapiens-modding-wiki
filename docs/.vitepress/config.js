@@ -1,7 +1,8 @@
 export default {
   title: "Sapiens Modding Wiki",
-  description: "Mod docs for the Sapiens video game.",
+  description: "Modding documentation for the Sapiens video game.",
   base: "/sapiens-modding-wiki/",
+  lastUpdated: true,
   themeConfig: {
     nav: [
       { text: 'Sapiens Website', link: 'https://www.playsapiens.com/' },
