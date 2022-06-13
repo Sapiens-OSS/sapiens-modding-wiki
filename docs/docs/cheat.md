@@ -1,4 +1,4 @@
-# Cheats in Sapiens
+# Cheating
 
 Sapiens contains a few tools to cheat, built automatically into the game. It is unknown if dave will remove these before launch!
 

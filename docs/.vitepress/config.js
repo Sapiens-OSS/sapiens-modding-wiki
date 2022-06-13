@@ -29,10 +29,9 @@ export default {
           { text: 'User Interface', link: '/docs/creating-ui' },
           { text: 'Game Saves', link: '/docs/game-saves' },
           { text: 'Input', link: '/docs/handling-input' },
-          { text: 'Notes', link: '/docs/notes' },
           { text: 'Threading', link: '/docs/thread-management' },
           { text: 'Timers', link: '/docs/timers' },
-
+          { text: 'Miscellaneous', link: '/docs/notes' }, // Put other entries above this one
         ]
       },
       {

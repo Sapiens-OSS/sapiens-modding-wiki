@@ -1,10 +1,8 @@
-# Handling Input
-
+# Input
+::: tip
+We recommend you use Hammerstone for managing input. You can find the Hammerstone docs [here](../hammerstone/input-manager.md)
+:::
 Input handling is the ability to listen and react to key strikes, mouse movements, and other physical-input.
-
-## Hammerstone
-
-Hammerstone API contains an input handling wrapper, [which you can find here.](https://github.com/SirLich/hammerstone-framework/blob/master/hammerstone/scripts/hammerstone/input/inputManager.lua)
 
 ## Adding your action to the KeyMap
 

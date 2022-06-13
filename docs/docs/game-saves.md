@@ -1,9 +1,7 @@
-# Save Games
-
-## Hammerstone
-
-Hammerstone contains a wrapper for saving, which you can find [here](../hammerstone/save-state.md)
-
+# Saving state
+::: tip
+We recommend you use Hammerstone for managing state. You can find the Hammerstone docs [here](../hammerstone/save-state.md)
+:::
 ## Step by Step
 
 Get bridge from `world.lua` `world:setBridge`
