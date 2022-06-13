@@ -35,6 +35,8 @@ export default {
 
         ]
       }
-    ]
+    ],
+    logo: '/logo.png',
+    siteTitle: 'Sapiens Modding Wiki',
   }
 };
