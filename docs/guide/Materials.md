@@ -3,7 +3,7 @@
 In Sapiens, a material is a group of numbers that work together to create a desired look for a surface.
 
 ##Where to find the material file
-Materials can be found in \GameResources\scripts\common\ in the Materials.lua file.
+Materials can be found in `\GameResources\scripts\common\` in the `materials.lua` file.
 
 ![](/images/materials/material_parameters.png)
 
@@ -37,4 +37,4 @@ It's possible to use variables with number values in place of manually writing n
 • Change material names to the names of the desired materials in materials.lua (Case Sensitive!) or create a material and do the same. Make sure there is no ".001" (or any other number) at the end.
 ![](/images/materials/material_names.png)
 
-In Blender's edit mode, selecting faces will allow you to manually assign materials to specific faces in the materials tab. This allows you to choose which material goes where. It does not matter how you make the material look in Blender, in Sapiens it will be overridden by the material values in material.lua.
+In Blender's edit mode, selecting faces will allow you to manually assign materials to specific faces in the materials tab. This allows you to choose which material goes where. It does not matter how you make the material look in Blender, in Sapiens it will be overridden by the material values in materials.lua.
