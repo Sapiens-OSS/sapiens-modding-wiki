@@ -1,4 +1,4 @@
-#Materials
+# Materials
 
 In Sapiens, a material is a group of numbers that work together to create a desired look for a surface.
 
@@ -11,24 +11,24 @@ The image above shows the material parameters for the material used on the bark 
 
 ![](/images/materials/material_parameters_explained.png)
 
-##Material Name
+## Material Name
 You can name this whatever you want, but it's best to name it something that is easily recognisable and lets you know what it is at a glance. Not visible in game.
 
-##Red, Green and Blue
+## Red, Green and Blue
 These work together to decide the colour of the material. RGB is a commonly used colour system on computers. 0 means none of that colour, and 1.0 means as much of that colour as possible. Imagine it as a percentage system, where 0 is 0%, 0.5 is 50% and 1 is 100%. You can use any number in between 0 and 1, of course. For example: If you were to put red and green at 1.0 and Blue at 0, the game would combine red and green to make yellow. Any colour can be made by combining these three colours.
 
-##Roughness
+## Roughness
 Decides how diffused the light hitting your surface is. 0 means that all light hits the surface perfectly and 1 means that the surface will have imperfections. Roughness can go above 1, but I'm not sure how high.
 
 (If someone has a better explanation please add it, I'm honestly not too sure on that one)
 
-##Metalicity
+## Metalicity
 Decides how metallic your surface is. 0 means no reflections, 1 means it is perfectly metallic and will reflect light like a mirror, like in the image on this page.
 
-##Notes
+## Notes
 It's possible to use variables with number values in place of manually writing numbers.
 
-#Adding a material to a model
+# Adding a material to a model
 
 • Open a model in Blender
 ![](/images/materials/alpaca_in_blender.png)
