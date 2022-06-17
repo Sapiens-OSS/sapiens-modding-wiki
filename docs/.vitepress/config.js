@@ -18,7 +18,6 @@ export default {
         collapsible: false,
         items: [
           { text: 'Getting Started', link: '/guide/getting-started' },
-          { text: 'Materials', link: '/guide/Materials' },
           { text: 'Lua Shadows', link: '/guide/shadowing' },
         ]
       },
@@ -26,6 +25,7 @@ export default {
         text: 'Documentation',
         collapsible: true,
         items: [
+          { text: 'Materials', link: '/guide/Materials' },
           { text: 'Mobs', link: '/docs/mobs' },
           { text: 'C++ Bridges', link: '/docs/bridge' },
           { text: 'Cheats', link: '/docs/cheat' },
