@@ -18,6 +18,7 @@ export default {
         collapsible: false,
         items: [
           { text: 'Getting Started', link: '/guide/getting-started' },
+          { text: 'Materials', link: '/guide/Materials' },
           { text: 'Lua Shadows', link: '/guide/shadowing' },
         ]
       },
