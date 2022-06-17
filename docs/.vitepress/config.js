@@ -25,7 +25,7 @@ export default {
         text: 'Documentation',
         collapsible: true,
         items: [
-          { text: 'Materials', link: '/guide/Materials' },
+          { text: 'Materials', link: '/docs/materials' },
           { text: 'Mobs', link: '/docs/mobs' },
           { text: 'C++ Bridges', link: '/docs/bridge' },
           { text: 'Cheats', link: '/docs/cheat' },
