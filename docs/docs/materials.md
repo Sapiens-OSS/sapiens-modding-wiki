@@ -2,7 +2,7 @@
 
 In Sapiens, a material is a group of numbers that work together to create a desired look for a surface.
 
-##Where to find the material file
+## Where to find the material file
 Materials can be found in `\GameResources\scripts\common\` in the `materials.lua` file.
 
 ![](/images/materials/material_parameters.png)
