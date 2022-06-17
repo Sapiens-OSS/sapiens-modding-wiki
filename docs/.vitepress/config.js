@@ -17,7 +17,8 @@ export default {
         text: 'Guides',
         collapsible: false,
         items: [
-          { text: 'Getting Started', link: '/guide/getting-started' }
+          { text: 'Getting Started', link: '/guide/getting-started' },
+          { text: 'Lua Shadows', link: '/guide/shadowing' },
         ]
       },
       {
