@@ -1,7 +1,7 @@
 # Getting Started
 
 ## Bootstrapping
-Bootstrap is particularly important with Hammerstone as without it, Hammerstone has no idea that your mod actually exists. The recommended way of bootstrapping is [shadowing](https://sirlich.github.io/sapiens-modding-wiki/guide/shadowing.html) `controller.lua`, then adding your init function to the init event, like this:
+Bootstrap is particularly important with Hammerstone as without it, Hammerstone has no idea that your mod actually exists. The recommended way of bootstrapping is [shadowing](/guide/shadowing.md) `controller.lua`, then adding your init function to the init event, like this:
 ```lua
 -- Using the Hammerstone Framework
 local mod = {
