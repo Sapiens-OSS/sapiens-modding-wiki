@@ -15,7 +15,7 @@ export default {
     sidebar: [
       {
         text: 'Guides',
-        collapsible: false,
+        collapsible: true,
         items: [
           { text: 'Getting Started', link: '/guide/getting-started' },
           { text: 'Lua Shadows', link: '/guide/shadowing' },
@@ -33,15 +33,14 @@ export default {
           { text: 'User Interface', link: '/docs/creating-ui' },
           { text: 'Game Saves', link: '/docs/game-saves' },
           { text: 'Input', link: '/docs/handling-input' },
-          { text: 'Notes', link: '/docs/notes' },
           { text: 'Threading', link: '/docs/thread-management' },
           { text: 'Timers', link: '/docs/timers' },
-
+          { text: 'Miscellaneous', link: '/docs/notes' }, // Put other entries above this one
         ]
       },
       {
         text: 'Hammerstone',
-        collapsible: false,
+        collapsible: true,
         items: [
           { text: 'Introduction', link: '/hammerstone/introduction' },
           { text: 'Getting Started', link: '/hammerstone/getting-started' },
@@ -49,7 +48,8 @@ export default {
           { text: 'Logger', link: '/hammerstone/logger' },
           { text: 'UI Manager', link: '/hammerstone/ui-manager' },
           { text: 'Locale Manager', link: '/hammerstone/locale-manager' },
-          { text: 'Input Manager', link: '/hammerstone/input-manager' }
+          { text: 'Input Manager', link: '/hammerstone/input-manager' },
+          { text: 'Save State', link: '/hammerstone/save-state' }
         ]
       }
     ],
