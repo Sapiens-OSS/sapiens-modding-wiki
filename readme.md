@@ -6,4 +6,4 @@ This repository contains a static site which provides modding documentation for 
 
 ## Contributing
 
-This wiki is open source. Please consider submiting PRs directly, or pjoin the discord](https://discord.gg/4jZGe64AtU).
+This wiki is open source. Please consider submiting PRs directly, or join the [Discord](https://discord.gg/4jZGe64AtU).
