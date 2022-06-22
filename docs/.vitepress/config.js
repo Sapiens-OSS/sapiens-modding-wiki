@@ -19,6 +19,7 @@ export default {
         items: [
           { text: 'Getting Started', link: '/guide/getting-started' },
           { text: 'Lua Shadows', link: '/guide/shadowing' },
+          { text: 'Common Issues', link: '/guide/common-issues' },
         ]
       },
       {
