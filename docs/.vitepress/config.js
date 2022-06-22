@@ -1,7 +1,8 @@
 export default {
   title: "Sapiens Modding Wiki",
-  description: "Mod docs for the Sapiens video game.",
+  description: "Modding documentation for the Sapiens video game.",
   base: "/sapiens-modding-wiki/",
+  lastUpdated: true,
   themeConfig: {
     nav: [
       { text: 'Sapiens Website', link: 'https://www.playsapiens.com/' },
@@ -16,13 +17,16 @@ export default {
         text: 'Guides',
         collapsible: true,
         items: [
-          { text: 'Getting Started', link: '/guide/getting-started' }
+          { text: 'Getting Started', link: '/guide/getting-started' },
+          { text: 'Lua Shadows', link: '/guide/shadowing' },
         ]
       },
       {
         text: 'Documentation',
         collapsible: true,
         items: [
+          { text: 'Model Format', link: '/docs/model-format' },
+          { text: 'Materials', link: '/docs/materials' },
           { text: 'Mobs', link: '/docs/mobs' },
           { text: 'C++ Bridges', link: '/docs/bridge' },
           { text: 'Cheats', link: '/docs/cheat' },
@@ -48,6 +52,8 @@ export default {
           { text: 'Save State', link: '/hammerstone/save-state' }
         ]
       }
-    ]
+    ],
+    logo: '/sapiens-modding-wiki/logo.png',
+    siteTitle: 'Sapiens Modding Wiki',
   }
 };

@@ -1,7 +1,7 @@
 # Getting Started
 
 ## Bootstrapping
-Bootstrap is particularly important with Hammerstone as without it, Hammerstone has no idea that your mod actually exists. The recommended way of bootstrapping is shadowing `controller.lua`, then adding your init function to the init event, like this:
+Bootstrap is particularly important with Hammerstone as without it, Hammerstone has no idea that your mod actually exists. The recommended way of bootstrapping is [shadowing](/guide/shadowing.md) `controller.lua`, then adding your init function to the init event, like this:
 ```lua
 -- Using the Hammerstone Framework
 local mod = {
@@ -40,3 +40,13 @@ end
 -- Module return
 return exampleMod
 ```
+
+## Components
+
+Get started with logging with [Logger](logger.md).
+
+Get started with UI with [UI Manager](ui-manager.md).
+
+Get started with input with [Input Manager](input-manager.md)
+
+Get started with localisation with [Locale Manager](locale-manager.md)
