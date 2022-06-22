@@ -53,7 +53,7 @@ export default {
         ]
       }
     ],
-    logo: '/logo.png',
+    logo: '/sapiens-modding-wiki/logo.png',
     siteTitle: 'Sapiens Modding Wiki',
   }
 };
