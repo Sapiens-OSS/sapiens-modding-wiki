@@ -10,32 +10,42 @@ Sapiens models are generally made up of standard geometry, paired with 'meta dat
 
 ![](/images/docs/model-format/example.png)
 
-### Per-Model empties
+### Placeholder Empties
 
-Some empties are per-model, and are used directly by dave for logic. They aren't required for all models.
+Some empties are per-model, and are used directly by dave for logic. They aren't required for all models!
 
 For example, `coconutTree` contains empties `coconut_1` through `coconut_4`. These are used to position the `coconut` model in-game.
+
+This kind of logic is usually paired with something written into the `modelPlaceholder`, so you can look there for inspiration.
+
+### Unused Empties
+
+The "Camera" and "Lamp" objects are just default Blender things that dave tends to leave in there, as they don't do any harm.
 
 ## Known Empties
 
 This section will explain a list of known empties, and their effects.
 
-### pathNode_box_n
+### icon_camera
 
-These empties are used to provide pathfinding information to the Sapiens navigation server. Semantics are unknown.
+Used to render the icon.
+
+### pathNode
+
+`pathNode`` primitives are extra nodes that are added to the pathfinding. They are especially important for doorways, as otherwise it's unlikely that sapiens will happen to find nodes that go through the gap. They're also added at corners, and on walkable surfaces like floors and steps. The engine doesn't actually place nodes in those locations directly, as the ground might be uneaven, but it casts rays through those positions, to try to find a ground position for the pathfinding.
 
 ### bounding_radius
 
 This empty is used to provide a bounding box for your model. Semantics are unknown.
 
-### static_box
+### placeCollide
 
-Unknown
+`placeCollide`` primitives are used when placing the object in build mode or planting/decorating, to ensure there are no collisions, eg to stop you placing 100 plants in the same spot.
 
-### placeCollide_n (box/sphere)
+### static and dynamic primitives
 
-Unknown
+`static`` primitives are used in the physics when the objects are static, and also for other purposes, but can't remember all of them off the top of my head. `dynamic` primitives are for when the object is loose and falling. I think the idea was that the static ones would be more complex, but in practice they are usually the same.
 
-### rayTestLimits_box_n
+### rayTestLimits & Others
 
-Unknown
+And there are `rayTest`` limits, `lookat`` boxes and a few other things I'm not even really sure of anymore. They are various hacks mostly for optimizations. Like the coconut tree because it is so tall and thin causes performance problems when you are looking through them, as once it hits the bounding radius, it checks every triangle. So the ray test limits reduce that.
