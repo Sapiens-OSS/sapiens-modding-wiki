@@ -27,3 +27,12 @@ Now imagine that you've defined a function as in the first example, and then att
 `local value = foo.bar('baz')`
 
 This would be incorrect, since you've essentially put 'baz' for 'self' and 'nil' for 'arg1'. The correct way to call it would be `local value = foo:bar('baz')`.
+
+## Recursive mjrequire
+
+If you have `foo.lua` which requires `bar.lua`, then you can't require `bar.lua` in `foo.lua` because it would cause an infinite loop.
+
+Workarounds:
+ - mjrequire inside of Functions
+ - rework your architecture
+ - pass `bar` as a parameter to `foo` (init function)

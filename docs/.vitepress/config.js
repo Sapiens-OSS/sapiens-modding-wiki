@@ -27,6 +27,7 @@ export default {
         collapsible: true,
         items: [
           { text: 'Model Format', link: '/docs/model-format' },
+          { text: 'Mod Types', link: '/docs/mod-types' },
           { text: 'Materials', link: '/docs/materials' },
           { text: 'Mobs', link: '/docs/mobs' },
           { text: 'C++ Bridges', link: '/docs/bridge' },
