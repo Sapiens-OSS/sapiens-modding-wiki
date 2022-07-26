@@ -48,5 +48,3 @@ Get started with logging with [Logger](logger.md).
 Get started with UI with [UI Manager](ui-manager.md).
 
 Get started with input with [Input Manager](input-manager.md)
-
-Get started with localisation with [Locale Manager](locale-manager.md)
