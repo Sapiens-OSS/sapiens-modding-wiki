@@ -6,7 +6,7 @@ In Sapiens, `.glb` models can be found inside of `GameResources/models`. These c
 
 ### Setting Up for Blender
 
-You need to do this or you model won't scale correctly.
+You need to do this or your model won't scale correctly.
 Make sure that you set the scale type to `Quaternion (WXYZ)` under Object Properties. When you want to scale your model make sure to use `Ctrl + A` and select apply all transforms.
 
 ### Understanding the Format
