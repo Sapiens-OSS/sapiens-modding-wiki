@@ -2,10 +2,10 @@
 layout: home
 hero:
   name: Sapiens Modding Wiki
-  text: 
+  text:
   tagline: Community-made documentation for modding Sapiens
   image:
-    src: /logo.png
+    src: logo.png
     alt: Sapiens modding wiki
   actions:
     - theme: brand

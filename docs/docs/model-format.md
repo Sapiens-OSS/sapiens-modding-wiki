@@ -4,6 +4,11 @@
 
 In Sapiens, `.glb` models can be found inside of `GameResources/models`. These can be imported into blender using `file -> import -> glTF 2.0`.
 
+### Setting Up for Blender
+
+You need to do this or your model won't scale correctly.
+Make sure that you set the scale type to `Quaternion (WXYZ)` under Object Properties. When you want to scale your model make sure to use `Ctrl + A` and select apply all transforms.
+
 ### Understanding the Format
 
 Sapiens models are generally made up of standard geometry, paired with 'meta data', represented via empties. You can [learn how materials work here.](/docs/materials).
@@ -44,8 +49,8 @@ This empty is used to provide a bounding box for your model. Semantics are unkno
 
 ### static and dynamic primitives
 
-`static`` primitives are used in the physics when the objects are static, and also for other purposes, but can't remember all of them off the top of my head. `dynamic` primitives are for when the object is loose and falling. I think the idea was that the static ones would be more complex, but in practice they are usually the same.
+` static`` primitives are used in the physics when the objects are static, and also for other purposes, but can't remember all of them off the top of my head.  `dynamic` primitives are for when the object is loose and falling. I think the idea was that the static ones would be more complex, but in practice they are usually the same.
 
 ### rayTestLimits & Others
 
-And there are `rayTest`` limits, `lookat`` boxes and a few other things I'm not even really sure of anymore. They are various hacks mostly for optimizations. Like the coconut tree because it is so tall and thin causes performance problems when you are looking through them, as once it hits the bounding radius, it checks every triangle. So the ray test limits reduce that.
+And there are ` rayTest`` limits,  `lookat`` boxes and a few other things I'm not even really sure of anymore. They are various hacks mostly for optimizations. Like the coconut tree because it is so tall and thin causes performance problems when you are looking through them, as once it hits the bounding radius, it checks every triangle. So the ray test limits reduce that.
