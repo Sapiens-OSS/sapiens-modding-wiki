@@ -26,6 +26,7 @@ export default {
         text: 'Documentation',
         collapsible: true,
         items: [
+          { text: 'Coordinates', link: '/docs/coordinates' },
           { text: 'Model Format', link: '/docs/model-format' },
           { text: 'Mod Types', link: '/docs/mod-types' },
           { text: 'Materials', link: '/docs/materials' },
