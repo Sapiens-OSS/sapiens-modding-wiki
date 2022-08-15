@@ -1,5 +1,4 @@
 # Lua Shadows
-
 Mods that wish to override or add Lua code can do so by creating their Lua files in a directory structure that mirrors the game's scripts directory.
 
 For example, if you wanted to override something in `world.lua`, you would place a file in `MOD/scripts/mainThread/world.lua`.

@@ -1,4 +1,17 @@
-# Welcome to the Sapiens Modding Wiki
-    This wiki is maintained by the community, and has no affiliation with Sapiens or MajicJungle
-
-Welcome to the Sapiens Modding Wiki! This wiki contains various resources & guides on creating games for [Sapiens](https://www.playsapiens.com/). You can also check out the offical game wiki [here](https://wiki.playsapiens.com/)
+---
+layout: home
+hero:
+  name: Sapiens Modding Wiki
+  text:
+  tagline: Community-made documentation for modding Sapiens
+  image:
+    src: logo.png
+    alt: Sapiens modding wiki
+  actions:
+    - theme: brand
+      text: Get Started
+      link: /guide/getting-started
+    - theme: alt
+      text: Join the Discord
+      link: https://discord.gg/WnN8hj2Fyg
+---
