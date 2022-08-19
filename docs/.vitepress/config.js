@@ -38,6 +38,7 @@ export default {
           { text: 'Input', link: '/docs/handling-input' },
           { text: 'Threading', link: '/docs/thread-management' },
           { text: 'Timers', link: '/docs/timers' },
+          { text: 'C Mods', link: '/docs/c-mods' },
           { text: 'Miscellaneous', link: '/docs/notes' }, // Put other entries above this one
         ]
       },
