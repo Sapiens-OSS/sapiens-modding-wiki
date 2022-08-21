@@ -40,8 +40,6 @@ local modInfo = {
 return modInfo
 ```
 
-return modInfo
-
 ### Mod Types
 
 As you can see above, we have yet to fill the `type` parameter of our `modInfo.lua`. This is because it changes depending on the type of mod we want to make.
