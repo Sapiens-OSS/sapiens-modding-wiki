@@ -28,6 +28,7 @@ export default {
         items: [
           { text: 'Coordinates', link: '/docs/coordinates' },
           { text: 'Model Format', link: '/docs/model-format' },
+          { text: 'Shaders', link: '/docs/shaders' },
           { text: 'Mod Types', link: '/docs/mod-types' },
           { text: 'Materials', link: '/docs/materials' },
           { text: 'Mobs', link: '/docs/mobs' },
