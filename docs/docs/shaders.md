@@ -54,7 +54,7 @@ When you run the script, it will compile all your `glsl` shaders into `spv` shad
 
 Here is a simple example of Shaders in action, which you can use as a test-case. We will be editing `lookAtTerrainMesh.frag`, since it's very simple.
 
-```glsl
+```c
 layout(location = 0) out vec4 data;
 
 layout(location = 0) in float outAnimation;
