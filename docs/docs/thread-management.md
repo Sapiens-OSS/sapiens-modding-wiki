@@ -2,19 +2,35 @@
 
 Sapiens uses multiple threads to manage tasks. These threads are more or less reflected in the folder structure of the Lua code. For example, code nested within `server` will only be executed on the server, and so forth.
 
-## Threads
+:::info
+Although Sapiens is currently singleplayer, the actual game is programmed as a multiplayer experience, where the server thread is intended to run on a dedicated server box, with clients connecting.
+:::
+
+## Available Threads
 
 Here is a quick explanation of all threads.
 
 ### mainThread
 
-The `mainThread` is essentially the client.
+The `mainThread` does the rendering, handles UI, player movement, anything that needs immediate feedback to the user. You can think of the `mainThread` as the client.
+
+### logicThread
+
+The `logicThread` is a secondary client-side thread, which handles handles everything else on the client, generating terrain, updating buffers for rendering, updating animations, communications with the server.
 
 ### server
 
 The `server` thread runs the client-agnostic logic. It may help to think of Sapiens is a multiplayer game, where multiple clients can attach to the same server.
 
 For example, if a client digs out a section of the world, this will need to be communicated to all clients. This will be done via the server.
+
+### Common Folder
+
+The 'common' folder in Sapiens contains a collection of files that can be accessed from multiple threads.
+
+### misc. Threads
+
+Alongside these main threads, there is also a host of other threads, doing various small tasks. These can range from world generation, to pathfinding, to particle rendering.
 
 ## Thread Communication
 
