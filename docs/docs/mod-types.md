@@ -1,6 +1,6 @@
 # Mod Types
 
-Sapiens modding has two mod types: world mods, and app mods.
+Sapiens modding has two mod types: world mods, and app mods. There is a also a third 'mod type' called direct editing.
 
 ### World Mods
 
@@ -19,3 +19,17 @@ App mods are installed to the game's mods folder, and apply to all worlds as wel
 Because App Mods are *client side only*, they are not enabled on the server thread. This means that many modifications will not be possible with an AppMod.
 
 You should generally only create AppMods in the rare occurrence where you really want to effect the whole game. Localization mods are a good example. 
+
+## Direct Editing
+
+Alongside officially supported mod types, you can also 'mod' sapiens by editing the files in your installation folder. This is commonly used to quickly adjust constant values, like how often Sapiens have babies, or how quickly time passes. 
+
+Direct edits are a powerful tool for experimentation, and can also often be a good 'gateway drug' to more sustainable modding techniques! With that said, they also come with some severe downsides:
+ 1. The edits are cleared everytime Sapiens is updated
+ 2. Direct edits have a huge chance to break other mods, since they aren't following the system of shadows
+ 3. Direct edits cannot easily be packaged up and shared with other people
+
+
+
+
+
