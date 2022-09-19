@@ -58,7 +58,7 @@ export default {
         ]
       }
     ],
-    logo: '/sapiens-modding-wiki/logo.png',
+    logo: '/logo.png',
     siteTitle: 'Sapiens Modding Wiki',editLink: {
       pattern: 'https://github.com/Sapiens-OSS/sapiens-modding-wiki/edit/master/docs/:path'
     },
