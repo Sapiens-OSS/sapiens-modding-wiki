@@ -9,7 +9,7 @@ export default {
       { text: 'Official Sapiens Wiki', link: 'https://wiki.playsapiens.com/' }
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/SirLich/sapiens-modding-wiki' },
+      { icon: 'github', link: 'https://github.com/Sapiens-OSS/sapiens-modding-wiki' },
       { icon: 'discord', link: 'https://discord.gg/WnN8hj2Fyg' }
     ],
     sidebar: [
@@ -60,7 +60,7 @@ export default {
     ],
     logo: '/sapiens-modding-wiki/logo.png',
     siteTitle: 'Sapiens Modding Wiki',editLink: {
-      pattern: 'https://github.com/SirLich/sapiens-modding-wiki/edit/master/docs/:path'
+      pattern: 'https://github.com/Sapiens-OSS/sapiens-modding-wiki/edit/master/docs/:path'
     },
   }
 };
