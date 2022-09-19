@@ -1,4 +1,7 @@
 export default {
+  head: [
+    ['link', { rel: 'stylesheet', href: '/index.css' }]
+  ],
   title: "Sapiens Modding Wiki",
   description: "Modding documentation for the Sapiens video game.",
   lastUpdated: true,
@@ -58,7 +61,7 @@ export default {
       }
     ],
     logo: '/logo.png',
-    siteTitle: 'Sapiens Modding Wiki',editLink: {
+    siteTitle: 'Sapiens Modding Wiki', editLink: {
       pattern: 'https://github.com/Sapiens-OSS/sapiens-modding-wiki/edit/master/docs/:path'
     },
   }
