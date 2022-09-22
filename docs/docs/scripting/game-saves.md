@@ -1,7 +1,7 @@
 # Saving state
 
 ::: tip
-We recommend you use Hammerstone for managing state. You can find the Hammerstone docs [here](../hammerstone/save-state.md)
+We recommend you use Hammerstone for managing state. You can find the Hammerstone docs [here](/hammerstone/save-state.md)
 :::
 
 ## Step by Step

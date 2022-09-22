@@ -1,5 +1,5 @@
-# Input Manager (inputManager)
-The inputManager is provides an easy way to add input to your mod. 
+# Input Manager
+The input manager is provides an easy way to add input to your mod. 
 ## Including
 ```lua
 local inputManager = mjrequire "hammerstone/input/inputManager"

@@ -1,6 +1,6 @@
 # Creating UI
 ::: tip
-We recommend you use Hammerstone for managing UI. You can find the Hammerstone docs [here](../hammerstone/ui-manager.md)
+We recommend you use Hammerstone for managing UI. You can find the Hammerstone docs [here](/hammerstone/ui-manager.md)
 :::
 UI in Sapiens relies on a few different things. This page will somewhat just introduce the vocabulary, and show a quick example.
 

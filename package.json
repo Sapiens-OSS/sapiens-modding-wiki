@@ -3,12 +3,11 @@
     "version": "1.0.0",
     "description": "A modding wiki for the Sapiens video game.",
     "main": "index.js",
-    "repository": "https://github.com/SirLich/sapiens-modding.git",
-    "author": "SirLich <lrkoehler77@gmail.com>",
     "license": "MIT",
     "private": false,
     "devDependencies": {
-        "vitepress": "^1.0.0-alpha.1"
+        "vitepress": "^1.0.0-alpha.1",
+        "vitepress-plugin-search": "^1.0.4-alpha.7"
     },
     "scripts": {
         "docs:dev": "vitepress dev docs",
