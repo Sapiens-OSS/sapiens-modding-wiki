@@ -21,9 +21,9 @@ export default {
         text: 'Guides',
         collapsible: true,
         items: [
-          { text: 'Getting Started', link: '/guide/getting-started' },
-          { text: 'Lua Shadows', link: '/guide/shadowing' },
-          { text: 'Common Issues', link: '/guide/common-issues' },
+          { text: 'Getting Started with Lua', link: '/guide/lua-getting-started' },
+          { text: 'Getting Started with C', link: '/guide/c-getting-started' },
+          { text: 'Using Lua Shadows', link: '/guide/shadowing' },
         ]
       },
       {
@@ -51,20 +51,21 @@ export default {
             items: [
               { text: 'Mod Types', link: '/docs/scripting/mod-types' },
               { text: 'Mobs', link: '/docs/scripting/mobs' },
-              { text: 'C++ Bridges', link: '/docs/scripting/bridge' },
-              { text: 'Cheats', link: '/docs/scripting/cheat' },
+              { text: 'Engine Bridges', link: '/docs/scripting/bridge' },
+              { text: 'Dev Tools', link: '/docs/scripting/cheat' },
               { text: 'Game Saves', link: '/docs/scripting/game-saves' },
               { text: 'Input', link: '/docs/scripting/handling-input' },
-              { text: 'Threading', link: '/docs/scripting/thread-management' },
+              { text: 'Thread Management', link: '/docs/scripting/thread-management' },
               { text: 'Timers', link: '/docs/scripting/timers' },
-              { text: 'C Mods', link: '/docs/scripting/c-mods' },
             ]
           },
           {
             text: 'Miscellaneous',
             collapsible: true,
             items: [
-              { text: 'Miscellaneous', link: '/docs/misc/notes' }, // Put other entries above this one
+              { text: "Abbreviations", link: '/docs/misc/abbrev' },
+              { text: 'Common Issues', link: '/docs/misc/common-issues' },
+              { text: 'Other Notes', link: '/docs/misc/notes' },
 
             ]
           }
@@ -77,8 +78,8 @@ export default {
         collapsible: true,
         items: [
           { text: 'Introduction', link: '/hammerstone/introduction' },
-          { text: 'Getting Started', link: '/hammerstone/getting-started' },
           { text: 'Installing', link: '/hammerstone/installing' },
+          { text: 'Getting Started', link: '/hammerstone/getting-started' },
           { text: 'Logger', link: '/hammerstone/logger' },
           { text: 'UI Manager', link: '/hammerstone/ui-manager' },
           { text: 'Input Manager', link: '/hammerstone/input-manager' },
@@ -95,6 +96,6 @@ export default {
     SearchPlugin()
   ],
   markdown: {
-    
+
   }
 };

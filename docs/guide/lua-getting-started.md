@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Started with Lua
 
 Hey, and welcome to the Sapiens Modding Wiki! Please note that this guide _only_ covers modding in Sapiens, not Lua or the basics of asset creation.
 

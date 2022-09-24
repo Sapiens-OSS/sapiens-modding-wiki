@@ -25,8 +25,9 @@ Decides how diffused the light hitting your surface is. 0 means that all light h
 ## Metalicity
 Decides how metallic your surface is. 0 means no reflections, 1 means it is perfectly metallic and will reflect light like a mirror, like in the image on this page.
 
-## Notes
+::: tip
 It's possible to use variables with number values in place of manually writing numbers.
+:::
 
 # Adding a material to a model
 
@@ -38,3 +39,7 @@ It's possible to use variables with number values in place of manually writing n
 ![](/images/materials/material_names.png)
 
 In Blender's edit mode, selecting faces will allow you to manually assign materials to specific faces in the materials tab. This allows you to choose which material goes where. It does not matter how you make the material look in Blender, in Sapiens it will be overridden by the material values in materials.lua.
+
+::: warning
+Black shiny stuff means it cant find a material in material.lua that matches what is specified in the model
+:::

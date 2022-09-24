@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /guide/getting-started
+      link: /guide/lua-getting-started
     - theme: alt
       text: Join the Discord
       link: https://discord.gg/WnN8hj2Fyg

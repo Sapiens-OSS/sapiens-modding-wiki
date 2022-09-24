@@ -1,4 +1,4 @@
-# C Mods
+# Getting Started with C
 
 Certain tasks are too performance intensive to implement in Lua, these tasks are implemented in C. 
 Currently the following tasks are done in C: 
@@ -6,6 +6,9 @@ Currently the following tasks are done in C:
 - Biome and Climate assignment
 - Particles
 
+:::tip
+This is considered an advanced topic. If you're new, try [Getting Started with Lua](/guide/lua-getting-started)
+:::
 ## Getting started
 
 ::: details Prerequisites
@@ -113,7 +116,7 @@ A symlink to your mod can be made for easy development, making it so you do not 
 
 ## Vertex Terrain Generation
 
-Vertex Terrain generation determines the height of every point in the world. This height is represented in the [prerender coordinate scale](/docs/coordinates).
+Vertex Terrain generation determines the height of every point in the world. This height is represented in the [prerender coordinate scale](/docs/visuals/coordinates).
 
 ::: tip
 You can convert meters into the prerender scale by using the `SP_METERS_TO_PRERENDER` macro:

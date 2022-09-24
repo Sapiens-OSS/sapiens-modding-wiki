@@ -23,3 +23,8 @@ Adding a new mob into Sapiens is a little tricky, and requires a number of files
  - Data: `mob.validTypes` (potentially already done for you, depending on how early you add the type)
  - Data: `mobClient.mobClassMap` (local `[mob.types.mammoth.index] = clientMammoth`)
  - Data: `serverMammoth:init(serverGOM, serverWorld, serverMob)` (inside of `serverMob.lua`)
+
+
+::: danger Oh-no!
+This wiki page isn't done. If you know what you're doing, feel free to contribute.
+:::
