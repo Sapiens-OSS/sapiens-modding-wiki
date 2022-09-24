@@ -18,7 +18,7 @@ This is considered an advanced topic. If you're new, try [Getting Started with L
 - [CMake](https://cmake.org/) if using the template, or an IDE that has CMake bundled like [CLion](https://www.jetbrains.com/clion/)
 :::
 
-C Mods have a file structure very familiar to normal Lua mods. The root folder contains a `modInfo.lua` file, exactly like a normal Lua mod. For more information on this check out the [Getting Started](/guide/getting-started) page. Additionally the root folder contains a `lib` folder. This lib folder contains library files which the game will load. On windows these library files have the `.dll` extension.
+C Mods have a file structure very familiar to normal Lua mods. The root folder contains a `modInfo.lua` file, exactly like a normal Lua mod. For more information on this check out the [Getting Started with Lua](/guide/lua-getting-started) page. Additionally the root folder contains a `lib` folder. This lib folder contains library files which the game will load. On windows these library files have the `.dll` extension.
 
 The easiest way to get started is by cloning either the [official example repository](https://github.com/Majic-Jungle/sapiens-mod-creation/) or the [template made by suppergerrie2](https://github.com/suppergerrie2/SapiensCModTemplate). The template has the benefit of being a clean setup without the other Lua mod examples. Note that both repositories need to be cloned with the `--recurse-submodules`.
 
