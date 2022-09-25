@@ -30,10 +30,12 @@ Hammerstone has support for adding a group like this:
 inputManager:addGroup("groupName")
 ```
 
-## Key Codes
-Sapiens uses key codes instead of strings to determine default keys. The keyCodes can be accessed with:
+## Key Codes & Modifiers
+Sapiens uses key codes instead of strings to determine default keys. The keyCodes and modifiers can be accessed with:
 ```lua
-local keyCodes = mjrequire "mainThread/keyMapping".keyCodes
+local keyMapping = mjrequire "mainThread/keyMapping"
+local keyCodes = keyMapping.keyCodes
+local modifiers = keyMapping.modifiers
 ```
 <details>
   <summary>Full list of all keycodes</summary>
@@ -276,10 +278,20 @@ local keyCodes = mjrequire "mainThread/keyMapping".keyCodes
 
 </details>
 
+<details>
+  <summary>Full list of modifiers</summary>
+
+* none (default)
+* shift
+* ctrl
+* alt
+* cmd (Windows key)
+</details>
+
 ## Adding a mapping
 The full process for adding a mapping is as follows. First, add the mapping:
 ```lua
-inputManager:addMapping("groupName", "keyBindName", keyCodes.[default key], keyCodes.[secondary key] or nil)
+inputManager:addMapping("groupName", "keyBindName", keyCodes.[default key], modifiers.[modifier] or 0)
 ```
 Then, bind a function to it:
 ```lua

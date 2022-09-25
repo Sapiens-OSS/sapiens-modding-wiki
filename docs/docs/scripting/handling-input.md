@@ -30,5 +30,5 @@ end
 The next step is actually listening to your action. This can be done using...
 
 ::: danger Oh-no!
-This wiki page isn't done. If you know what you're doing, feel free to contribute.
+This wiki page isn't done. But you can help! Click the 'Edit Page' button at the bottom.
 :::

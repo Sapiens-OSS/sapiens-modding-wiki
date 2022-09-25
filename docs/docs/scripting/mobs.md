@@ -26,5 +26,5 @@ Adding a new mob into Sapiens is a little tricky, and requires a number of files
 
 
 ::: danger Oh-no!
-This wiki page isn't done. If you know what you're doing, feel free to contribute.
+This wiki page isn't done. But you can help! Click the 'Edit Page' button at the bottom.
 :::

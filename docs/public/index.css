@@ -5,8 +5,7 @@
     font-style: normal;
 }
 
-/*
-h1 {
+
+h1, .vp-doc > div > h2, h3, h4 {
     font-family: "Sapiens";
 }
-*/

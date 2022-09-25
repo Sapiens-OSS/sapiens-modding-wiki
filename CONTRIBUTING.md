@@ -1,6 +1,26 @@
 # Contributing
 We'd love some help making this wiki! Get started by creating a fork, commiting some changes, then creating a pull request!
 
+## Format
+```
+# Title
+[Short introduction]
+## Topic
+[Contents]
+## Topic
+[Contents]
+## Example (optional)
+[Example]
+```
+
+If you don't have time or can't finish a wiki page, put this block at the end:
+```
+::: danger Oh-no!
+This wiki page isn't done. But you can help! Click the 'Edit Page' button at the bottom.
+:::
+```
+
+# Categories
 ## Guides
 The guides sections are for walkthroughs to do a specific thing. For example, setting up a project or using a specific feature
 
