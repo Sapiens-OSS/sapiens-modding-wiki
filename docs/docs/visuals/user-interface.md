@@ -1,4 +1,4 @@
-# Creating UI
+# User Interface
 ::: tip
 We recommend you use Hammerstone for managing UI. You can find the Hammerstone docs [here](/hammerstone/ui-manager.md)
 :::
@@ -17,13 +17,13 @@ On each view you can set fields such as:
  - `RelativePosition`: `ViewPosition`
  - `size` : `vec2`
 
-# UI Types
+## UI Types
 
-## View
+### View
 
 Blank slate, like `div`
 
-## Model View
+### Model View
 
 Render a model. Useful for creating background plates.
 

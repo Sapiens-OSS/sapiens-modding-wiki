@@ -6,8 +6,7 @@
     "license": "MIT",
     "private": false,
     "devDependencies": {
-        "vitepress": "^1.0.0-alpha.1",
-        "vitepress-plugin-search": "^1.0.4-alpha.7"
+        "vitepress": "^1.0.0-alpha.1"
     },
     "scripts": {
         "docs:dev": "vitepress dev docs",

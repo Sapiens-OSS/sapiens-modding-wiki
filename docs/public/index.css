@@ -7,17 +7,17 @@
 
 @font-face {
     font-family: 'SapiensLight';
-    src: url('https://playsapiens.com/fonts/sapienslight-webfont.woff2') format('woff2'),
-        url('https://playsapiens.com/fonts/sapienslight-webfont.woff') format('woff'),
-        url('https://playsapiens.com/fonts/sapienslight-webfont.ttf') format('truetype');
+    src: url('https://playsapiens.com/fonts/sapienslight-webfont.woff2') format('woff2'), url('https://playsapiens.com/fonts/sapienslight-webfont.woff') format('woff'), url('https://playsapiens.com/fonts/sapienslight-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 
-h1,
-.vp-doc>div>h2,
-h3,
-h4 {
+h1 {
     font-family: "SapiensLight";
+}
+
+.vp-doc > div > h1 {
+    font-size: 45px !important;
+    text-align: center;
 }

@@ -20,6 +20,14 @@ This wiki page isn't done. But you can help! Click the 'Edit Page' button at the
 :::
 ```
 
+## How to use headers
+Headers (`#, ##, ###, ####`) are used to section a page. 
+
+`#` should ONLY be used once, and at the top for the title. 
+`##` should be used for each 'topic', so things like 'Creating a model' or 'Example'
+`###` should be used for each 'step' or part to a section. Like 'Importing a model' then 'Editing the model'
+`####` should be used for further division of a section, but isn't super common
+
 # Categories
 ## Guides
 The guides sections are for walkthroughs to do a specific thing. For example, setting up a project or using a specific feature

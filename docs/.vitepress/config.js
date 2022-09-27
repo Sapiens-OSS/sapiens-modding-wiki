@@ -1,8 +1,7 @@
-import { SearchPlugin } from "vitepress-plugin-search";
-
 export default {
   head: [
-    ['link', { rel: 'stylesheet', href: '/index.css' }]
+    ['link', { rel: 'stylesheet', href: '/index.css' }],
+    ['link', { rel: 'icon', href: '/favicon.ico'}]
   ],
   title: "Sapiens Modding Wiki",
   description: "Modding documentation for the Sapiens video game.",
@@ -10,7 +9,8 @@ export default {
   themeConfig: {
     nav: [
       { text: 'Sapiens Website', link: 'https://www.playsapiens.com/' },
-      { text: 'Official Sapiens Wiki', link: 'https://wiki.playsapiens.com/' }
+      { text: 'Sapiens Wiki', link: 'https://wiki.playsapiens.com/' },
+      { text: 'Sapiens Modding Wiki', link: 'https://github.com/Majic-Jungle/sapiens-mod-creation/wiki' },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Sapiens-OSS/sapiens-modding-wiki' },
@@ -38,8 +38,7 @@ export default {
               { text: 'Shaders', link: '/docs/visuals/shaders' },
               { text: 'Model Format', link: '/docs/visuals/model-format' },
               { text: 'Coordinates', link: '/docs/visuals/coordinates' },
-              { text: 'User Interface', link: '/docs/visuals/creating-ui' },
-
+              { text: 'User Interface', link: '/docs/visuals/user-interface' },
             ]
           },
           {
@@ -69,8 +68,6 @@ export default {
 
             ]
           }
-
-
         ]
       },
       {
@@ -93,7 +90,7 @@ export default {
     },
   },
   plugins: [
-    SearchPlugin()
+
   ],
   markdown: {
 
