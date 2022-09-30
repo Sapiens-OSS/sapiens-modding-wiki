@@ -3,7 +3,9 @@ Mods that wish to override or add Lua code can do so by creating their Lua files
 
 For example, if you wanted to override something in `world.lua`, you would place a file in `MOD/scripts/mainThread/world.lua`.
 
-`WARNING:` Shadows are more complex than just copying/pasting the game's source files and editing them. Please read further to understand how you can use Shadowing to manipulate game logic!
+:::warning
+Shadows are more complex than just copying/pasting the game's source files and editing them. Please read further to understand how you can use Shadowing to manipulate game logic!
+:::
 
 ## File Structure
 
