@@ -6,7 +6,6 @@ For example, if you wanted to override something in `world.lua`, you would place
 :::warning
 Shadows are more complex than just copying/pasting the game's source files and editing them. Please read further to understand how you can use Shadowing to manipulate game logic!
 :::
-
 ## File Structure
 
 Once you've created your Lua file, you must add some mandatory structure. This example will show a shadow for `world.lua`:
@@ -82,8 +81,8 @@ end
 
 ### Notes
 
-1. You don't need to store or call super. If you don't, the base functionality of sapiens will be completely absent.
-2. There exists an equivalent syntax for overriding functions using the `world:togglePause` syntax. But it's against conventions, however, as it hides the fact that a function is being overridden.
+1. While it isn't *required* to stop and call the super, if you don't, the base functionality of Sapiens will be completely absent.
+2. There exists an equivalent syntax for overriding functions using the `world:togglePause` syntax. However it's against conventions, as it hides the fact that a function is being overridden.
 
 ## Limitations
 
