@@ -2,9 +2,34 @@
 
 World generation is split across multiple parts, knowledge of [C modding](/guide/c-getting-started.md) is required.
 
+## Common Objects
+
+Common objects are used in more than one stage of world generation.
+
+### SPWorldGenOptions
+
+`SPWorldGenOptions` is used to pass settings from the GUI to the generation functions. 
+It's used in `spHeightGet` for vertex height generation and `spRainfallGet` for rainfall generation.
+It's defined in `SPCommon.h`
+
+```C
+struct SPWorldGenOptions {
+	double heightOffset;
+	double rainfallMultiplier;
+	double temperatureOffset;
+	SPVec3 scales;
+	SPVec3 influences;
+}
+```
+
+### SPNoise
+
+`SPNoise` is part of the noise generation system. While the exact details are unknown it can be used to generate noise values or generate things with a chance.
+
 ## Vertex Terrain Generation
 
 Vertex Terrain generation determines the height of every point in the world. This height is represented in the [prerender coordinate scale](/docs/visuals/coordinates).
+The methods required for vertex generation are defined in `SPHeight.h`.
 
 ::: tip
 You can convert meters into the prerender scale by using the `SP_METERS_TO_PRERENDER` macro:
