@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,a as e}from"./app.78b61a10.js";const y=JSON.parse('{"title":"Timers","description":"","frontmatter":{},"headers":[],"relativePath":"docs/timers.md","lastUpdated":1654549993000}'),l={name:"docs/timers.md"},o=e("",4),p=[o];function t(c,r,i,d,A,D){return n(),a("div",null,p)}const C=s(l,[["render",t]]);export{y as __pageData,C as default};
