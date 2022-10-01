@@ -34,7 +34,7 @@ Alongside these main threads, there is also a host of other threads, doing vario
 
 ## Thread Communication
 
-Sapiens has an RPC-like structure for elevating client calls to the server, and for server calls to be multicast to the clients.
+Sapiens has an RPC-like structure for elevating client calls to the server, and for server calls to be multicast to the clients. The only supported way to communicate between threads is the callMainThreadFunction/registerMainThreadFunction types of methods.
 
 :::warning
 You can only send one param at once! Use a table if you must process multiple pieces of information at once.
@@ -56,3 +56,7 @@ To communicate from the Server to the Client, you will need to do a bit of setup
 
 And then finally, you can use:
  - `server:callClientFunction` can be called on the `server` to propagate a server call to the `mainThread`, via the `logic` thread.
+
+:::warning
+Lua objects need to be serialized/unserialized when those methods are called, and that can be a performance bottleneck if abused too much
+:::

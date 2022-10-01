@@ -11,7 +11,7 @@ Make sure that you set the scale type to `Quaternion (WXYZ)` under Object Proper
 
 ### Understanding the Format
 
-Sapiens models are generally made up of standard geometry, paired with 'meta data', represented via empties. You can [learn how materials work here.](/docs/materials).
+Sapiens models are generally made up of standard geometry, paired with 'meta data', represented via empties. You can [learn how materials work here.](/docs/visuals/materials).
 
 ![](/images/docs/model-format/example.png)
 

@@ -1,6 +1,6 @@
-# UI Manager (uiManager)
+# UI Manager
 
-UI in Sapiens is fairly complex. The uiManager doesn't help you build UIs, it just helps you manage their state. For example:
+UI in Sapiens is fairly complex. The UI manager doesn't help you build UIs, it just helps you manage their state. For example:
 * Giving you mouse control when the UI is active
 * Allowing you to press ESC to close the current UI (coming soon)
 * Preventing OTHER ui from showing on top of your currently active UI (coming soon)

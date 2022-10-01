@@ -8,7 +8,7 @@ Sapiens modding requires a special kind of coding style called [shadowing](/guid
 
 ## Running Server logic on App Mods
 
-There are two [mod types](/docs/mod-types) in sapiens, App Mods, and World Mods. You must be aware of the limitation that doesn't allow App Mods to operate on the server thread. If you need the server thread, make a world mod instead.
+There are two [mod types](/docs/scripting/mod-types) in sapiens, App Mods, and World Mods. You must be aware of the limitation that doesn't allow App Mods to operate on the server thread. If you need the server thread, make a world mod instead.
 
 ## Editing the Wrong Files
 
@@ -38,7 +38,9 @@ As you can see, there is a mysterious 'self' argument getting passed around when
 
 Now imagine that you've defined a function as in the first example, and then attempted to call it like this:
 
-`local value = foo.bar('baz')`
+```lua
+local value = foo.bar('baz')
+```
 
 This would be incorrect, since you've essentially put 'baz' for 'self' and 'nil' for 'arg1'. The correct way to call it would be `local value = foo:bar('baz')`.
 

@@ -16,17 +16,17 @@ There are two shader types:
 
 Dave uses both shader types heavily to create Sapiens.
 
-# Getting Started with GLSL
+## Getting Started with GLSL
 
 Before you can realistically ship a shader mod for Sapiens, you will need the ability to write and compile shaders. This tutorial will walk you through those steps.
 
-## Install the VulkanSDK
+### Install the VulkanSDK
 
 You can download the VulkanSDK [here](https://vulkan.lunarg.com/sdk/home#windows).
 
 Simply go through the installation wizard like normal.
 
-## Compile your Shader
+### Compile your Shader
 
 To compile your shader, you will need to execute your shader using the `glslc.exe` executable, shipped with Vulkan. By default this is located in `C:/VulkanSDK/x.x.xxx.x/Bin/glslc.exe`.
 
@@ -38,19 +38,19 @@ Here is a sample command:
  - `-std=450core` This sets the version, since dave neglected to do so at the top of the shader files
  - `my_shader.frag.spv` This is the file name/location where the output will be placed
 
-## Dependency Management
+### Dependency Management
 
 Shaders in Sapiens often rely on *other shaders*. When compiling, you therefor need to ensure that any dependency `glsl` shaders are also available, in the expected folder structure.
 
-## Compiler Helper
+### Compiler Helper
 
-I wrote a little script to make this whole process easier: https://gist.github.com/SirLich/1ada6df219ab9c1d2a92bcdcc4ca4335
+I wrote a little script to make this whole process easier: [Sapiens Shader Compiler](https://gist.github.com/SirLich/1ada6df219ab9c1d2a92bcdcc4ca4335)
 
 To use the script, drop it into your mod folder. Then create your shaders in `glsl` folder, and also create a blank `spv` folder.
 
 When you run the script, it will compile all your `glsl` shaders into `spv` shaders, ensuring that dependencies are satisfied.
 
-# Example
+## Example
 
 Here is a simple example of Shaders in action, which you can use as a test-case. We will be editing `lookAtTerrainMesh.frag`, since it's very simple.
 

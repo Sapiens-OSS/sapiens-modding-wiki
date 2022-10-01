@@ -3,8 +3,6 @@
     "version": "1.0.0",
     "description": "A modding wiki for the Sapiens video game.",
     "main": "index.js",
-    "repository": "https://github.com/SirLich/sapiens-modding.git",
-    "author": "SirLich <lrkoehler77@gmail.com>",
     "license": "MIT",
     "private": false,
     "devDependencies": {

@@ -2,7 +2,7 @@
 
 This repository contains a static site which provides modding documentation for the [Sapiens video game.](https://www.playsapiens.com/).
 
-🚀 [View the website.](https://SapiensOSS.github.io/sapiens-modding-wiki/) 🚀
+🚀 [View the website.](https://wiki.sapiens.dev/) 🚀
 
 ## Contributing
 

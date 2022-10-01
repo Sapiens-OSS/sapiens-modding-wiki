@@ -1,4 +1,4 @@
-# Logger (logger)
+# Logger
 The logger is very simple, it merely adds a level of distinction to your log messages.
 
 ## Including

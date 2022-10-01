@@ -1,7 +1,7 @@
-# Saving state
+# Game Saves
 
 ::: tip
-We recommend you use Hammerstone for managing state. You can find the Hammerstone docs [here](../hammerstone/save-state.md)
+We recommend you use Hammerstone for managing state. You can find the Hammerstone docs [here](/hammerstone/save-state.md)
 :::
 
 ## Step by Step
@@ -16,4 +16,8 @@ Now methods are:
 
 ## Explanation
 
-In sapiens, there are a few different databases, which allow you to store different things.
+In Sapiens, there are a few different databases, which allow you to store different things.
+
+::: danger Oh-no!
+This wiki page isn't done. But you can help! Click the 'Edit Page' button at the bottom.
+:::
