@@ -56,7 +56,7 @@ export default {
               { text: 'Input', link: '/docs/scripting/handling-input' },
               { text: 'Thread Management', link: '/docs/scripting/thread-management' },
               { text: 'Timers', link: '/docs/scripting/timers' },
-              { text: "World Generation", link: '/docs/worldgen' },
+              { text: "World Generation", link: '/docs/scripting/worldgen' },
             ]
           },
           {
