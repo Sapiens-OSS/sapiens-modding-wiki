@@ -108,7 +108,96 @@ SPVec4 spHeightGet(SPVec4 previousHeight, //if spReplacesPreviousHeight returns 
 
 ## Biome and Climate assignment
 
-It's currently unknown how biome and climate assignment works, the vanilla implementation can be found in the [splugins](https://github.com/Majic-Jungle/splugins/blob/main/SPVanilla/src/SPBiome.c) repository.
+::: danger Oh-no!
+This section isn't done. But you can help! Click the 'Edit Page' button at the bottom.
+:::
+
+::: info
+This section mentions the vanilla code several times. You can find it [here](https://github.com/Majic-Jungle/splugins).
+:::
+
+Biomes are assigned in this stage of world generation, objects like trees and rocks are placed in this stage of generation.
+
+### Objects
+
+Objects that are common to multiple methods during biome generation.
+
+#### SPBiomeThreadState
+
+Allows the biome generator to get indices for various objects generated on the Lua side. 
+
+```C
+struct SPBiomeThreadState {
+	void* terrainGenerator; //private
+	void* gom; //private
+
+    // The following methods can be called to get the index from the lua typeMap for various types of objects.
+	uint16_t (*getBiomeTag)(struct SPBiomeThreadState*,char*); // Get the index for the given biome tag, eg "hot". 
+	uint32_t (*getTerrainBaseTypeIndex)(struct SPBiomeThreadState*,char*); // Get the index for the given terrain base type, eg "riverSand"
+	uint32_t (*getTerrainVariation)(struct SPBiomeThreadState*,char*); // Get the index for the given terrain variation, eg "grassSnow"
+	uint32_t (*getTerrainModification)(struct SPBiomeThreadState*,char*); // Get the index for the given terrain modification, eg "preventGrassAndSnow"
+	uint32_t (*getGameObjectTypeIndex)(struct SPBiomeThreadState*,char*); // Get the index for the given object type, eg "appleTree". Note that this method can be null and has to be checked for existence
+
+	uint32_t (*getMaterialTypeIndex)(struct SPBiomeThreadState*,char*); 
+	uint32_t (*getDecalGroupTypeIndex)(struct SPBiomeThreadState*,char*);
+
+	SPSurfaceTypeDefault (*getSurfaceDefaultsForBaseType)(struct SPBiomeThreadState*,uint32_t);
+	SPSurfaceTypeDefault (*getSurfaceDefaultsForVariationType)(struct SPBiomeThreadState*,uint32_t);
+
+	uint32_t (*getSurfaceBaseTypeForFillObjectType)(struct SPBiomeThreadState*,uint32_t);
+
+	SPRand* spRand;
+	SPNoise* spNoise1;
+	SPNoise* spNoise2;
+}
+```
+
+### Methods
+
+The following methods can be overridden to implement custom biome generation. 
+
+#### spBiomeInit
+
+- `threadState: SPBiomeThreadState*` 
+
+This method has no return value, the method is used to initialize static variables with indices of the relevant object.  
+
+#### spBiomeGetTagsForPoint
+
+It's currently unknown what this method exactly does. You can help by checking out the vanilla code!
+
+#### spBiomeGetSurfaceTypeForPoint
+
+It's currently unknown what this method exactly does. You can help by checking out the vanilla code!
+
+#### spBiomeGetTransientGameObjectTypesForFaceSubdivision
+
+ - `threadState SPBiomeThreadState*` The state of the thread including noise generators and a RNG object.
+ - `incomingTypeCount: int` Amount of already generated objects
+ - `types: uint32_t*` Array of types to be generated with size `BIOME_MAX_GAME_OBJECT_COUNT_PER_SUBDIVISION`. 
+ - `biomeTags: uint16_t*`Array of biome tags at the position to generate. 
+ - `tagCount: int` Amount of biome tags at the position to generate
+ - `pointNormal: SPVec3` 
+ - `noiseLoc: SPVec3` Location to be used in conjunction with the given noiseGenerator.
+ - `faceUniqueID: uint64_t` The unique id of the face, can be used to get random values.
+ - `level: int` The level of subdivisions the face has undergone. 
+ - `altitude: double` Altitude of the face
+ - `steepness: double` 
+ - `riverDistance: double`
+
+This method is responsible for spawning gameobjects, this ranges from rocks to trees. Adding gameobjects is done by adding the relevant index (acquired in `spBiomeInit`) the `types` array. It's your responsibility that you write to indices within the range `[incomingTypeCount, BIOME_MAX_GAME_OBJECT_COUNT_PER_SUBDIVISION)`. 
+Vanilla has a helper macro for this, it requires you to define an integer at the top of the method (`int addedCount = incomingTypeCount`):
+Note that this method is called for all mods enabled (this includes vanilla!) and you can thus already have gameobjects in the `types` array. It's possible to overwrite previous mods by overwriting previous indices. 
+
+```C
+#define ADD_OBJECT(__addType__)                                                \
+  types[addedCount++] = __addType__;                                           \
+  if (addedCount >= BIOME_MAX_GAME_OBJECT_COUNT_PER_SUBDIVISION) {             \
+    return addedCount;                                                         \
+  }
+```
+
+Vanilla spawns different kinds of objects at different subdivision levels, look at the vanilla code for specifics.
 
 ## Particle Engine
 
