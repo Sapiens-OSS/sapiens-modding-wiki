@@ -179,9 +179,9 @@ It's currently unknown what this method exactly does. You can help by checking o
  - `steepness: double` 
  - `riverDistance: double`
 
-Note that this method is called for all mods enabled (this includes vanilla!) and you can thus already have gameobjects in the `types` array. It's possible to overwrite previous mods by overwriting previous indices. 
 This method is responsible for spawning gameobjects, this ranges from rocks to trees. Adding gameobjects is done by adding the relevant index (acquired in `spBiomeInit`) the `types` array. It's your responsibility that you write to indices within the range `[incomingTypeCount, BIOME_MAX_GAME_OBJECT_COUNT_PER_SUBDIVISION)`. 
 Vanilla has a helper macro for this, it requires you to define an integer at the top of the method (`int addedCount = incomingTypeCount`):
+Note that this method is called for all mods enabled (this includes vanilla!) and you can thus already have gameobjects in the `types` array. It's possible to overwrite previous mods by overwriting previous indices. 
 
 ```C
 #define ADD_OBJECT(__addType__)                                                \
