@@ -113,7 +113,7 @@ This section isn't done. But you can help! Click the 'Edit Page' button at the b
 :::
 
 ::: info
-This section mentions the vanilla code several times. You can find it (here)[https://github.com/Majic-Jungle/splugins]
+This section mentions the vanilla code several times. You can find it [here](https://github.com/Majic-Jungle/splugins).
 :::
 
 Biomes are assigned in this stage of world generation, objects like trees and rocks are placed in this stage of generation.
