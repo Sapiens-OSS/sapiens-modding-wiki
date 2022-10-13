@@ -108,9 +108,15 @@ SPVec4 spHeightGet(SPVec4 previousHeight, //if spReplacesPreviousHeight returns 
 
 ## Biome and Climate assignment
 
-It's currently unknown how biome and climate assignment works, the vanilla implementation can be found in the [splugins](https://github.com/Majic-Jungle/splugins/blob/main/SPVanilla/src/SPBiome.c) repository.
+::: danger Oh-no!
+This section isn't done. But you can help! Click the 'Edit Page' button at the bottom.
+:::
 
-Objects like trees and rocks are also placed in this stage of generation.
+::: info
+This section mentions the vanilla code several times. You can find it (here)[https://github.com/Majic-Jungle/splugins]
+:::
+
+Biomes are assigned in this stage of world generation, objects like trees and rocks are placed in this stage of generation.
 
 ### Objects
 
