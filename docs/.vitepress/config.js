@@ -7,6 +7,12 @@ export default {
   description: "Modding documentation for the Sapiens video game.",
   lastUpdated: true,
   themeConfig: {
+    algolia: {
+      // Search only key
+      apiKey: '56fc5c07ebe891feedd03953cc55884e',
+      appId: 'QS6BR6DKN3',
+      indexName: 'sapiens'
+    },
     nav: [
       { text: 'Sapiens Website', link: 'https://www.playsapiens.com/' },
       { text: 'Sapiens Wiki', link: 'https://wiki.playsapiens.com/' },
@@ -86,7 +92,8 @@ export default {
       }
     ],
     logo: '/logo.png',
-    siteTitle: 'Sapiens Modding Wiki', editLink: {
+    siteTitle: 'Sapiens Modding Wiki', 
+    editLink: {
       pattern: 'https://github.com/Sapiens-OSS/sapiens-modding-wiki/edit/master/docs/:path'
     },
   },
