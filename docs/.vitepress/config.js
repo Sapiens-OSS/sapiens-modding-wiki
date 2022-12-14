@@ -89,6 +89,13 @@ export default {
           { text: 'Input Manager', link: '/hammerstone/input-manager' },
           { text: 'Save State', link: '/hammerstone/save-state' }
         ]
+      },
+      {
+        text: 'Tutorials',
+        collapsible: true,
+        items: [
+          { text: 'Creating a craftable object with Lua', link: '/tutorials/creating-craftable-objects' }
+        ]
       }
     ],
     logo: '/logo.png',
