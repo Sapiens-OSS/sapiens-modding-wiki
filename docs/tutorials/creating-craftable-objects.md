@@ -71,13 +71,31 @@ As you can see, there are quite a few parameters to tweak with. These all define
 
 This is already a good start, but as the comments explain, there are some more things we need to do to make this gameObject come to life. Specifically, we still have to define a model and a resource (and other things too).
 
-## Defining a model
+## Defining a model and a material
 
 In Sapiens, a model is the visual representation of a gameObject (or other kinds of resources). It is stored in the game's files as a `.glb` file, which is a 3D model file that can be created using a program such as Blender.
 
 As I am not talented enough to work with Blender, I am simply going to copy the `models/rock1.glb` file from the game's source code and paste it into my mod directory under `models/charcoal.glb` (you will have to create the `models/` directory first). You can of course create your own model.
 
-We then register this model in `scripts/common/material.lua`:
+We then register this model in `scripts/common/model.lua`:
+```lua
+local mod = {
+    loadOrder = 1
+}
+
+function mod:onload(model)
+
+    model.remapModels.dirt.charcoal = {
+        dirt = "charcoal"
+    }
+    
+end
+
+return mod
+```
+It sounds quite random that we have to remap `dirt`, but my two cents is that `dirt` refers to the shape of the item, as all items that fall under this dirt category (rock, clay, etc.) have similar model shapes.
+
+We can define the texture of this model in `scripts/common/material.lua`:
 ```lua
 local mod = {
     loadOrder = 1
@@ -87,11 +105,14 @@ local mjm = mjrequire "common/mjm"
 local vec3 = mjm.vec3
 
 function mod:onload(material)
-    mj:insertIndexed(material.types, {
+        mj:insertIndexed(material.types, {
         key = "charcoal",
-        color = vec3(0.19,0.14,0.05) * 0.8, -- <- You can change its color if you'd like
-        roughness = 1.0,
-        metal = 0.0
+        color = vec3(0.035,0.027,0.016), -- <-- You can change its color if you'd like
+        roughness = 1.1,
+        metal = 1.1,
+        colorB = vec3(0,0,0),
+        roughnessB = 1.1 * 0.9,
+        metalB = 1.1
     })
 end
 
@@ -100,7 +121,7 @@ return mod
 
 ## Defining a resource
 
-Sapiens has different types of resources: food, weapons, tools, and other items. These are all referenced in `scripts/resource.lua`. We will have to add our charcoal gameObject to that list. Do so by creating `scripts/resource.lua` in your mod directory, and defining the `mod` module, the function `mod:onload` and some imports like we did with the gameObject:
+Sapiens has different types of resources: food, weapons, tools, and other items. These are all referenced in `scripts/resource.lua`. We will have to add our charcoal gameObject to that list. Do so by creating `scripts/resource.lua` in your mod directory, and defining the `mod` module, the function `mod:onload` and some imports like we did before:
 ```lua
 local mod = {
     loadOrder = 1
