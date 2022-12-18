@@ -20,7 +20,7 @@ This is considered an advanced topic. If you're new, try [Getting Started with L
 
 C Mods have a file structure very familiar to normal Lua mods. The root folder contains a `modInfo.lua` file, exactly like a normal Lua mod. For more information on this check out the [Getting Started with Lua](/guide/lua-getting-started) page. Additionally the root folder contains a `lib` folder. This lib folder contains library files which the game will load. On windows these library files have the `.dll` extension.
 
-The easiest way to get started is by cloning either the [official example repository](https://github.com/Majic-Jungle/sapiens-mod-creation/) or the [template made by suppergerrie2](https://github.com/suppergerrie2/SapiensCModTemplate). The template has the benefit of being a clean setup without the other Lua mod examples. Note that both repositories need to be cloned with the `--recurse-submodules`.
+The easiest way to get started is by cloning either the [official example repository](https://github.com/Majic-Jungle/sapiens-mod-creation/) or the [template made by suppergerrie2](https://github.com/suppergerrie2/SapiensCModTemplate). The template has the benefit of being a clean setup without the other Lua mod examples, and does not require Visual Studio, allowing you to program on Linux. Note that both repositories need to be cloned with the `--recurse-submodules`.
 
 ### Official repository
 
@@ -38,6 +38,9 @@ The template will combine the `modInfo.lua` and create the `lib` folder for you,
 
 The template is setup as a GitHub template, thus it can be easily used to create your own GitHub repository by going to the [repository](https://github.com/suppergerrie2/SapiensCModTemplate) and pressing `Use this template`. This will then ask you to enter the name of your mod and whether it should be public or private and then create the GitHub repository. Copy the Git URL by pressing `Code => Local` and then copying the URL. 
 
+#### For Linux developers
+Append `NO_CMAKE_FIND_ROOT_PATH` to the end of the arguments list of `find_library` in `CMakeLists.txt`.
+
 #### Command line setup
 
 First the repository needs to be cloned.
@@ -50,6 +53,8 @@ Then configure the CMake project
 cd [Your GitHub repository name]
 cmake -DMOD_ID=MyCMod -DMOD_NAME="My C Mod" -DDESCRIPTION="An amazing mod that does things in C" -DDEVELOPER="Me!" -DDEVELOPER_URL="https://example.com" -DPREVIEW_FILE="preview.png" -DMOD_MAJOR_VERSION=1 -DMOD_MINOR_VERSION=2 -DMOD_PATCH_VERSION=3 . -B build
 ```
+For Linux developers, swap `cmake` with `x86_64-w64-mingw32-cmake`.
+
 Don't be afraid of the long line, it's defining a lot of values you should change yourself. The version is combined as `major.minor.patch`.
 
 ::: details CMake gui
