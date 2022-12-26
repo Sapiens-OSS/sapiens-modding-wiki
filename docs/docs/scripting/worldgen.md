@@ -26,6 +26,25 @@ struct SPWorldGenOptions {
 
 `SPNoise` is part of the noise generation system. While the exact details are unknown it can be used to generate noise values or generate things with a chance.
 
+#### spNoiseGet
+This function allows you to sample the noise value at a specific location. It takes three arguments:
+- `SPNoise* noise` An instance of `SPNoise`
+- `SPVec3 vec` The point you want to sample
+- `int endOctave` Sets the "detail" or frequency of your noise.
+
+The two last arguments can be tweaked to get a desired result. Do not set `endOctave` too high (max ~8) as this increases the time it takes to sample noise values.
+
+Here are four examples of using `spNoiseGet` to set terrain height on a certain position called `noiseLoc`:
+```c
+spNoiseGet(noise1, noiseLoc, 1) * 1000; // <- Creates a world with large oceans and large continents, while keeping the terrain relatively flat
+
+spNoiseGet(noise1, noiseLoc, 8) * 1000; // <- Creates a world with more details: islands, lakes, etc. and continents and oceans are slightly smaller, but everything remains relatively flat
+
+spNoiseGet(noise1, spVec3Mul(noiseLoc, 1000), 1) * 1000; // <- Creates a world consisting entirely of small, smooth and relatively flat islands
+
+spNoiseGet(noise1, spVec3Mul(noiseLoc, 1000), 8) * 1000; // <- Creates a world consisting entirely of small but rugged islands
+```
+
 ## Vertex Terrain Generation
 
 Vertex Terrain generation determines the height of every point in the world. This height is represented in the [prerender coordinate scale](/docs/visuals/coordinates).
