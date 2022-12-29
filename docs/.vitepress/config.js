@@ -82,7 +82,6 @@ export default {
         collapsible: true,
         items: [
           { text: 'Introduction', link: '/hammerstone/introduction' },
-          { text: 'Installing', link: '/hammerstone/installing' },
           { text: 'Getting Started', link: '/hammerstone/getting-started' },
           { text: 'Logger', link: '/hammerstone/logger' },
           { text: 'UI Manager', link: '/hammerstone/ui-manager' },
@@ -94,7 +93,7 @@ export default {
         text: 'Tutorials',
         collapsible: true,
         items: [
-          { text: 'Creating a craftable object with Lua', link: '/tutorials/creating-craftable-objects' }
+          { text: 'Craftable object in Lua', link: '/tutorials/creating-craftable-objects' }
         ]
       }
     ],

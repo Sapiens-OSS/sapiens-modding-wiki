@@ -1,9 +1,9 @@
-# Creating a craftable object with Lua
+# Craftable object in Lua
 
 In this tutorial, we will create a small mod that adds charcoal as a craftable object to the game. It is based on a minimal [Coal mod](https://github.com/nmattela/sapiens_coal_mod). This tutorial is written for update 0.3.8. It is possible that this tutorial will not work for future updates.
 
 ## Getting started
-To get started, follow the [getting started with Lua](/guide/lua-getting-started) guide. This tutorial also uses the [Hammerstone framework](/hammerstone/getting-started) to make your life a bit easier. Optionally, you can also install the creative mode mod to make debugging and testing a bit faster.
+To get started, follow the [Getting Started with Lua](/guide/lua-getting-started) guide. This tutorial also uses the [Hammerstone Framework](/hammerstone/introduction) to make your life a bit easier. Optionally, you can also install [Creative Mode](https://github.com/SirLich/sapiens-creative-mode) to make debugging and testing a bit faster.
 
 I assume you have shadowed `scripts/mainThread/controller.lua` and created a directory called `scripts/<yourName>/coal.lua`. In this file, add the following content:
 ```lua
