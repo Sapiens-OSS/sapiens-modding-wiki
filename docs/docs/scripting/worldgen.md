@@ -202,10 +202,11 @@ Note that this function does not spawn small rocks, boulders, clay balls or anyt
  - `uint32_t* variations` Terrain variations such as red rock, green rock, snow, etc.
  - `SPVec3 pointNormal` Coordinates in the world.
  - `SPVec3 noiseLoc` A noise value associated with that coordinate.
- - `double baseAltitude` The altitude of the coordinate.
- - `double steepness` The steepness (angle) of that coordinate. If the steep is high that means its at the side of a mountain.
- - `double riverDistance` Distance to the closest river.
+ - `double baseAltitude` The altitude of the coordinate. There is no "absolute minimum" or "absolute maximum", but running some tests it seems to fall between -0.001 and 0.001, with 0 being the sea level. A value of 0.001 translates to about 4335. 1 meter translates to 0.00000023 units in baseAltitude
+ - `double steepness` The steepness of that coordinate. It is calculated by taking two other samples 4m away, one to the north, and one to the east, of which the maximum absolute difference between those heights and the base point height in meters is taken.
+ - `double riverDistance` Distance to the closest river. A river distance of 1 indicates that the nearest river is about 7650 hexagons away
  - `int seasonIndex` What season it's in (?).
+
 
  The return value is a `SPSurfaceTypeResult`. This struct contains the following:
  - `uint32_t surfaceBaseType` The type of the surface, such as clay, rock, soil, etc.
@@ -214,7 +215,19 @@ Note that this function does not spawn small rocks, boulders, clay balls or anyt
  - `uint32_t decalTypeIndex` Not sure what this is.
  - `uint8_t pathDifficultyIndex` Sets the difficulty of traversing this surface.
 
+ ::: tip
+ You can convert the steepness value into radians going from 0 to π/2 by doing:
+```c
+double angle = isnan(steepness) ? 0 : atan(steepness / sqrt(32));
+```
+:::
+
 #### spBiomeGetTransientGameObjectTypesForFaceSubdivision
+
+This method is responsible for spawning gameobjects, this ranges from rocks to trees. Adding gameobjects is done by adding the relevant index (acquired in `spBiomeInit`) the `types` array. It's your responsibility that you write to indices within the range `[incomingTypeCount, BIOME_MAX_GAME_OBJECT_COUNT_PER_SUBDIVISION)`. 
+Vanilla has a helper macro for this, it requires you to define an integer at the top of the method (`int addedCount = incomingTypeCount`):
+Note that this method is called for all mods enabled (this includes vanilla!) and you can thus already have gameobjects in the `types` array. It's possible to overwrite previous mods by overwriting previous indices. 
+
 
  - `threadState SPBiomeThreadState*` The state of the thread including noise generators and a RNG object.
  - `incomingTypeCount: int` Amount of already generated objects
@@ -224,14 +237,11 @@ Note that this function does not spawn small rocks, boulders, clay balls or anyt
  - `pointNormal: SPVec3` 
  - `noiseLoc: SPVec3` Location to be used in conjunction with the given noiseGenerator.
  - `faceUniqueID: uint64_t` The unique id of the face, can be used to get random values.
- - `level: int` The level of subdivisions the face has undergone. 
+ - `level: int` The level of subdivisions the face has undergone. The higher this value, the denser that gameObjects will be placed. The method is called only for the following levels of subdivision: 13, 14, 15, 16, 17, 18, 19, 20, 21
  - `altitude: double` Altitude of the face
- - `steepness: double` 
+ - `steepness: double` The steepness of that coordinate. It is calculated by taking two other samples 4m away, one to the north, and one to the east, of which the maximum absolute difference between those heights and the base point height in meters is taken.
  - `riverDistance: double`
 
-This method is responsible for spawning gameobjects, this ranges from rocks to trees. Adding gameobjects is done by adding the relevant index (acquired in `spBiomeInit`) the `types` array. It's your responsibility that you write to indices within the range `[incomingTypeCount, BIOME_MAX_GAME_OBJECT_COUNT_PER_SUBDIVISION)`. 
-Vanilla has a helper macro for this, it requires you to define an integer at the top of the method (`int addedCount = incomingTypeCount`):
-Note that this method is called for all mods enabled (this includes vanilla!) and you can thus already have gameobjects in the `types` array. It's possible to overwrite previous mods by overwriting previous indices. 
 
 ```C
 #define ADD_OBJECT(__addType__)                                                \
