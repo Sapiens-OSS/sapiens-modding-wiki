@@ -27,6 +27,7 @@ export default {
         text: 'Guides',
         collapsible: true,
         items: [
+          { text: 'Getting Started with VSCode', link: '/guide/vscode-getting-started' },
           { text: 'Getting Started with Lua', link: '/guide/lua-getting-started' },
           { text: 'Getting Started with C', link: '/guide/c-getting-started' },
           { text: 'Using Lua Shadows', link: '/guide/shadowing' },
