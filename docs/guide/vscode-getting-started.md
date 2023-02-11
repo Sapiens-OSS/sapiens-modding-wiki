@@ -17,7 +17,7 @@ Ensure that `steam` is a recognized command on your system. If not, edit your PA
 - On **Windows**, your Steam binary is likely located at `C:\Program Files (x86)`, which is not by default in your PATH.
 
 Please take note of your Sapiens installation's mod directory:
-- For **Windows** users, this is by default installed at `C:\Users\<your_username>\AppData\majicjungle\sapiens\mods`.
+- For **Windows** users, this is by default installed at `%AppData%\majicjungle\sapiens\mods`.
 - For **Linux** users, you will need to:
     1. Open Steam.
     2. Go to Sapiens.
@@ -33,6 +33,7 @@ Please take note of your Sapiens installation's mod directory:
 3. Click on the gear on the right > Properties...
 4. Click on local files > Browse...
 5. You are now on the path where Sapiens files are located.
+6. Navigate further to `GameResources/`.
 7. Take note of the `GameResources` folder's absolute path.
 
 ## Instructions
@@ -40,7 +41,7 @@ Please take note of your Sapiens installation's mod directory:
     ![](/images/guide/vscode/instruction_1.png)
 2. Open your VSCode settings, and search for `modPath`. Enter the path to the Sapiens mod folder as you have noted it down in the prerequisite step.
     ![](/images/guide/vscode/instruction_2.png)
-3. (Optional) Search for `GameResourcesPath` in your VSCode settings. Enter the path to the Sapiens GameResources folder as your have noted it down in the prerequisite step.
+3. (Optional) Search for `gameResourcesPath` in your VSCode settings. Enter the path to the Sapiens GameResources folder as your have noted it down in the prerequisite step.
     ![](/images/guide/vscode/instruction_3.png)
 4. Search using Ctrl+Shift+P for 'newProject'. An option to create a new Sapiens mod project will appear.
     ![](/images/guide/vscode/instruction_4.png)
