@@ -1,9 +1,14 @@
-# Sapiens Modding Wiki
+# Sapiens Modding Wiki (Nuxt)
+The Nuxt version of the modding wiki is a modern and fast version. However, due to the large amount of overhead and work required to maintain this version, it is not guaranteed to be up-to-date or working at any given moment. 
 
-This repository contains a static site which provides modding documentation for the [Sapiens video game.](https://www.playsapiens.com/).
+## Development
+Requirements:
+ - Node **>16**
 
-🚀 [View the website.](https://wiki.sapiens.dev/) 🚀
+It's a [Nuxt](https://nuxt.com) project with the [content](https://nuxt.com/modules/content) module. 
 
-## Contributing
+### Dev Server
+`npm run dev`
 
-[<img src="https://discord.com/assets/cb48d2a8d4991281d7a6a95d2f58195e.svg" width="300"/>](https://discord.gg/WnN8hj2Fyg)
+### Build
+`npm run build`
