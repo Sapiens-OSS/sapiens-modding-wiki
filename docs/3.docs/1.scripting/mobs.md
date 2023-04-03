@@ -25,6 +25,6 @@ Adding a new mob into Sapiens is a little tricky, and requires a number of files
  - Data: `serverMammoth:init(serverGOM, serverWorld, serverMob)` (inside of `serverMob.lua`)
 
 
-::: danger Oh-no!
+::danger{title="Oh no!"}
 This wiki page isn't done. But you can help! Click the 'Edit Page' button at the bottom.
-:::
+::

@@ -1,14 +1,42 @@
-# Sapiens Modding Wiki (Nuxt)
-The Nuxt version of the modding wiki is a modern and fast version. However, due to the large amount of overhead and work required to maintain this version, it is not guaranteed to be up-to-date or working at any given moment. 
+# Nuxt 3 Minimal Starter
 
-## Development
-Requirements:
- - Node **>16**
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-It's a [Nuxt](https://nuxt.com) project with the [content](https://nuxt.com/modules/content) module. 
+## Setup
 
-### Dev Server
-`npm run dev`
+Make sure to install the dependencies:
 
-### Build
-`npm run build`
+```bash
+# yarn
+yarn install
+
+# npm
+npm install
+
+# pnpm
+pnpm install
+```
+
+## Development Server
+
+Start the development server on `http://localhost:3000`
+
+```bash
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

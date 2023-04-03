@@ -4,7 +4,7 @@ This page covers a few common issues that you may face, when developing mods for
 
 ## Copy/Pasting Files
 
-Sapiens modding requires a special kind of coding style called [shadowing](/guide/shadowing). This is *required*. If you just copy/paste source files into your mod and edit them, they won't have any effect at all!
+Sapiens modding requires a special kind of coding style called [shadowing](/guides/shadowing). This is *required*. If you just copy/paste source files into your mod and edit them, they won't have any effect at all!
 
 ## Running Server logic on App Mods
 

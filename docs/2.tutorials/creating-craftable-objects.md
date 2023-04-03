@@ -3,7 +3,7 @@
 In this tutorial, we will create a small mod that adds charcoal as a craftable object to the game. It is based on a minimal [Coal mod](https://github.com/nmattela/sapiens_coal_mod). This tutorial is written for update 0.3.8. It is possible that this tutorial will not work for future updates.
 
 ## Getting started
-To get started, follow the [Getting Started with Lua](/guide/lua-getting-started) guide. This tutorial also uses the [Hammerstone Framework](/hammerstone/introduction) to make your life a bit easier. Optionally, you can also install [Creative Mode](https://github.com/SirLich/sapiens-creative-mode) to make debugging and testing a bit faster.
+To get started, follow the [Getting Started with Lua](/guides/lua) guide. This tutorial also uses the [Hammerstone Framework](/hammerstone/introduction) to make your life a bit easier. Optionally, you can also install [Creative Mode](https://github.com/SirLich/sapiens-creative-mode) to make debugging and testing a bit faster.
 
 I assume you have shadowed `scripts/mainThread/controller.lua` and created a directory called `scripts/<yourName>/coal.lua`. In this file, add the following content:
 ```lua
@@ -17,7 +17,7 @@ end
 
 return coal
 ```
-That's it! Congratulations, you made your first mod! Just kidding... Obviously your mod doesn't do anything. For that, we will have to shadow a couple more files. If you're unfamiliar with the concept of shadowing, [consult this guide](/guide/shadowing). Also, make sure to have the game's source code open as well to consult. You can find it in `SteamLibrary/steamapps/common/Sapiens/GameResources`. Check Steam settings on what disk your SteamLibrary is located.
+That's it! Congratulations, you made your first mod! Just kidding... Obviously your mod doesn't do anything. For that, we will have to shadow a couple more files. If you're unfamiliar with the concept of shadowing, [consult this guide](/guides/shadowing). Also, make sure to have the game's source code open as well to consult. You can find it in `SteamLibrary/steamapps/common/Sapiens/GameResources`. Check Steam settings on what disk your SteamLibrary is located.
 
 ## Defining a gameObject
 

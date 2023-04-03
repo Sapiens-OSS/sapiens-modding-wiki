@@ -1,9 +1,9 @@
 # Dev Tools
 Sapiens contains a few utillity tools to make modding easier (cheat), built automatically into the game. It is unknown if dave will remove these before launch!
 
-:::warning
+::warning
 In latest betas, these cheat tools are not available without modifying the game. Check `gameConstants.lua`.
-:::
+::
 
 ## Debug Menu
 

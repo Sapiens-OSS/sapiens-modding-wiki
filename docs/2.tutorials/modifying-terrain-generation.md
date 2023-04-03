@@ -7,7 +7,7 @@ This tutorial will cover a bit about the C part, so please make sure you are fam
 This tutorial is written for update 0.3.8. It is possible that this tutorial will not work for future updates.
 
 ## Getting started
-To get started, follow the [getting started with Lua](/guide/lua-getting-started) guide. This tutorial also uses the [Hammerstone framework](/hammerstone/getting-started) to make your life a bit easier. Additionally, read up on the [getting started with C](/guide/c-getting-started) guide and make sure you have managed to run the flat terrain mod.
+To get started, follow the [getting started with Lua](/guides/lua) guide. This tutorial also uses the [Hammerstone framework](/hammerstone/getting-started) to make your life a bit easier. Additionally, read up on the [getting started with C](/guides/c) guide and make sure you have managed to run the flat terrain mod.
 
 I personally use the [cmake template made by suppergerrie2](https://github.com/suppergerrie2/SapiensCModTemplate), but using the official visual studio project is of course also possible.
 

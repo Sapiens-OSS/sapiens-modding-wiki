@@ -1,6 +1,6 @@
 # World Generation
 
-World generation is split across multiple parts, knowledge of [C modding](/guide/c-getting-started.md) is required.
+World generation is split across multiple parts, knowledge of [C modding](/guides/c) is required.
 
 ## Common Objects
 
@@ -50,12 +50,12 @@ spNoiseGet(noise1, spVec3Mul(noiseLoc, 1000), 8) * 1000; // <- Creates a world c
 Vertex Terrain generation determines the height of every point in the world. This height is represented in the [prerender coordinate scale](/docs/visuals/coordinates).
 The methods required for vertex generation are defined in `SPHeight.h`.
 
-::: tip
+::tip
 You can convert meters into the prerender scale by using the `SP_METERS_TO_PRERENDER` macro:
 ```c
 double heightInPrerenderScale = SP_METERS_TO_PRERENDER(heightInMeters);
 ```
-:::
+::
 
 ### Methods
 
@@ -72,7 +72,7 @@ The following methods can be overridden to implement custom vertex terrain gener
 - `riverValue: double` Used as a crude height multiplier. 
 - `riverDistance: double` Distance to a nearby river if one is close enough.
 
-::: tip
+::tip
 You can calculate the latitude and longitude as follows:
 
 ```c
@@ -83,7 +83,7 @@ You can calculate the latitude and longitude as follows:
         lon = atan2(pointNormal.z, pointNormal.x);
     }
 ```
-:::
+::
 
 ::: warning
 Some points are `NaN`, the vanilla implementation returns `NaN` at these points. Returning anything else seems to cause artifacts on the equator of the planet.
@@ -121,19 +121,19 @@ SPVec4 spHeightGet(SPVec4 previousHeight, //if spReplacesPreviousHeight returns 
 }
 ```
 
-::: details Result of the above code
+::details{title="Result of the above code"}
 ![](/images/docs/c-mods/flat-planet-result.png)
-:::
+::
 
 ## Biome and Climate assignment
 
-::: danger Oh-no!
+::danger
 This section isn't done. But you can help! Click the 'Edit Page' button at the bottom.
-:::
+::
 
-::: info
+::info
 This section mentions the vanilla code several times. You can find it [here](https://github.com/Majic-Jungle/splugins).
-:::
+::
 
 Biomes are assigned in this stage of world generation, objects like trees and rocks are placed in this stage of generation.
 
@@ -215,12 +215,12 @@ Note that this function does not spawn small rocks, boulders, clay balls or anyt
  - `uint32_t decalTypeIndex` Not sure what this is.
  - `uint8_t pathDifficultyIndex` Sets the difficulty of traversing this surface.
 
- ::: tip
+ ::tip
  You can convert the steepness value into radians going from 0 to π/2 by doing:
 ```c
 double angle = isnan(steepness) ? 0 : atan(steepness / sqrt(32));
 ```
-:::
+::
 
 #### spBiomeGetTransientGameObjectTypesForFaceSubdivision
 

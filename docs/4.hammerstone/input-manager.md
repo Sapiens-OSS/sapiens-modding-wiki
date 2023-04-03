@@ -37,8 +37,7 @@ local keyMapping = mjrequire "mainThread/keyMapping"
 local keyCodes = keyMapping.keyCodes
 local modifiers = keyMapping.modifiers
 ```
-<details>
-  <summary>Full list of all keycodes</summary>
+::dropdown{title="Full list of all keycodes"}
 
 * backspace
 * tab
@@ -275,18 +274,15 @@ local modifiers = keyMapping.modifiers
 * kbdillumup
 * eject
 * sleep
-
-</details>
-
-<details>
-  <summary>Full list of modifiers</summary>
+::
+::dropdown{title="Full list of modifiers"}
 
 * none (default)
 * shift
 * ctrl
 * alt
 * cmd (Windows key)
-</details>
+::
 
 ## Adding a mapping
 The full process for adding a mapping is as follows. First, add the mapping:

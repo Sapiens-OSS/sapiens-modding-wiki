@@ -25,9 +25,9 @@ Decides how diffused the light hitting your surface is. 0 means that all light h
 ### Metalicity
 Decides how metallic your surface is. 0 means no reflections, 1 means it is perfectly metallic and will reflect light like a mirror, like in the image on this page.
 
-::: tip
+::tip
 It's possible to use variables with number values in place of manually writing numbers.
-:::
+::
 
 ## Adding a material to a model
 

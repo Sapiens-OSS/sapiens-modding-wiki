@@ -1,7 +1,7 @@
 # Input
-::: tip
+::tip
 We recommend you use Hammerstone for managing input. You can find the Hammerstone docs [here](/hammerstone/input-manager.md)
-:::
+::
 Input handling is the ability to listen and react to key strikes, mouse movements, and other physical-input.
 
 ## Adding your action to the KeyMap
@@ -29,6 +29,6 @@ end
 
 The next step is actually listening to your action. This can be done using...
 
-::: danger Oh-no!
+::danger{title="Oh no!"}
 This wiki page isn't done. But you can help! Click the 'Edit Page' button at the bottom.
-:::
+::
