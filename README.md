@@ -1,9 +1,42 @@
-# Sapiens Modding Wiki
+# Nuxt 3 Minimal Starter
 
-This repository contains a static site which provides modding documentation for the [Sapiens video game.](https://www.playsapiens.com/).
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-🚀 [View the website.](https://wiki.sapiens.dev/) 🚀
+## Setup
 
-## Contributing
+Make sure to install the dependencies:
 
-[<img src="https://discord.com/assets/cb48d2a8d4991281d7a6a95d2f58195e.svg" width="300"/>](https://discord.gg/WnN8hj2Fyg)
+```bash
+# yarn
+yarn install
+
+# npm
+npm install
+
+# pnpm
+pnpm install
+```
+
+## Development Server
+
+Start the development server on `http://localhost:3000`
+
+```bash
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

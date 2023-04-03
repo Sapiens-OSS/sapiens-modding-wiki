@@ -1,0 +1,8 @@
+name = "sapiens-modding-wiki"
+main = "./.output/server/index.mjs"
+workers_dev = true
+compatibility_date = "2022-09-10"
+account_id = "8751ac04cef5f2fb41249a4e0a7d37ef"
+
+[site]
+bucket = ".output/public"

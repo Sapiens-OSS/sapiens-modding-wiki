@@ -15,9 +15,9 @@ We'd love some help making this wiki! Get started by creating a fork, commiting 
 
 If you don't have time or can't finish a wiki page, put this block at the end:
 ```
-::: danger Oh-no!
+::danger{title="Oh no!"}
 This wiki page isn't done. But you can help! Click the 'Edit Page' button at the bottom.
-:::
+::
 ```
 
 ## How to use headers
