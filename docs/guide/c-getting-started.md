@@ -1,4 +1,4 @@
-# C Mods
+# Getting Started with C
 
 Certain tasks are too performance intensive to implement in Lua, these tasks are implemented in C. 
 Currently the following tasks are done in C: 
@@ -6,6 +6,9 @@ Currently the following tasks are done in C:
 - Biome and Climate assignment
 - Particles
 
+:::tip
+This is considered an advanced topic. If you're new, try [Getting Started with Lua](/guide/lua-getting-started)
+:::
 ## Getting started
 
 ::: details Prerequisites
@@ -15,9 +18,9 @@ Currently the following tasks are done in C:
 - [CMake](https://cmake.org/) if using the template, or an IDE that has CMake bundled like [CLion](https://www.jetbrains.com/clion/)
 :::
 
-C Mods have a file structure very familiar to normal Lua mods. The root folder contains a `modInfo.lua` file, exactly like a normal Lua mod. For more information on this check out the [Getting Started](/guide/getting-started) page. Additionally the root folder contains a `lib` folder. This lib folder contains library files which the game will load. On windows these library files have the `.dll` extension.
+C Mods have a file structure very familiar to normal Lua mods. The root folder contains a `modInfo.lua` file, exactly like a normal Lua mod. For more information on this check out the [Getting Started with Lua](/guide/lua-getting-started) page. Additionally the root folder contains a `lib` folder. This lib folder contains library files which the game will load. On windows these library files have the `.dll` extension.
 
-The easiest way to get started is by cloning either the [official example repository](https://github.com/Majic-Jungle/sapiens-mod-creation/) or the [template made by suppergerrie2](https://github.com/suppergerrie2/SapiensCModTemplate). The template has the benefit of being a clean setup without the other Lua mod examples. Note that both repositories need to be cloned with the `--recurse-submodules`.
+The easiest way to get started is by cloning either the [official example repository](https://github.com/Majic-Jungle/sapiens-mod-creation/) or the [template made by suppergerrie2](https://github.com/suppergerrie2/SapiensCModTemplate). The template has the benefit of being a clean setup without the other Lua mod examples, and does not require Visual Studio, allowing you to program on Linux. Note that both repositories need to be cloned with the `--recurse-submodules`.
 
 ### Official repository
 
@@ -35,6 +38,9 @@ The template will combine the `modInfo.lua` and create the `lib` folder for you,
 
 The template is setup as a GitHub template, thus it can be easily used to create your own GitHub repository by going to the [repository](https://github.com/suppergerrie2/SapiensCModTemplate) and pressing `Use this template`. This will then ask you to enter the name of your mod and whether it should be public or private and then create the GitHub repository. Copy the Git URL by pressing `Code => Local` and then copying the URL. 
 
+#### For Linux developers
+Append `NO_CMAKE_FIND_ROOT_PATH` to the end of the arguments list of `find_library` in `CMakeLists.txt`.
+
 #### Command line setup
 
 First the repository needs to be cloned.
@@ -47,6 +53,8 @@ Then configure the CMake project
 cd [Your GitHub repository name]
 cmake -DMOD_ID=MyCMod -DMOD_NAME="My C Mod" -DDESCRIPTION="An amazing mod that does things in C" -DDEVELOPER="Me!" -DDEVELOPER_URL="https://example.com" -DPREVIEW_FILE="preview.png" -DMOD_MAJOR_VERSION=1 -DMOD_MINOR_VERSION=2 -DMOD_PATCH_VERSION=3 . -B build
 ```
+For Linux developers, swap `cmake` with `x86_64-w64-mingw32-cmake`.
+
 Don't be afraid of the long line, it's defining a lot of values you should change yourself. The version is combined as `major.minor.patch`.
 
 ::: details CMake gui
@@ -110,76 +118,6 @@ The [splugins](https://github.com/Majic-Jungle/splugins/tree/main/SPVanilla) rep
 ### Symlinks
 
 A symlink to your mod can be made for easy development, making it so you do not have to manually copy the folder to the game's mods folder every time you compile. The template can setup this symlink automatically, to do this the project should be configured with `AUTO_GENERATE_SAPIENS_MOD_SYMLINK` set to `ON` and with admin permissions. The symlink can also be manually made by running `ni [YOUR MOD NAME] -i SymbolicLink -ta [PATH TO WHERE YOUR MOD COMPILES TO]` in a powershell instance with admin privileges.
-
-## Vertex Terrain Generation
-
-Vertex Terrain generation determines the height of every point in the world. This height is represented in the [prerender coordinate scale](/docs/coordinates).
-
-::: tip
-You can convert meters into the prerender scale by using the `SP_METERS_TO_PRERENDER` macro:
-```c
-double heightInPrerenderScale = SP_METERS_TO_PRERENDER(heightInMeters);
-```
-:::
-
-Most of the paramaters are still a mystery.
-
-The `pointNormal` parameter is the location on the planet normalised, you can imagine it as sampling points on a sphere with `(0,0,0)` as the center and a radius of `1`. 
-
-::: tip
-You can calculate the latitude and longitude as follows:
-
-```c
-    double lat = asin(pointNormal.y);
-
-    double lon = 0;
-    if (fabs(pointNormal.x) + fabs(pointNormal.z) > 0.0000001) {
-        lon = atan2(pointNormal.z, pointNormal.x);
-    }
-```
-:::
-
-::: warning
-Some points are `NaN`, the vanilla implementation returns `NaN` at these points. Returning anything else seems to cause artifacts on the equator of the planet.
-:::
-
-The return value from te function is a vector with 4 components. The first component is the height, the other components are currently unknown and in the vanilla implementation always `riverDistance`, `0` and `0` respectively. 
-
-Below is the code for the `FlatTerrainMod` which returns a height of 10 for every position in the world and generates a planet that has flat terrain.
-```c
-#include "SPHeight.h"
-
-bool spReplacesPreviousHeight()
-{
-	return true;
-}
-
-SPVec4 spHeightGet(SPVec4 previousHeight, //if spReplacesPreviousHeight returns false, then previousHeight is the output of the previous mod, otherwise it should be ignored.
-                   SPNoise* noise1,
-                   SPNoise* noise2,
-                   SPVec3 pointNormal,
-                   SPVec3 noiseLoc,
-                   SPWorldGenOptions worldGenOptions,
-                   double riverValue,
-                   double riverDistance) {
-
-
-    SPVec4 result = {SP_METERS_TO_PRERENDER(10), riverDistance, 0.0, 0.0};
-    return result;
-}
-```
-
-::: details Result of the above code
-![](/images/docs/c-mods/flat-planet-result.png)
-:::
-
-## Biome and Climate assignment
-
-It's currently unknown how biome and climate assignment works, the vanilla implementation can be found in the [splugins](https://github.com/Majic-Jungle/splugins/blob/main/SPVanilla/src/SPBiome.c) repository.
-
-## Particle Engine
-
-It's currently unknown how the particle engine works, the vanilla implementation can be found in the [splugins](https://github.com/Majic-Jungle/splugins/blob/main/SPVanilla/src/SPParticles.c) repository.
 
 ## Common mistakes
 

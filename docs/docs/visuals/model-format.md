@@ -11,7 +11,7 @@ Make sure that you set the scale type to `Quaternion (WXYZ)` under Object Proper
 
 ### Understanding the Format
 
-Sapiens models are generally made up of standard geometry, paired with 'meta data', represented via empties. You can [learn how materials work here.](/docs/materials).
+Sapiens models are generally made up of standard geometry, paired with 'meta data', represented via empties. You can [learn how materials work here.](/docs/visuals/materials).
 
 ![](/images/docs/model-format/example.png)
 
@@ -37,7 +37,7 @@ Used to render the icon.
 
 ### pathNode
 
-`pathNode`` primitives are extra nodes that are added to the pathfinding. They are especially important for doorways, as otherwise it's unlikely that sapiens will happen to find nodes that go through the gap. They're also added at corners, and on walkable surfaces like floors and steps. The engine doesn't actually place nodes in those locations directly, as the ground might be uneaven, but it casts rays through those positions, to try to find a ground position for the pathfinding.
+`pathNode` primitives are extra nodes that are added to the pathfinding. They are especially important for doorways, as otherwise it's unlikely that sapiens will happen to find nodes that go through the gap. They're also added at corners, and on walkable surfaces like floors and steps. The engine doesn't actually place nodes in those locations directly, as the ground might be uneaven, but it casts rays through those positions, to try to find a ground position for the pathfinding.
 
 ### bounding_radius
 
@@ -45,15 +45,17 @@ This empty is used to provide a bounding box for your model. Semantics are unkno
 
 ### placeCollide
 
-`placeCollide`` primitives are used when placing the object in build mode or planting/decorating, to ensure there are no collisions, eg to stop you placing 100 plants in the same spot.
+`placeCollide` primitives are used when placing the object in build mode or planting/decorating, to ensure there are no collisions, eg to stop you placing 100 plants in the same spot.
 
 ### static and dynamic primitives
 
-` static`` primitives are used in the physics when the objects are static, and also for other purposes, but can't remember all of them off the top of my head.  `dynamic` primitives are for when the object is loose and falling. I think the idea was that the static ones would be more complex, but in practice they are usually the same.
+`static` primitives are used in the physics when the objects are static, and also for other purposes, but can't remember all of them off the top of my head.  `dynamic` primitives are for when the object is loose and falling. I think the idea was that the static ones would be more complex, but in practice they are usually the same.
 
 ### rayTestLimits & Others
 
 And there are ` rayTest`` limits,  `lookat`` boxes and a few other things I'm not even really sure of anymore. They are various hacks mostly for optimizations. Like the coconut tree because it is so tall and thin causes performance problems when you are looking through them, as once it hits the bounding radius, it checks every triangle. So the ray test limits reduce that.
+
+And there are `rayTest` limits,  `lookat` boxes and a few other things I'm not even really sure of anymore. They are various hacks mostly for optimizations. Like the coconut tree because it is so tall and thin causes performance problems when you are looking through them, as once it hits the bounding radius, it checks every triangle. So the ray test limits reduce that.
 
 # Model Remaps
 
@@ -80,3 +82,5 @@ willowBranch = {
 
 This example is creating three new models, based on the basic `willowBranch.gltf` model. The models are called `appleBranch`, `orangeBranch`, and `peachBranch`. The data inside each of these new models is used to remap the materials.
 So for example `appleBranch` remaps the material `darkBark` to be `appleBark`, and `willowWood` into `appleWood`.
+
+

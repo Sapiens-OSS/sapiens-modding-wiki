@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Started with Lua
 
 Hey, and welcome to the Sapiens Modding Wiki! Please note that this guide _only_ covers modding in Sapiens, not Lua or the basics of asset creation.
 
@@ -53,6 +53,6 @@ Depending on the type of mod you'd like to create, `type` is either `world` (for
 
 This guide just sets up a mod for you, nothing more. To make the game do what you want to do, look over on the sidebar and read up on how it works before trying to implement it. Some topics I suggest checking out:
 
-- [Shadowing](/guide/shadowing) - Further your knowledge on how shadowing works so you don't run into weird issues later.
-- [Mod Types](/docs/mod-types) - Understand what each type of mod does and how to develop them properly.
+- [Shadowing](/guide/shadowing.md) - Further your knowledge on how shadowing works so you don't run into weird issues later.
+- [Mod Types](/docs/scripting/mod-types) - Understand what each type of mod does and how to develop them properly.
 - [Hammerstone Framework](/hammerstone/introduction) - Hammerstone Framework is a library that's designed to help modders and provide a level of 'protection' from the Sapiens codebase.

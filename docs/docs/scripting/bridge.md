@@ -1,4 +1,4 @@
-# Bridge
+# Engine Bridges
 
 In Sapiens, many lua classes contain a method called `setBridge` that take a `bridge` parameter. This parameter directly maps to a C++ class inside of the games source code. Every bridge parameter is also unique: No two lua scripts are initialized with the same bridge object.
 
