@@ -87,7 +87,16 @@ export default {
           { text: 'Logger', link: '/hammerstone/logger' },
           { text: 'UI Manager', link: '/hammerstone/ui-manager' },
           { text: 'Input Manager', link: '/hammerstone/input-manager' },
-          { text: 'Save State', link: '/hammerstone/save-state' }
+          { text: 'Save State', link: '/hammerstone/save-state' },
+          { 
+            text: 'DDAPI', link: '/hammerstone/ddapi/ddapi-getting-started',
+            collapsible: true,
+            items: [
+              { text: 'Objects', link: '/hammerstone/ddapi/ddapi-objects' },
+              { text: 'Remaps', link: '/hammerstone/ddapi/ddapi-remaps' },
+              { text: 'Troubleshooting', link: '/hammerstone/ddapi/ddapi-Troubleshooting' },
+            ]
+          }
         ]
       },
       {
