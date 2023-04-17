@@ -39,7 +39,7 @@ as such.
 
 To get started, you need a live copy of Hammerstone beta, and a text editor like VSCode. Then create a folder structure like this:
 
-```yml
+```
 mod-name
 	modInfo.lua
 	hammerstone
