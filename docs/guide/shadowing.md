@@ -1,4 +1,5 @@
 # Lua Shadows
+
 Mods that wish to override or add Lua code can do so by creating their Lua files in a directory structure that mirrors the game's scripts directory.
 
 For example, if you wanted to override something in `world.lua`, you would place a file in `MOD/scripts/mainThread/world.lua`.
@@ -6,6 +7,11 @@ For example, if you wanted to override something in `world.lua`, you would place
 :::warning
 Shadows are more complex than just copying/pasting the game's source files and editing them. Please read further to understand how you can use Shadowing to manipulate game logic!
 :::
+
+:::info
+If you're using Hammerstone, there is a [shadowing utility](docs/hammerstone/shadowing), which provides a nicer syntax for shadowing.
+:::
+
 ## File Structure
 
 Once you've created your Lua file, you must add some mandatory structure. This example will show a shadow for `world.lua`:

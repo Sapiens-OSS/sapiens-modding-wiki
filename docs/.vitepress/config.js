@@ -84,6 +84,7 @@ export default {
         items: [
           { text: 'Introduction', link: '/hammerstone/introduction' },
           { text: 'Getting Started', link: '/hammerstone/getting-started' },
+          { text: 'Shadowing Util', link: '/hammerstone/shadowing' },
           { text: 'Logger', link: '/hammerstone/logger' },
           { text: 'UI Manager', link: '/hammerstone/ui-manager' },
           { text: 'Input Manager', link: '/hammerstone/input-manager' },
