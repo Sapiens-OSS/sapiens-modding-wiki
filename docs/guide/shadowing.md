@@ -9,7 +9,7 @@ Shadows are more complex than just copying/pasting the game's source files and e
 :::
 
 :::info
-If you're using Hammerstone, there is a [shadowing utility](docs/hammerstone/shadowing), which provides a nicer syntax for shadowing.
+If you're using Hammerstone, there is a [shadowing utility](hammerstone/shadowing), which provides a nicer syntax for shadowing.
 :::
 
 ## File Structure
