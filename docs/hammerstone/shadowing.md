@@ -1,7 +1,7 @@
 # Shadowing with Hammerstone
 
 :::info
-This page builds upon the explanation inside of the base-game [shadowing explanation](guide/shadowing).
+This page builds upon the explanation inside of the base-game [shadowing explanation](/guide/shadowing).
 :::
 
 Shadowing in Sapiens is very important, because it allows us to hook our custom logic into base game functions.

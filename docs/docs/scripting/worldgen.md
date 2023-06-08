@@ -12,7 +12,7 @@ Common objects are used in more than one stage of world generation.
 It's used in `spHeightGet` for vertex height generation and `spRainfallGet` for rainfall generation.
 It's defined in `SPCommon.h`
 
-```C
+```cpp
 struct SPWorldGenOptions {
 	double heightOffset;
 	double rainfallMultiplier;
@@ -52,7 +52,7 @@ The methods required for vertex generation are defined in `SPHeight.h`.
 
 ::: tip
 You can convert meters into the prerender scale by using the `SP_METERS_TO_PRERENDER` macro:
-```c
+```cpp
 double heightInPrerenderScale = SP_METERS_TO_PRERENDER(heightInMeters);
 ```
 :::
@@ -75,7 +75,7 @@ The following methods can be overridden to implement custom vertex terrain gener
 ::: tip
 You can calculate the latitude and longitude as follows:
 
-```c
+```cpp
     double lat = asin(pointNormal.y);
 
     double lon = 0;
@@ -98,7 +98,7 @@ This method has no arguments, when `true` is returned the output of the previous
 ### Example
 
 Below is the code for the `FlatTerrainMod` which returns a height of 10 for every position in the world and generates a planet that has flat terrain.
-```c
+```cpp
 #include "SPHeight.h"
 
 bool spReplacesPreviousHeight()
@@ -145,7 +145,7 @@ Objects that are common to multiple methods during biome generation.
 
 Allows the biome generator to get indices for various objects generated on the Lua side. 
 
-```C
+```cpp
 struct SPBiomeThreadState {
 	void* terrainGenerator; //private
 	void* gom; //private
@@ -217,7 +217,7 @@ Note that this function does not spawn small rocks, boulders, clay balls or anyt
 
  ::: tip
  You can convert the steepness value into radians going from 0 to π/2 by doing:
-```c
+```cpp
 double angle = isnan(steepness) ? 0 : atan(steepness / sqrt(32));
 ```
 :::
@@ -243,7 +243,7 @@ Note that this method is called for all mods enabled (this includes vanilla!) an
  - `riverDistance: double`
 
 
-```C
+```cpp
 #define ADD_OBJECT(__addType__)                                                \
   types[addedCount++] = __addType__;                                           \
   if (addedCount >= BIOME_MAX_GAME_OBJECT_COUNT_PER_SUBDIVISION) {             \
