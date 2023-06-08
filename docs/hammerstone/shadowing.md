@@ -43,6 +43,7 @@ return mod
 ```
 
 As you can see, once you have access to the `localPlayer` module you have a *lot of freedom* to update and change it's behavior -it's just a bit finicky.
+:::
 
 ### Shadowing Utility
 
