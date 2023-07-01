@@ -1,52 +1,16 @@
 # Getting Started
 
-## Bootstrapping
-Bootstrap is particularly important with Hammerstone as without it, Hammerstone has no idea that your mod actually exists. The recommended way of bootstrapping is [shadowing](/guide/shadowing.md) `controller.lua`, then adding your init function to the init event, like this:
-```lua
--- Using the Hammerstone Framework
-local mod = {
-	loadOrder = 1, -- Can be anything less than 999
-}
+## Installing
 
-local eventManager = mjrequire "hammerstone/event/eventManager"
-local eventTypes = mjrequire "hammerstone/event/eventTypes"
+While it's technically possible to use Hammerstone from steam, it's highly recommended to install from GitHub. This will allow you to view the source code as you develop your own mod, and perhaps, maybe even contribute something of your own! You can find the source code [here](https://github.com/SirLich/hammerstone-framework).
 
-function mod:onload(controller)
-    local exampleMod = mjrequire "exampleMod/exampleMod"
-    eventManager:bind(eventTypes.init, exampleMod.init)
-end
+Once you've downloaded the repository, you should locate it inside of your mods directory, e.g., `C:\Users\[USER]\AppData\Roaming\majicjungle\sapiens\mods\hammerstone\`
 
-return mod
-```
-This format of bootstrapping is particularly good, as it keeps the shadowed file to a minimum. In `exampleMod/exampleMod.lua`, you would have something like this:
-```lua
---- Mod entry point for exampleMod
--- Module setup
-local exampleMod = {}
+## What next?
 
--- Includes
+Hammerstone is a *framework*. The next steps for you depend entirely on what you're trying to create. Here are some systems you might want to explore:
 
-(Add includes here)
-
--- exampleMod entrypoint, called by shadowing 'controller.lua' in the main thread.
-function exampleMod:init()
-	mj:log("Initializing Example Mod...")
-	
-	(Add initalisation code here)
-
-	mj:log("Example Mod Initialized.")
-end
-
--- Module return
-return exampleMod
-```
-
-## Components
-
-Get started with logging with [Logger](logger.md).
-
-Get started with UI with [UI Manager](ui-manager.md).
-
-Get started with input with [Input Manager](input-manager.md)
-
-Get started with game saves with [Save State Manager](save-state.md)
+ - Get started with logging with [Logger](logger.md).
+ - Get started with UI with [UI Manager](ui-manager.md).
+ - Get started with input with [Input Manager](input-manager.md)
+ - Get started with game saves with [Save State Manager](save-state.md)

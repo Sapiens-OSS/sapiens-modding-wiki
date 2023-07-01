@@ -29,6 +29,8 @@ end
 function mod:onload(localPlayer)              -- localPlayer variable refers to the 
 	localPlayer.greet = "Hello World"         -- Define a new 'greet' variable on the module
 
+	mj:log("Onload Called")
+
 	super_setMapMode = localPlayer.setMapMode -- Save the original 'setMapMode' function to a local var (the "super"), so we can re-call it layer
 	localPlayer.setMapMode = function(self, newMapModeOrNil, shouldSnap)
 		mj:log("Before setMapMode")
@@ -65,6 +67,11 @@ mjrequire "hammerstone/utils/shadow"
 local localPlayer = {
 	greet = "Hello World" -- The public state you define here will also be available on the parent module
 }
+
+-- 'preload' amd 'postload' are called automatically when the file is first required. It's equivalent to placing code directly into 'onload', as you can see above.
+function localPlayer:preload(parent)
+	mj:log("Onload Called")
+end
 
 -- To shadow a function, just define it. The only different is the first argument should always be called 'super', and represents
 -- the original function (which you should probably call).
@@ -157,5 +164,5 @@ function birdBath:fillWithWater(super, liters)
 end
 ```
 
-The correct way to refer to the actual `birdBath` module is using the `self` variable, which is special in lua, and contains the parent module. Once the `shadow:shadow` nonsense is finished, the shadowed function will exist in `birdBath`, meaning that `self` correctly refers to the 
+The correct way to refer to the actual `birdBath` module is using the `self` variable, which is special in lua, and contains the parent module. Once the `shadow:shadow` nonsense is finished, the shadowed function will exist in `birdBath`, meaning that `self` correctly refers to the *parent* module, not the current module.
 

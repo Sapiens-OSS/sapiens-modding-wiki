@@ -1,31 +1,43 @@
 # Input Manager
-The input manager is provides an easy way to add input to your mod. 
-## Including
+
+The input manager provides an easy to use API for adding input binding to your mod.
+
+### Example Use Case
+
+Pressing `ctrl+p` to fast-forward time to the next day.
+
+### Including
+
 ```lua
 local inputManager = mjrequire "hammerstone/input/inputManager"
 ```
 
-## Using
-The input system in Sapiens is fully rebindable, so we have to use strings to keep track of inputs. There are also categorisation in the form of groups.
+# Using Input Manager
+
+The input system in Sapiens is fully rebindable, so we have to use strings to keep track of inputs. Input can also be grouped together.
 
 ## Groups
+
 The built in groups for Sapiens are as follows:
-* Menu [`menu`]: Contains menu navigation controls
-* Game [`game`]: Contains hotkeys for opening various in-game menus
-* Movement [`movement`]: Contains forward, backwards, left & right, among other things
-* Building [`building`]: Contains various building shortcuts & hotkeys. 
-* Text Entry [`textEntry`]: Contains keys like send and backspace.
-* Multi-select [`multiSelect`]: Contains the subtract modifier for multiselect. 
-* Debug [`debug`]: Contains various debug controls
-* Cinematic Camera [`cinematicCamera`]: Contains all the control for the cinematic camera
+ - `menu`: Contains menu navigation controls
+ - `game`: Contains hotkeys for opening various in-game menus
+ - `movement`: Contains forward, backwards, left & right, among other things
+ - `building`: Contains various building shortcuts & hotkeys. 
+ - `textEntry`: Contains keys like send and backspace.
+ - `multiSelect`: Contains the subtract modifier for multiselect. 
+ - `debug`: Contains various debug controls
+ - `cinematicCamera`: Contains all the control for the cinematic camera
 
 When adding a key mapping, you have to use one of these groups:
+
 ```lua
-inputManager:addMapping("groupName", ...
+inputManager:addMapping("groupName", ...)
 ```
 
-#### Adding a group
+### Adding a Group
+
 Hammerstone has support for adding a group like this:
+
 ```lua
 inputManager:addGroup("groupName")
 ```
@@ -286,15 +298,18 @@ local modifiers = keyMapping.modifiers
 :::
 
 ## Adding a mapping
+
 The full process for adding a mapping is as follows. First, add the mapping:
+
 ```lua
 inputManager:addMapping("groupName", "keyBindName", keyCodes.[default key], modifiers.[modifier] or 0)
 ```
+
 Then, bind a function to it:
+
 ```lua
 inputManager:addKeyChangedCallback("groupName", "keyBindName", function (isDown, isRepeat)
    -- Do whatever you want
 end)
 ```
 Everything should be working now!
-
