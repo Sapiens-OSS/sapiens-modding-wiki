@@ -1,4 +1,4 @@
-# Getting Started in VSCode (C, Lua and Localizations)
+# Getting Started in VSCode
 
 A Sapiens VSCode extension is at your disposal in the VSCode extension market that sets up a project for you to write Lua, C (a combination of both) and localization mods with. It uses the wonderful [Sapiens cmake template by suppergerrie2](https://github.com/Sapiens-OSS/sapiens-cmake-template).
 
