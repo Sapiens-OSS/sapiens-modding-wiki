@@ -10,8 +10,8 @@ To get started modding Sapiens you should install a suitable code editor. We sug
 
 To create a mod, create a folder in one of these locations:
 
-- Windows (offical platform): `C:\Users\[user_name]\AppData\Roaming\majicjungle\sapiens\mods\`
-- MacOSX: `~/Library/Application\ Support/majicjungle/sapiens/mods`
+- Windows (official platform): `C:\Users\[user_name]\AppData\Roaming\majicjungle\sapiens\mods\`
+- MacOSX (official platform): `~/Library/Application\ Support/majicjungle/sapiens/mods`
 - Proton (unoffical): `~/.steam/steam/steamapps/compatdata/1060230/pfx/drive_c/users/steamuser/AppData/Roaming/majicjungle/sapiens/mods/`
 
 Next, create a `modInfo.lua`. This contains most of the important information about your mod. Example `modInfo.lua`, copy and change as necessary:
