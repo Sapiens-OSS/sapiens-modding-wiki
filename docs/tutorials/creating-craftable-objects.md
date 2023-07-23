@@ -353,6 +353,9 @@ Either you made a change, or I made a typo, either way this is a valuable lesson
 
 Fixing bugs is best done by checking the logs. There are two log locations:
 - The main Sapiens logs, check these logs if your game crashes before being able to create a world. These can be found at `AppData/roaming/sapiens/` or for Proton users: `/SteamLibrary/steamapps/compatdata/1060230/pfx/drive_c/users/steamuser/AppData/Roaming/majicjungle/sapiens`
-- The world logs, check these logs if your game crashes after hitting `create world`. Even if your game does not crash, these logs can still contain useful errors. These can be found at `AppData/roaming/sapiens/players/playerID/worlds/worldID/logs` or for Proton users: `/mnt/LinuxHDD/SteamLibrary/steamapps/compatdata/1060230/pfx/drive_c/users/steamuser/AppData/Roaming/majicjungle/sapiens/players/playerID/worlds/worldID/logs`
+- The world logs, check these logs if your game crashes after hitting `create world`. Even if your game does not crash, these logs can still contain useful errors. 
+  - On Window, these can be found at `AppData/roaming/sapiens/players/playerID/worlds/worldID/logs`
+  - Proton: `/mnt/LinuxHDD/SteamLibrary/steamapps/compatdata/1060230/pfx/drive_c/users/steamuser/AppData/Roaming/majicjungle/sapiens/players/playerID/worlds/worldID/logs`
+  - Mac: `~/Library/Application\ Support/majicjungle/sapiens/players/playerID/worlds/worldID/logs/`
 
 Ask for help in the [Discord](https://discord.gg/WnN8hj2Fyg) if you're stuck. Have fun!
