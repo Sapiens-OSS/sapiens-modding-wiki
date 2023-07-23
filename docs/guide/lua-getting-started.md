@@ -12,7 +12,9 @@ To create a mod, create a folder in one of these locations:
 
 - Windows (official platform): `C:\Users\[user_name]\AppData\Roaming\majicjungle\sapiens\mods\`
 - MacOSX (official platform): `~/Library/Application\ Support/majicjungle/sapiens/mods`
-- Proton (unoffical): `~/.steam/steam/steamapps/compatdata/1060230/pfx/drive_c/users/steamuser/AppData/Roaming/majicjungle/sapiens/mods/`
+- Proton (unoffical): 
+  - `SteamLibrary/steamapps/compatdata/1060230/pfx/drive_c/users/steamuser/AppData/Roaming/majicjungle/sapiens/mods/` or
+  - `~/.steam/steam/steamapps/compatdata/1060230/pfx/drive_c/users/steamuser/AppData/Roaming/majicjungle/sapiens/mods/`
 
 Next, create a `modInfo.lua`. This contains most of the important information about your mod. Example `modInfo.lua`, copy and change as necessary:
 
