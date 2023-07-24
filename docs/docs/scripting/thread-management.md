@@ -6,17 +6,22 @@ Sapiens uses multiple threads to manage tasks. These threads are more or less re
 Although Sapiens is currently singleplayer, the actual game is programmed as a multiplayer experience, where the server thread is intended to run on a dedicated server box, with clients connecting.
 :::
 
+## Threads Explained
+
+Each thread has its own separate lua enviornment, so you can't just call functions directly in other threads or anything like that. It is resource heavy for sure, but I decided it was the best solution. There are 4 Lua enviornments. The server, the main thread, the logic thread, and the globe thread, which is only used to render the globe in the main menu, so a max of 3 running at once.
+
 ## Available Threads
 
 Here is a quick explanation of all threads.
 
 ### mainThread
 
-The `mainThread` does the rendering, handles UI, player movement, anything that needs immediate feedback to the user. You can think of the `mainThread` as the client.
+The `mainThread` does the rendering, handles UI, player movement, anything that needs immediate feedback to the user. You can think of the `mainThread` as the client. Lua scripts that
+only run on the main thread can be found in `scripts/mainThread`
 
 ### logicThread
 
-The `logicThread` is a secondary client-side thread, which handles handles everything else on the client, generating terrain, updating buffers for rendering, updating animations, communications with the server.
+The `logicThread` is a secondary client-side thread, which handles handles everything else on the client, generating terrain, updating buffers for rendering, updating animations, communications with the server. Lua scripts that only run on the logic thread can be found `scripts/logicThread`
 
 ### server
 
@@ -24,13 +29,15 @@ The `server` thread runs the client-agnostic logic. It may help to think of Sapi
 
 For example, if a client digs out a section of the world, this will need to be communicated to all clients. This will be done via the server.
 
+Lua scripts that only run on the server can be found in `scripts/server`
+
+### globeThread
+
+The `globe` thread  is only used to render the globe in the main menu, so not relevant for gameplay code. Lua scripts that will only run on the globe thread can be found in `scripts/globeThread`.
+
 ### Common Folder
 
-The 'common' folder in Sapiens contains a collection of files that can be accessed from multiple threads.
-
-### misc. Threads
-
-Alongside these main threads, there is also a host of other threads, doing various small tasks. These can range from world generation, to pathfinding, to particle rendering.
+The 'common' folder in Sapiens contains a collection of files that can be accessed from multiple threads. These are usually shared stateful systems which need to be synced across multiple threads.
 
 ## Thread Communication
 
