@@ -10,6 +10,7 @@ Please ensure you have the following installed on your system:
 - [CMake](https://cmake.org/)
     - **Windows** users should additionally install [Visual C++ Build Tools](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019)
     - **Linux** users should additionally install [x86_64-w64-mingw32-cmake](https://aur.archlinux.org/packages/mingw-w64-cmake)
+    - **Mac** users _may_ need to `brew install cmake`
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Sapiens VSCode Extension](https://marketplace.visualstudio.com/items?itemName=Sapiens-OSS.sapiens-vscode-extension)
 
@@ -18,6 +19,7 @@ Ensure that `steam` is a recognized command on your system. If not, edit your PA
 
 Please take note of your Sapiens installation's mod directory:
 - For **Windows** users, this is by default installed at `%AppData%\majicjungle\sapiens\mods`.
+- For **Mac** users, this is by default installed at `~/Library/Application Support/majicjungle/sapiens/mods`
 - For **Linux** users, you will need to:
     1. Open Steam.
     2. Go to Sapiens.
