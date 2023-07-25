@@ -85,7 +85,6 @@ export default {
           { text: 'Introduction', link: '/hammerstone/introduction' },
           { text: 'Getting Started', link: '/hammerstone/getting-started' },
           { text: 'Shadowing Util', link: '/hammerstone/shadowing' },
-          { text: 'Logger', link: '/hammerstone/logger' },
           { text: 'UI Manager', link: '/hammerstone/ui-manager' },
           { text: 'Input Manager', link: '/hammerstone/input-manager' },
           { text: 'Save State', link: '/hammerstone/save-state' },
@@ -93,10 +92,10 @@ export default {
             text: 'DDAPI', 
             collapsible: true,
             items: [
-              { text: 'Getting Started', link: '/hammerstone/ddapi/ddapi-getting-started' },
-              { text: 'Objects', link: '/hammerstone/ddapi/ddapi-objects' },
-              { text: 'Remaps', link: '/hammerstone/ddapi/ddapi-remaps' },
-              { text: 'Troubleshooting', link: '/hammerstone/ddapi/ddapi-Troubleshooting' },
+              { text: 'Getting Started',  link: '/hammerstone/ddapi/ddapi-getting-started' },
+              { text: 'Objects',          link: '/hammerstone/ddapi/ddapi-objects' },
+              { text: 'Remaps',           link: '/hammerstone/ddapi/ddapi-remaps' },
+              { text: 'Troubleshooting',  link: '/hammerstone/ddapi/ddapi-troubleshooting' },
             ]
           }
         ]
