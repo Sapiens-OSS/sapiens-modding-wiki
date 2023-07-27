@@ -3,7 +3,8 @@ export default {
     ['link', { rel: 'stylesheet', href: '/index.css' }],
     ['link', { rel: 'icon', href: '/favicon.ico'}]
   ],
-  title: "Sapiens Modding Wiki",
+  lang: 'en-US',
+  title: "Unofficial Sapiens Modding Wiki",
   description: "Modding documentation for the Sapiens video game.",
   lastUpdated: true,
   themeConfig: {
@@ -16,7 +17,7 @@ export default {
     nav: [
       { text: 'Sapiens Website', link: 'https://www.playsapiens.com/' },
       { text: 'Sapiens Wiki', link: 'https://wiki.playsapiens.com/' },
-      { text: 'Sapiens Modding Wiki', link: 'https://github.com/Majic-Jungle/sapiens-mod-creation/wiki' },
+      { text: 'Official Sapiens Modding Wiki', link: 'https://github.com/Majic-Jungle/sapiens-mod-creation/wiki' },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Sapiens-OSS/sapiens-modding-wiki' },
@@ -85,18 +86,17 @@ export default {
           { text: 'Introduction', link: '/hammerstone/introduction' },
           { text: 'Getting Started', link: '/hammerstone/getting-started' },
           { text: 'Shadowing Util', link: '/hammerstone/shadowing' },
-          { text: 'Logger', link: '/hammerstone/logger' },
           { text: 'UI Manager', link: '/hammerstone/ui-manager' },
           { text: 'Input Manager', link: '/hammerstone/input-manager' },
           { text: 'Save State', link: '/hammerstone/save-state' },
-          { 
-            text: 'DDAPI', 
+          {
+            text: 'DDAPI',
             collapsible: true,
             items: [
-              { text: 'Getting Started', link: '/hammerstone/ddapi/ddapi-getting-started' },
-              { text: 'Objects', link: '/hammerstone/ddapi/ddapi-objects' },
-              { text: 'Remaps', link: '/hammerstone/ddapi/ddapi-remaps' },
-              { text: 'Troubleshooting', link: '/hammerstone/ddapi/ddapi-Troubleshooting' },
+              { text: 'Getting Started',  link: '/hammerstone/ddapi/ddapi-getting-started' },
+              { text: 'Objects',          link: '/hammerstone/ddapi/ddapi-objects' },
+              { text: 'Remaps',           link: '/hammerstone/ddapi/ddapi-remaps' },
+              { text: 'Troubleshooting',  link: '/hammerstone/ddapi/ddapi-troubleshooting' },
             ]
           }
         ]
@@ -110,7 +110,7 @@ export default {
       }
     ],
     logo: '/logo.png',
-    siteTitle: 'Sapiens Modding Wiki', 
+    siteTitle: 'Sapiens Modding Wiki',
     editLink: {
       pattern: 'https://github.com/Sapiens-OSS/sapiens-modding-wiki/edit/master/docs/:path'
     },
