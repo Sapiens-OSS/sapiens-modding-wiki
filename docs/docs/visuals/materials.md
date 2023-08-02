@@ -18,15 +18,13 @@ You can name this whatever you want, but it's best to name it something that is 
 These work together to decide the colour of the material. RGB is a commonly used colour system on computers. 0 means none of that colour, and 1.0 means as much of that colour as possible. Imagine it as a percentage system, where 0 is 0%, 0.5 is 50% and 1 is 100%. You can use any number in between 0 and 1, of course. For example: If you were to put red and green at 1.0 and Blue at 0, the game would combine red and green to make yellow. Any colour can be made by combining these three colours.
 
 ### Roughness
-Decides how diffused the light hitting your surface is. 0 means that all light hits the surface perfectly and 1 means that the surface will have imperfections. Roughness can go above 1, but I'm not sure how high.
-
-(If someone has a better explanation please add it, I'm honestly not too sure on that one)
+The roughness of a surface determines how mirror-like it is. A value of 0 will have perfect reflections (a cubemap approximation) and a value of 1 will be perfectly matte. Values in between will be a mix of the two, for example 0.5 will be like plastic with blurry highlights.
 
 ### Metalicity
-Decides how metallic your surface is. 0 means no reflections, 1 means it is perfectly metallic and will reflect light like a mirror, like in the image on this page.
+Metallic objects tint reflections. With a value of 0, any reflected objects will be their actual colour in the reflection. With a value of 1, reflections will take on the colour of the surface.
 
 ::: tip
-It's possible to use variables with number values in place of manually writing numbers.
+It's possible to use variables with number values in place of hard-coded values.
 :::
 
 ## Adding a material to a model
@@ -46,5 +44,5 @@ It's possible to use variables with number values in place of manually writing n
 In Blender's edit mode, selecting faces will allow you to manually assign materials to specific faces in the materials tab. This allows you to choose which material goes where. It does not matter how you make the material look in Blender, in Sapiens it will be overridden by the material values in materials.lua.
 
 ::: warning
-Black shiny stuff means it cant find a material in material.lua that matches what is specified in the model
+If your material is black and shiny, it means material.lua does not have a material that matches the material name specified in the model.
 :::

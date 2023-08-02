@@ -4,7 +4,7 @@ Sapiens modding has two mod types: world mods, and app mods. There is a also a t
 
 ### World Mods
 
-World mods are your 'standard' mod. They are installed to your system, but only effect the worlds they are enabled in! You should make world mods whenever possible.
+World mods are your 'standard' mod. They are installed to your system, but only affect the worlds they are enabled in! You should make world mods whenever possible.
 
 From a technical perspective, world mods are copied from your mods folder to the game's world folder when the world is created. This means that when developing a world mod, you must edit it within the world itself (not in the mod folder, since those changes won't be reflected).
 
