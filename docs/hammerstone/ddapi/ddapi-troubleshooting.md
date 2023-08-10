@@ -6,7 +6,7 @@ some common issues and their solutions. Happy modding!
 
 ## Debug Boolean
 
-Simply set `"debug": true` at the top of the config file, and Hammerstone will print additional information about the object.
+Simply set `"debug": true` at the top of your JSON file (per config, not fully standardized), and Hammerstone will print additional information about the object.
 
 ## Problems
 
