@@ -2,6 +2,8 @@
 
 The 'DDAPI' is a data-driven API for creating Hammerstone mods.
 
+There are two ways of writing the same format: Lua and json. Both are fully supported, yet the differences are that the json file has a light additional wrapper layer on the outside and a web editor; while Lua can add logic inside (useful for defining a template for instance).
+
 ### Philosophy
 
 In the base game of Sapiens, the data and logic for a "feature" is often spread across multiple files. For example, to create an apple, you might need the following:
