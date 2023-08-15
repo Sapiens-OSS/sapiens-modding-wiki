@@ -50,7 +50,76 @@ Here is a quick refresher:
  - Can be crafted with (i.e., you don't craft with a `birchBranch` you craft with a `branch` -the game figures the rest out)
 
 # Components
+Here is a list of components, their default value in parenthesis.
+## hs_object
+For most objects
+### model
+### scale (1)
+### physics (true)
+### link_to_resource
+### props
+Stands for 'properties'. The fields there are copied directly into the final object, with no additional processing
 
-Here is a list of components, valid for the `object` config type:
+## hs_evolving_object
+For objects that decay or transform over time, such as food or fresh pottery.
+### time_years
+### time_days
+### transform_to
 
-## 
+## hs_resource
+
+### display_object
+The icon.
+### storage_identifier
+### props
+
+## hs_craftable
+For craftable objects such as bowls...
+### hs_output
+### skill
+### tool
+### resources
+### craft_area
+### action_sequence
+### build_sequence
+### classification (craft)
+### build_model (craftSimple)
+### display_object
+### props
+
+## hs_buildable
+For buildings' elements such as walls, roofs..
+### classification
+### ignore_build_ray
+### has_collisions
+### clear_ground
+### allow_placement_collisions
+### build_completion_plan
+### seat_type
+### craft_area
+### model_placeholder
+### props
+- allowBuildEvenWhenDark (false)
+- allowYTranslation (true)
+- allowXZRotation (true)
+- noBuildUnderWater (true)
+- canAttachToAnyObjectWithoutTestingForCollisions (false)
+
+## hs_harvestable
+For resources such as branches...
+### resources_to_harvest
+### finish_harvest_index
+
+## hs_mob
+For creatures
+### dead_object
+### animation_group
+### props
+
+## hs_tool
+
+### damage
+### durability
+### speed
+
+

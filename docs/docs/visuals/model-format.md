@@ -53,9 +53,7 @@ This empty is used to provide a bounding box for your model. Semantics are unkno
 
 ### rayTestLimits & Others
 
-And there are ` rayTest`` limits,  `lookat`` boxes and a few other things I'm not even really sure of anymore. They are various hacks mostly for optimizations. Like the coconut tree because it is so tall and thin causes performance problems when you are looking through them, as once it hits the bounding radius, it checks every triangle. So the ray test limits reduce that.
-
-And there are `rayTest` limits,  `lookat` boxes and a few other things I'm not even really sure of anymore. They are various hacks mostly for optimizations. Like the coconut tree because it is so tall and thin causes performance problems when you are looking through them, as once it hits the bounding radius, it checks every triangle. So the ray test limits reduce that.
+And there are ``rayTest`` limits,  ``lookat`` boxes and a few other things I'm not even really sure of anymore. They are various hacks mostly for optimizations. Like the coconut tree because it is so tall and thin causes performance problems when you are looking through them, as once it hits the bounding radius, it checks every triangle. So the ray test limits reduce that.
 
 # Model Remaps
 

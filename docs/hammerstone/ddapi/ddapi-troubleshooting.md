@@ -1,12 +1,11 @@
 # Troubleshooting the DDAPI
 
-Modding in Sapiens is error prone, and although Hammerstone improves this in some ways, in other ways it can make it more confusing: Rather than working with the games code directly,
-you're instead authoring a "config" format, which Hammerstone interprets. This opens the doors to additional bugs to sneak in! This section will explain 
-some common issues and their solutions. Happy modding!
+Modding in Sapiens is error prone, and although Hammerstone improves this in some ways, in other ways it can add more confusion. Also, the DDAPI opens the doors to additional bugs to sneak in!
+This section will explain some common issues and their solutions. Happy modding!
 
 ## Debug Boolean
 
-Simply set `"debug": true` at the top of the config file, and Hammerstone will print additional information about the object.
+Simply set `"debug": true` at the top of your JSON file (per config, not fully standardized), and Hammerstone will print additional information about the object.
 
 ## Problems
 
@@ -23,7 +22,7 @@ If the buildable is finished, but never "completed", this could be caused by an 
 
 ### Object Crashes when I Click On It
 
-Objects in Sapiens need the "plans" to be added. Resources have their own plans. Harvestables have their own plans. You can also add plans custom. But if you don't do any of this, the object will crash when you click on it.
+Objects in Sapiens need the "plans" to be added. Resources have their own plans. Harvestables have their own plans. You can also add custom plans. But if you don't do any of this, the object will crash when you click on it.
 
 ### Object Crashes when a Sapien Picks it Up
 

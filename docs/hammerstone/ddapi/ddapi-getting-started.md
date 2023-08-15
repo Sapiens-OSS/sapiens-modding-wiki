@@ -1,6 +1,13 @@
 # Hammerstone Data-Driven-API
 
-The 'DDAPI' is a data-driven API for creating Hammerstone mods.
+The 'DDAPI' is a data-driven API for creating Hammerstone mods: rather than working with the games code directly, you're instead authoring a "config" format which Hammerstone interprets.
+
+
+Writing config files can be done in two formats: Lua and JSON. 
+Both are fully supported, yet the differences are that the json file has a light additional wrapper layer on the outside and a web editor;
+ while Lua can add logic inside (useful for defining a template for instance).
+
+Unless stated otherwise, DDAPI examples use the JSON format.
 
 ### Philosophy
 
