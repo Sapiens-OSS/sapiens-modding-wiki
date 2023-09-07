@@ -52,11 +52,13 @@ Here is a quick refresher:
 # Components
 Here is a list of components, their default value in parenthesis.
 ## hs_object
-For most objects
+Base definition for most objects (e.g: branches, fruits..).
 ### model
+The .glb file used to display this object in the world, and as an icon.
 ### scale (1)
 ### physics (true)
 ### link_to_resource
+For objects defined as variations of a resource. E.g: 'branch' for branch objects (appleBranch, aspenBranch, birchBranch..)
 ### props
 Stands for 'properties'. The fields there are copied directly into the final object, with no additional processing
 
@@ -69,7 +71,7 @@ For objects that decay or transform over time, such as food or fresh pottery.
 ## hs_resource
 
 ### display_object
-The icon.
+The .glb file for the icon.
 ### storage_identifier
 ### props
 
@@ -97,7 +99,32 @@ For buildings' elements such as walls, roofs..
 ### build_completion_plan
 ### seat_type
 ### craft_area
-### model_placeholder
+### model_placeholder (Array)
+Defines how to place the resources used into the final buildable, using the empties' transform from the .glb file. ﻿Empties' name must conform to the pattern `<resourceName>_<index>`.
+
+For instance, the following config defines how to use the empties of a model:
+* "branch_1" to place a branch - say the vertical one,
+* "branch_2" to place the other branch (horizontal), also defining a default custom model (a smaller branch),
+* "branch_store" to define the area relative to the build model where resources will be gathered prior to building - usually at ground level, a meter or something from the build...
+```json
+	"model_placeholder": [
+	        {
+                        "key": "branch_1",
+                        "resource": "branch"
+                },
+                {
+                        "key": "branch_2",
+                        "resource": "branch"
+                        "default_model": "horiz_support",
+                },
+                {
+                        "key": "branch_store",
+                        "is_store": true
+		}
+	]
+```
+in the config, 'is_store' is what defines the temporary store.
+
 ### props
 - allowBuildEvenWhenDark (false)
 - allowYTranslation (true)
