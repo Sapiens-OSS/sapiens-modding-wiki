@@ -13,6 +13,14 @@ Everything is done in memory. This means that the original files on the disk are
 
 Patch mods should only be used when regular mods simply don't cut it. A good example would be to override a local function. Hammerstone already provides a way for you to make that function global. You can then create a regular mod to override it as usual.
 
+### When NOT to use patch mods
+
+Patch mods should not be used to add global functions or variables (unless part of a bigger patch). This can already be done via regular mods.
+
+The reason is that the more patches are applied to one file, the harder it is for other modders to patch it themselves. Their own operations might fail because a patch with a lower patchOrder has removed or renamed what they wanted to patch.
+
+Please be careful and mindful when using patch mods! (Otherwise, have lots of fun and enjoy the power :) )
+
 # Creating patch mods
 
 To create a patch mod, create a "patches" folder at the root of your mod folder. Then, create a lua file matching the same path as the "script" file you want to patch as you would with regular script mods.
@@ -75,7 +83,7 @@ operation = {
 ### Operation Types
 
 Hammerstone provides the following operation types:
-- `replace` Equivalent of calling string.gsub
+- `replace` Equivalent of calling `string.gsub`
     - `pattern` (string+) The pattern to search the file with
     - `repl` (string+) The replacement string
 - `replaceAt` Replaces the file content (inclusive) between "startAt" and "endAt"
@@ -104,11 +112,14 @@ Hammerstone provides the following operation types:
 
 Note: When `endAt` is optional, the end of the edit is the end of the file.
 
+### Inclusive vs Exclusive replacements
+Inclusive means that the last string at `startAt` and the last string at `endAt` will be included in the replacement. Exclusive means the opposite.
+
 ### string+
 
 In order to be as powerful as can be, Hammerstone provides many ways to fill in operation parameters. A string+ can be the following:
 
-- `string` Plain old regular string
+- `string` Plain old regular string (or `pattern` in the case of `replace`)
 - `function` Receives the fileContent and name of the parameter and returns the value of the parameter
 - `sub-table` Must contain the name and value of the argument (no use for now)
 - `chunk table` Used to fill the parameter with the content of a chunk
@@ -144,6 +155,7 @@ end
 ```
   
 We would like to replace "getResult()" with getMyNewResult() BUT only when it is being called by "bar". If we search for the string "local result = ", it'll return the location of the first result, which is under "foo".
+
 This is not what we want. We first want to search for "local function bar()" and THEN search for "local result = ". To tell Hammerstone this, we setup the startAt nodes as such:
 
 ```lua
@@ -158,7 +170,10 @@ The "endAt" node always start their search after the results of "startAt". This 
 # Hammerstone patches
 
 Hammerstone already patches some files for its own needs in order to better server you :)
-A copy of the patched files can be found in Hammerstone under "patched" if you ever need to consult them.
+
+Some of these changes are minor, some are massive. By default, a copy of the patched files can be found in Hammerstone's mod folder under "patched" if you ever need to consult them. They are created when Hammerstone patches a module. This means that, for example, if you want to see if a certain UI module has been patched, you must first open up that UI in game so that its file and patch are loaded. 
+
+This file will contain ALL patches applied to the original file. If you only want to see the patches done by Hammerstone unload all other mods.
 
 # Concrete example
 To see a concrete example, check Hammerstone's source code and into "actionUI"
