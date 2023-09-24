@@ -31,8 +31,8 @@ Inside this file, return the following information:
 ```lua
 local patch = {
 	version = "0.4.2.5", --for future use. The version of the game the patch was made for
-  patchOrder = 1, -- same as "loadOrder" in regular mods. Indicates the priority of the patch vs other patches
-  debugCopyBefore = false, -- if true, Hammerstone will save a "before" copy of the file at the same location as your patch mod file. This could be useful in case an other patch mod modified the file before you did
+	patchOrder = 1, -- same as "loadOrder" in regular mods. Indicates the priority of the patch vs other patches
+	debugCopyBefore = false, -- if true, Hammerstone will save a "before" copy of the file at the same location as your patch mod file. This could be useful in case an other patch mod modified the file before you did
 	debugCopyAfter = true, -- if true, Hammerstone will save an "after" copy of the file so you can see your edits
 	debugOnly = false, --if true, Hammerstone will patch the file but won't load it into the environment. Use this in combinaison with "debugCopyAfter" while you're working on your patch
 	operations = {} -- see "Operations"
