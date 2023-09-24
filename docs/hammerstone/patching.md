@@ -156,7 +156,7 @@ end
   
 We would like to replace `getResult()` with `getMyNewResult()` BUT only when it is being called by `bar`. If we search for the string `local result = `, it'll return the location of the first result, which is under `foo`.
 
-This is not what we want. We first want to search for `lua local function bar()` and THEN search for `lua local result = `. To tell Hammerstone this, we setup the startAt nodes as such:
+This is not what we want. We first want to search for `local function bar()` and THEN search for `local result = `. To tell Hammerstone this, we setup the startAt nodes as such:
 
 ```lua
 startAt = {
