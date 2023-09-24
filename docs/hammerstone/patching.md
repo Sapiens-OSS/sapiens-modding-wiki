@@ -74,3 +74,88 @@ operation = {
 
 ### Operation Types
 
+Hammerstone provides the following operation types:
+- `replace` Equivalent of calling string.gsub
+    - `pattern` (string+) The pattern to search the file with
+    - `repl` (string+) The replacement string
+- `replaceAt` Replaces the file content (inclusive) between "startAt" and "endAt"
+    - `startAt` (nodes) Where to start looking for the text to replace
+    - `endAt` (nodes) (optional) Where to stop looking for the text to replace
+    - `repl` (string+) The replacement string
+- `replaceBetween` Replaces the file content (exclusive) between "startAt" and "endAt"
+    - `startAt` (nodes) Where to start looking for the text to replace
+    - `endAt` (nodes) Where to stop looking for the text to replace
+    - `repl` (string+) The replacement string
+- `removeAt` Removes text from the file content (inclusive) between "startAt" and "endAt"
+    - `startAt` (nodes) Where to start looking for the text to remove
+    - `endAt` (nodes) (optional) Where to stop looking for the text to remove
+- `insertAfter` Inserts text after "after"
+    - `after` (nodes) Where to insert the text
+    - `string` (string+) The text to insert
+- `insertBefore` Inserts text before "before"
+    - `before` (nodes) Where to insert the text
+    - `string` (string+) The text to insert
+- `localVariableToModule` Transform a local variable into part of the module so it can be recalled with moduleName.variableName
+    - `moduleName` (string+) The name of the module
+    - `variableName` (string+) The name of the variable
+- `localFunctionToGlobal` Transform a local function into a global one
+    - `moduleName` (string+) The name of the module
+    - `variableName` (string+) The name of the variable
+
+Note: When `endAt` is optional, the end of the edit is the end of the file.
+
+### string+
+
+In order to be as powerful as can be, Hammerstone provides many ways to fill in operation parameters. A string+ can be the following:
+
+- `string` Plain old regular string
+- `function` Receives the fileContent and name of the parameter and returns the value of the parameter
+- `sub-table` Must contain the name and value of the argument (no use for now)
+- `chunk table` Used to fill the parameter with the content of a chunk
+    - `chunk` (string) The name of the chunk. Equivalent to the name of the chunk file without the ".lua" extension
+    - `indent` (number) (Optional) Number of times to indent the content of the chunk. 1 indent equals to 4 spaces
+
+### nodes
+In order to better search for the right place in the file to start or stop an edit, Hammerstone provide "nodes". They can be the following:
+
+- `string` Hammerstone will search for that string in plain text
+- `text table` Contains the following:
+    - `text` (string) The text to search for
+    - `plain` (boolean) If true, Hammerstone will search with a plain text. If false, it will search with a pattern
+- `function` Receives the fileContent and the index to start its search at as parameter. Must return the first and last index of its search result
+- `nodes table` Contains a list of nodes. Each node within that list must be either a string, a text table or a function as previously defined.
+
+Nodes are used to pinpoint the location of an edit with better accuracy. Consider the following code:
+
+```lua
+local function foo()
+    local result = getResult()
+    if result then
+       doSomething()
+    end
+end
+
+local function bar()
+   local result = getResult()
+   if result then
+       doSomethingElse()
+   end
+end
+```
+  
+We would like to replace "getResult()" with getMyNewResult() BUT only when it is being called by "bar". If we search for the string "local result = ", it'll return the location of the first result, which is under "foo".
+This is not what we want. We first want to search for "local function bar()" and THEN search for "local result = ". To tell Hammerstone this, we setup the startAt nodes as such:
+
+```lua
+startAt = {
+   "local function bar()",
+   "local result = "
+}
+```
+
+The "endAt" node always start their search after the results of "startAt". This means that it's not necessary to repeat the nodes from "startAt".
+
+# Concrete example
+To see a concrete example, check Hammerstone's source code and into "actionUI"
+
+Happy Patching!
