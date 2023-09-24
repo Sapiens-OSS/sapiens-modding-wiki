@@ -74,7 +74,7 @@ The rest of the fields will depend on the operation `type`.
 
 Ex:
 ```lua
-operation = {
+operations = {
    --replaces the whole local function "doStuff" with the content of the chunk file at "chunks/newDoStuff.lua"
    [1] = { type = "replace", startAt="local function doStuff(", repl={chunk="newDoStuff"}, endAt="\r\nend" } 
 }
