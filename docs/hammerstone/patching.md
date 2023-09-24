@@ -155,6 +155,11 @@ startAt = {
 
 The "endAt" node always start their search after the results of "startAt". This means that it's not necessary to repeat the nodes from "startAt".
 
+# Hammerstone patches
+
+Hammerstone already patches some files for its own needs in order to better server you :)
+A copy of the patched files can be found in Hammerstone under "patched" if you ever need to consult them.
+
 # Concrete example
 To see a concrete example, check Hammerstone's source code and into "actionUI"
 
