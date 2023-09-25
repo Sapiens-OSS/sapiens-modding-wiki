@@ -67,7 +67,7 @@ operations = {
 
 Table operations are a clean and short way to write edits. By default, all table operations will contain these fields:
 - `type` The type of operation (see Operation Types below)
-- `skipOnFail` (optional) If true, Hammerstone will move onto the next operation instead of failing the whole patch
+- `skipOnError` (optional) If true, Hammerstone will move onto the next operation instead of failing the whole patch if the operation fails
 - `condition` (optional) A function which receives the fileContent as a parameter and returns a boolean indicating if this operation should be run or not
 
 The rest of the fields will depend on the operation `type`.
