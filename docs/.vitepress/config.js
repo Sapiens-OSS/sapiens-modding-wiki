@@ -89,6 +89,7 @@ export default {
           { text: 'UI Manager', link: '/hammerstone/ui-manager' },
           { text: 'Input Manager', link: '/hammerstone/input-manager' },
           { text: 'Save State', link: '/hammerstone/save-state' },
+          { text: 'Patching', link: '/hammerstone/patching' },
           {
             text: 'DDAPI',
             collapsible: true,
