@@ -50,6 +50,8 @@ The name of the file without the extension will become the name of the chunk.
 Operations are the "edits" you want to make to the original lua file. Hammerstone will run each operation sequentially. If an operation fails, unless it is allowed to fail, the whole patch will be abandonned and the original file will remain as is. 
 An operation can either be a table or a function.
 
+NOTE: Operations are an indexed array iterated through "ipairs". If you set the indices yourself (as I like to do to better be able to debug if the logs say "operation 'x' failed"), make sure they are sequential!
+
 ## Function operations
 
 This function only receives one parameter: the content of the file as it is currently patched. This function must return two things: the new patched file string and a success indicator.
