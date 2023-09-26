@@ -75,7 +75,7 @@ operations = {
 Table operations are a clean and short way to write edits. By default, all table operations will contain these fields:
 - `type` The type of operation (see Operation Types below)
 - `skipOnFail` (optional) If true, Hammerstone will move onto the next operation instead of failing the whole patch if the operation fails
-- `condition` (optional) A function which receives the fileContent as a parameter and returns a boolean indicating if this operation should be run or not
+- `condition` (optional) A function which receives the fileContent and the context as a parameter and returns a boolean indicating if this operation should be run or not
 
 The rest of the fields will depend on the operation `type`.
 
@@ -86,6 +86,13 @@ operations = {
    [1] = { type = "replace", startAt="local function doStuff(", repl={chunk="newDoStuff"}, endAt="\r\nend" } 
 }
 ```
+
+### Context
+
+The context contains useful information about the file currently being patched:
+
+- `path` Path of the module (ex: "common/skills")
+- `moduleName` Name of the module (ex: "skills")
 
 ### Operation Types
 
@@ -132,6 +139,14 @@ In order to be as powerful as can be, Hammerstone provides many ways to fill in 
 - `chunk table` Used to fill the parameter with the content of a chunk
     - `chunk` (string) The name of the chunk. Equivalent to the name of the chunk file without the ".lua" extension
     - `indent` (number) (Optional) Number of times to indent the content of the chunk. 1 indent equals to 4 spaces
+ 
+#### Keywords
+
+All string+ can use `keywords`. They are placeholders for values pertaining to the current file being patched. They correspond to the values of the `context`.
+
+You use them by putting the name of the context value surrounded by a pound sign (ex: "#PATH#").
+
+During the operation, they keywords will be replaced by the value in the `context`.
 
 ### nodes
 In order to better search for the right place in the file to start or stop an edit, Hammerstone provide "nodes". They can be the following:
