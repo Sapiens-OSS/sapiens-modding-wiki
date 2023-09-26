@@ -35,11 +35,16 @@ local patch = {
 	debugCopyBefore = false, -- if true, Hammerstone will save a "before" copy of the file at the same location as your patch mod file. This could be useful in case an other patch mod modified the file before you did
 	debugCopyAfter = true, -- if true, Hammerstone will save an "after" copy of the file so you can see your edits
 	debugOnly = false, --if true, Hammerstone will patch the file but won't load it into the environment. Use this in combinaison with "debugCopyAfter" while you're working on your patch
+	appliesTo = {}, -- for 'Universal patches' only. Specifies which files this patch is for
 	operations = {} -- see "Operations"
 }
 
 return patch
 ```
+## Universal patches
+If you want to patch something in many files, you can make a 'Universal patch'. These kinds of patch MUST be placed at the root of the `patches` folder and contain a table named `appliesTo`.
+
+Each entry in this table represents the path of the module(s) to patch as a pattern. For example, if you want to patch everything under "mainThread/ui", use `mainThread/ui/.+`.
 
 ## Chunk Files
 If you have a lot of code to insert or replace, typing one long multiline string just isn't manageable. For this purpose, you can create separate lua files containing all that neat code and place it in "modFolder/chunks".
@@ -100,10 +105,10 @@ Hammerstone provides the following operation types:
     - `startAt` (nodes) Where to start looking for the text to remove
     - `endAt` (nodes) (optional) Where to stop looking for the text to remove
 - `insertAfter` Inserts text after "after"
-    - `after` (nodes) Where to insert the text
+    - `after` (nodes) (optional) Where to insert the text. If nil, the string will be added at the end of the file
     - `string` (string+) The text to insert
 - `insertBefore` Inserts text before "before"
-    - `before` (nodes) Where to insert the text
+    - `before` (nodes) (optional) Where to insert the text. If nil, the string will be added at the top of the file
     - `string` (string+) The text to insert
 - `localVariableToModule` Transform a local variable into part of the module so it can be recalled with moduleName.variableName
     - `moduleName` (string+) The name of the module
@@ -135,6 +140,7 @@ In order to better search for the right place in the file to start or stop an ed
 - `text table` Contains the following:
     - `text` (string) The text to search for
     - `plain` (boolean) If true, Hammerstone will search with a plain text. If false, it will search with a pattern
+    - `reps` (number) (optional) How many times the text should be looked for. If nil, the default value is 1. If the value is -1, the text will be searched for until it can't be found anymore.
 - `function` Receives the fileContent and the index to start its search at as parameter. Must return the first and last index of its search result
 - `nodes table` Contains a list of nodes. Each node within that list must be either a string, a text table or a function as previously defined.
 
