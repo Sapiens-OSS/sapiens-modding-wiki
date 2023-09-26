@@ -15,7 +15,7 @@ Patch mods should only be used when regular mods simply don't cut it. A good exa
 
 ### When NOT to use patch mods
 
-Patch mods should not be used to add global functions or variables (unless part of a bigger patch). This can already be done via regular mods.
+Patch mods should not be used to add new global functions or variables (unless part of a bigger patch). This can already be done via regular mods.
 
 The reason is that the more patches are applied to one file, the harder it is for other modders to patch it themselves. Their own operations might fail because a patch with a lower patchOrder has removed or renamed what they wanted to patch.
 
