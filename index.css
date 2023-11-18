@@ -1,15 +1,26 @@
 @font-face {
-    font-family: 'SapiensLight';
-    src: url('/sapienslight-webfont.woff2') format('woff2'), url('/sapienslight-webfont.woff') format('woff'), url('/sapienslight-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "SapiensLight";
+  src: url("/sapienslight-webfont.woff2") format("woff2"),
+    url("/sapienslight-webfont.woff") format("woff"),
+    url("/sapienslight-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 h1 {
-    font-family: "SapiensLight";
+  font-family: "SapiensLight";
 }
 
 .vp-doc > div > h1 {
-    font-size: 45px !important;
-    text-align: center;
+  font-size: 45px !important;
+  text-align: center;
+}
+
+:root {
+  --vp-c-accent: rgb(218, 180, 11);
+  --vp-c-brand: #f97316;
+  --vp-c-brand-light: #f97316;
+  --vp-c-brand-lighter: #fb923c;
+  --vp-c-brand-dark: #c2410c;
+  --vp-c-brand-darker: #9a3412;
 }
