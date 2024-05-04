@@ -1,9 +1,9 @@
 # UI Manager
 
 UI in Sapiens is fairly complex. The UI manager doesn't help you build UIs, it just helps you manage their state. For example:
-* Giving you mouse control when the UI is active
-* Allowing you to press ESC to close the current UI (coming soon)
-* Preventing OTHER ui from showing on top of your currently active UI (coming soon)
+ - Giving you mouse control when the UI is active
+ - Allowing you to press ESC to close the current UI (coming soon)
+ - Preventing OTHER ui from showing on top of your currently active UI (coming soon)
 
 ## Requiring
 ```lua
@@ -36,7 +36,7 @@ local exampleActionElement = {
 -- Add requires here
 
 -- This function is called automatically from the UI manager
-function exampleActionElement:initActionElement(viewContainer, gameUI, hubUI, world)
+function exampleActionElement:init(viewContainer, gameUI, hubUI, world)
 	-- Create a parent container
 	self.view = View.new(viewContainer)
 
@@ -55,9 +55,9 @@ uiManager:registerActionElement(exampleGameElement);
 ```
 The Game Element module should look something like this:
 ```lua
-local exampleActionElement = {
+local exampleGameElement = {
     gameUI = nil,
-	name = "exampleActionElement",
+	name = "exampleGameElement",
 	view = nil,
 }
 
@@ -73,16 +73,34 @@ local backgroundHeight = 640
 local backgroundSize = vec2(backgroundWidth, backgroundHeight)
 
 -- Called when the UI needs to be generated
-function exampleActionElement:initGameElement(gameUI)
+function exampleGameElement:init(gameUI)
     self.view = View.new(gameUI.view)
 	self.view.size = backgroundSize
 	self.view.relativePosition = ViewPosition(MJPositionCenter, MJPositionCenter)
 end
 
 -- Called every frame
-function exampleActionElement:updateGameElement(gameUI)
+function exampleGameElement:updateGameElement(gameUI)
 	
 end
 
-return exampleActionElement
+return exampleGameElement
 ```
+
+### Manage Elements
+Manage elements are the pages that open when you press `Esc`. The UI manager allows you to add new buttons to that menu, and automatically sets up all the supporting keybinds and tab logic. A manage element module looks like this:
+```lua
+local exampleManageElement = {
+    name = "exampleManageElement",
+	view = nil,
+	parent = nil,
+	icon = "icon_exampleManageElement",
+}
+
+function exampleManageElement:init(contentView)
+	-- Do your magic!
+end
+
+return exampleManageElement
+```
+

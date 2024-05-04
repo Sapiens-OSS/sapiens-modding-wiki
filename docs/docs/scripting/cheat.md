@@ -1,8 +1,8 @@
-# Dev Tools
+# Dev Tools (Cheats)
 Sapiens contains a few utillity tools to make modding easier (cheat), built automatically into the game. It is unknown if dave will remove these before launch!
 
 :::warning
-In latest betas, these cheat tools are not available without modifying the game. Check `gameConstants.lua`.
+In latest versions, these cheat tools are not available without modifying the game. Check `scripts/common/gameConstants.lua`.
 :::
 
 ## Debug Menu
@@ -11,21 +11,21 @@ To access to the debug menu, you can select it from the settings tab:
 
 ![](/images/cheat/debug_settings.png)
 
-It is suggested that you enabled the debug display checkbox, which will enable two additional displays:
+It is suggested that you enabled the debug display checkbox, which will enable the two following additional displays.
 
 ### Debug Display
 
-The debug display shows in the top right corner of your screen, and is similar to the `f3` tab in games like Minecraft. It will show your FPS, currently queued order totals, among other things.
+The debug display shows in the top right corner of your screen, and is similar to the `F3` view in games like Minecraft. It will show your FPS, currently queued order totals, among other useful debug information.
 
 ![](/images/cheat/debug_display.png)
 
 ### Context Aware Debugging
 
-The context aware debugger is an odd little "debug" button that will appear in the bottom left corner of your screen. It will allow you to perform a single "debug" action on the currently selected object.
+The context aware debugger is a little "debug" button that will appear in the bottom left corner of your screen. It will allow you to perform a single "debug" action on the currently selected object.
 
 ![](/images/cheat/context_debug.png)
 
-`note:` The debug button mostly won't do anything. Only specific contexts have any functionality.
+**Note:** For most objects, the debug button will do nothing. Only specific contexts have any functionality.
 
 
 ## Lua Console
@@ -46,7 +46,7 @@ Once in lua mode, there are a few useful functions you might want to call:
 
 ### Spawn
 
- - Format: `spawn(object_id)`
+ - Format: `spawn(objectId)`
  - Example: `spawn('mammoth')`
  - Description: Spawns the object if it exists, and places it at your feet.
 

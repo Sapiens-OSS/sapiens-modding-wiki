@@ -1,10 +1,12 @@
 # Input
-::: tip Hammerstone Edition&#8482;
-We recommend you use Hammerstone for managing input. You can find the Hammerstone docs [here.](/hammerstone/input-manager.md)
-:::
-Input handling is the ability to listen and react to key strikes, mouse movements, and other physical-input.
 
-## Adding your action to the KeyMap
+Input handling is the ability to listen and react to key strikes, mouse movements, and other physical input.
+
+::: tip Hammerstone Edition&#8482;
+We recommend you use Hammerstone for managing input. You can find the Hammerstone docs [here](/hammerstone/input-manager.md).
+:::
+
+## Adding your action to the keyMap
 
 The first step is overwriting `scripts/mainThread/keyBinding.lua`. I think it's also possible to add bindings from other files, but I think there may be an ordering dependency here, so I suggest overwriting in-place.
 
@@ -27,8 +29,9 @@ end
 
 ## Listening to your Action
 
-The next step is actually listening to your action. This can be done using...
+The next step is actually listening to your action. This can by adding an event listener to the game's `eventManager`:
 
-::: danger Oh-no!
-This wiki page isn't done. But you can help! Click the 'Edit Page' button at the bottom.
-:::
+```lua
+-- Yes, the code is intentionally misspelt
+eventManager:addEventListenter(keyChangedCallback, eventManager.keyChangedListeners)
+```

@@ -1,23 +1,23 @@
 # Shadowing with Hammerstone
 
+Shadowing is what allows us to hook our logic into Sapiens. This page introduces the Hammerstone shadowing utility which makes this job easier, by introducing a simpler syntax.
+
 :::info
 This page builds upon the explanation inside of the base-game [shadowing explanation](/guide/shadowing).
 :::
 
-'Shadowing' is what allows us to hook our logic into sapiens. This page introduces something called the 'shadowing utility' which makes this job easier, by introducing a 
-simpler syntax.
+## Normal Shadowing
 
-### Normal Shadowing
-
-In the base game, shadowing is implemented by calling a special function called `onload`, with a single param, representing the 
+In the base game, shadowing is implemented by calling a special function called `onload`, with a single param, representing the
 original base game module. This module can be used to 'hook' or override functions, change local state, etc.
 
-:::details 'Normal Shadowing' example, for reference.
+:::details Normal Shadowing example, for reference.
 Here is an example, which shows:
- - Injecting a variable (greet)
- - Shadowing a function (setMapMode)
- - Injecting a new function (newFunction)
- 
+
+- Injecting a variable (greet)
+- Shadowing a function (setMapMode)
+- Injecting a new function (newFunction)
+
 ```lua
 local mod = {loadOrder = 1}
 
@@ -26,7 +26,7 @@ local function newFunction()
 	mj:log("New Function")
 end
 
-function mod:onload(localPlayer)              -- localPlayer variable refers to the 
+function mod:onload(localPlayer)              -- localPlayer variable refers to the
 	localPlayer.greet = "Hello World"         -- Define a new 'greet' variable on the module
 
 	mj:log("Onload Called")
@@ -44,18 +44,21 @@ end
 return mod
 ```
 
-As you can see, once you have access to the `localPlayer` module you have a *lot of freedom* to update and change it's behavior -it's just a bit finicky.
+As you can see, once you have access to the `localPlayer` module you have a lot of freedom to update and change it's behavior - it's just a bit finicky.
 :::
 
-### Shadowing Utility
+## Shadowing Utility
 
-While the 'onload' based syntax from above is very powerful, it can be a bit annoying to write. A 'shadow' file tends to look very different than a base game file
+While the 'onload' based syntax from above is very powerful, it can be a bit annoying to write. A shadow file tends to look very different than a base game file
 which can make it harder to read and understand.
 
-Hammerstone solves this with something called the *shadowing utility* which you can import like so:
- - `mjrequire "hammerstone/utils/shadow"`
+The Hammerstone shadowing utility solves this. You can import like so:
 
-Once you've imported this module, you have access to the `shadow:shadow` function, which takes in a lua module, and re-configures it as a valid shadow. This is a *transformation* step, and allows you to author a normal lua file, without defining `onload`. 
+```lua
+local shadow = mjrequire "hammerstone/utils/shadow"
+```
+
+Once you've imported this module, you have access to the `shadow:shadow` function, which takes in a Lua module, and re-configures it as a valid shadow. This is a transformation step, and allows you to author a normal Lua file, without defining `onload`.
 
 Here is the same example from above, rewritten using this utility:
 
@@ -90,19 +93,20 @@ end
 return shadow:shadow(localPlayer)
 ```
 
-In case this example wasn't clear, what's happening here is that `shadow:shadow` performs a *transformation* on your code, taking a straight-forward lua file, and re-configuring it under the hood to use the `mod:onload` syntax.
+In case this example wasn't clear, what's happening here is that `shadow:shadow` performs a transformation on your code, taking a straight-forward Lua file, and re-configuring it under the hood to use the `mod:onload` syntax.
 
 So, in a nutshell, `shadow:shadow` defines `mod:onload`, and runs the following logic inside of it:
 
- - Copies local variables from the shadow module into the parent module (i.e., greet)
- - Iterates over the functions in the parent module, and checks the shadow for functions with the same name. If they exist, shadow them automatically.
- - Takes any remaining functions in the shadow, and copies them into the parent (i.e., newFunction)
+- Copies local variables from the shadow module into the parent module (i.e., greet)
+- Iterates over the functions in the parent module, and checks the shadow for functions with the same name. If they exist, shadow them automatically.
+- Takes any remaining functions in the shadow, and copies them into the parent (i.e., newFunction)
 
-### Style Suggestion
+## Style Suggestion
 
 To make it easier to understand shadows, I suggest two style tips:
- 1. Always call the first argument of a shadowed function `super`
- 2. Use the @shadow annotation comment
+
+1.  Always call the first argument of a shadowed function `super`
+2.  Use the @shadow annotation comment
 
 Example:
 
@@ -114,7 +118,7 @@ function localPlayer:setMapMode(super, newMapModeOrNil, shouldSnap)
 end
 ```
 
-### Debugging Tip
+## Debugging Tip
 
 To debug the shadowing module, you can always print out the resulting module:
 
@@ -124,7 +128,7 @@ mj:log(debugLocalPlayer)
 return debugLocalPlayer
 ```
 
-### Common Issue
+## Common Issue
 
 One last thing to note, is `self` vs. the module name.
 
@@ -134,7 +138,6 @@ which isn't what you want.
 
 If this is confusing for you, try printing out `self` and `localPlayer` to see the difference.
 :::
-
 
 Imagine you're shadowing a fake file called 'birdBath.lua'
 
@@ -147,6 +150,7 @@ end
 Inside of this function, it's very natural that you want to access the 'birdBath' module, to access the internal state. For example:
 
 **WRONG**
+
 ```lua
 function birdBath:fillWithWater(super, liters)
 	super(liters)
@@ -154,9 +158,10 @@ function birdBath:fillWithWater(super, liters)
 end
 ```
 
-As you might have noticed, using `birdBath` to refer to the module is WRONG. At this point, `birdBath` will refer to the *current file*, not the actual birdBath module (the base game module, containing water level information).
+As you might have noticed, using `birdBath` to refer to the module is WRONG. At this point, `birdBath` will refer to the _current file_, not the actual birdBath module (the base game module, containing water level information).
 
 **RIGHT**
+
 ```lua
 function birdBath:fillWithWater(super, liters)
 	super(liters)
@@ -164,5 +169,4 @@ function birdBath:fillWithWater(super, liters)
 end
 ```
 
-The correct way to refer to the actual `birdBath` module is using the `self` variable, which is special in lua, and contains the parent module. Once the `shadow:shadow` nonsense is finished, the shadowed function will exist in `birdBath`, meaning that `self` correctly refers to the *parent* module, not the current module.
-
+The correct way to refer to the actual `birdBath` module is using the `self` variable, which is special in lua, and contains the parent module. Once the `shadow:shadow` nonsense is finished, the shadowed function will exist in `birdBath`, meaning that `self` correctly refers to the _parent_ module, not the current module.

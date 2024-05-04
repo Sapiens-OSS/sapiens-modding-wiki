@@ -2,13 +2,13 @@
 
 In Sapiens, there are three coordinate systems: The first is used during world generation (pre-render), the second is used for rendering (render), and the third is used during normal gameplay (meters).
 
-## Prerender Scale
+## Pre-render Scale
 
 The world is a unit sphere, where sea level is `1.0` radius. The north pole is `0.0, 1.0, 00`. In pre-render, the coordinates are just 3D positions in that space.
 
 ## Render Scale
 
-The render scale is similar to pre-render, except that it's `100,000` times larger. The significance of this scale is unknown.
+The render scale is similar to pre-render, except that it's **100,000** times larger.
 
 Alongside having it's own scale, the render coordinate systems is relative to a shifting origin point. This prevents floating point insanity, no matter where you are on such a large planet.
 
@@ -18,7 +18,7 @@ The meter scale is used during normal gameplay. Each side of a hex in sapiens is
 
 ## Conversions and Constants
 
-The `mj` module contains a few methods for converting back and forth between the three coordinate systems. Here is a cleaned up version of the code:
+The `mj` global module contains a few methods for converting back and forth between the three coordinate systems. Here is a simplified version of the code:
 
 ```lua
 

@@ -56,44 +56,42 @@ export default defineConfig({
         text: "Documentation",
         items: [
           {
-            text: "Engine Information",
+            text: "Engine Fundamentals",
             items: [
               { text: "Mod Types", link: "/docs/engine/mod-types" },
               { text: "Coordinates", link: "/docs/engine/coordinates" },
               {
                 text: "Threads",
-                link: "/docs/engine/thread-management",
+                link: "/docs/engine/threads",
               },
+              { text: "Bridges", link: "/docs/engine/bridges" },
 
             ]
           },
           {
             text: "Models",
             items: [
-              { text: "Materials", link: "/docs/visuals/materials" },
-              { text: "Shaders", link: "/docs/visuals/shaders" },
-              { text: "Model Format", link: "/docs/visuals/model-format" },
+              { text: "Materials", link: "/docs/models/materials" },
+              { text: "Model Format", link: "/docs/models/model-format" },
             ],
           },
           {
-            text: "UI",
+            text: "Visuals",
             items: [
-              { text: "User Interface", link: "/docs/visuals/user-interface" },
+              { text: "Shaders", link: "/docs/visuals/shaders" },
+              { text: "User Interface (UI)", link: "/docs/visuals/user-interface" },
             ]
           },
           {
-            // Might need a better name
-            // Means everything that the user can't see
-            // Handing input, save state, timers, threading etc
             text: "Scripts",
             items: [
               { text: "Mobs", link: "/docs/scripting/mobs" },
-              { text: "Engine Bridges", link: "/docs/scripting/bridge" },
               { text: "Dev Tools", link: "/docs/scripting/cheat" },
               { text: "Game Saves", link: "/docs/scripting/game-saves" },
-              { text: "Input", link: "/docs/scripting/handling-input" },
+              { text: "Input", link: "/docs/scripting/input" },
               { text: "Timers", link: "/docs/scripting/timers" },
               { text: "World Generation", link: "/docs/scripting/worldgen" },
+              { text: "Object Sets", link: "/docs/scripting/object-sets" }
             ],
           },
           {
@@ -111,10 +109,21 @@ export default defineConfig({
         items: [
           { text: "Introduction", link: "/hammerstone/introduction" },
           { text: "Getting Started", link: "/hammerstone/getting-started" },
-          { text: "Shadowing Util", link: "/hammerstone/shadowing" },
-          { text: "UI Manager", link: "/hammerstone/ui-manager" },
-          { text: "Input Manager", link: "/hammerstone/input-manager" },
-          { text: "Save State", link: "/hammerstone/save-state" },
+          {
+            text: "Utilities",
+            items: [
+              { text: "Shadowing", link: "/hammerstone/utilities/shadowing" },
+              { text: "Logger", link: "/hammerstone/utilities/logger" }
+            ]
+          },
+          {
+            text: "Systems",
+            items: [
+              { text: "UI Manager", link: "/hammerstone/systems/ui-manager" },
+              { text: "Input Manager", link: "/hammerstone/systems/input-manager" },
+              { text: "Save State", link: "/hammerstone/systems/save-state" },
+            ]
+          },
           { text: "Patching", link: "/hammerstone/patching" },
           {
             text: "DDAPI",

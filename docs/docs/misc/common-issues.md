@@ -8,15 +8,9 @@ Sapiens modding requires a special kind of coding style called [shadowing](/guid
 
 ## Running Server logic on App Mods
 
-There are two [mod types](/docs/scripting/mod-types) in sapiens, App Mods, and World Mods. You must be aware of the limitation that doesn't allow App Mods to operate on the server thread. If you need the server thread, make a world mod instead.
+There are two [mod types](/docs/engine/mod-types) in Sapiens: app mods and world mods. You must be aware of the limitation that doesn't allow App Mods to operate on the server thread. If you need the server thread, make a world mod instead.
 
-## Editing the Wrong Files
-
-When working in World mods, the mod is copied from your mods directory, into your testing world. From this point on, you will have two copies of your mod file. I suggest editing directly in the world (and using `git`+`github` to keep the two folder synced). 
-
-The "issue" you may face is editing the wrong files, and then being confused why your changes aren't showing up in your testing world.
-
-## Confusing module.function with module:function
+## Confusing `module.function()` with `module:function()`
 
 In lua, you define a module like `local foo = {}`. Functions can then be defined like:
 
@@ -44,7 +38,7 @@ local value = foo.bar('baz')
 
 This would be incorrect, since you've essentially put 'baz' for 'self' and 'nil' for 'arg1'. The correct way to call it would be `local value = foo:bar('baz')`.
 
-## Recursive mjrequire
+## Recursive `mjrequire`
 
 If you have `foo.lua` which requires `bar.lua`, then you can't require `bar.lua` in `foo.lua` because it would cause an infinite loop.
 

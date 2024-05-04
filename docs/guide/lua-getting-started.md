@@ -50,12 +50,12 @@ As you can see above, we have yet to fill the `type` parameter of our `modInfo.l
 - **World** mods are the 'standard' type of mod. They are run both on the client and the server, and are very useful when trying to add any sort of content.
 - **App** mods are mods that affect the whole game. They are run on the client, and are useful for things like [Localization](https://github.com/Majic-Jungle/sapiens-mod-creation/wiki/Localizations#creating-a-translation-mod)
 
-Depending on the type of mod you'd like to create, `type` is either `world` (for World mods) or `app` (for App mods). Read more about it [here.](/docs/engine/mod-types.md)
+Depending on the type of mod you'd like to create, `type` is either `world` (for World mods) or `app` (for App mods). Read more about it [here](/docs/engine/mod-types.md).
 
 ## What to do from here?
 
 This guide just sets up a mod for you, nothing more. To make the game do what you want to do, look over on the sidebar and read up on how it works before trying to implement it. Some topics I suggest checking out:
 
 - [Shadowing](/guide/shadowing.md) - Further your knowledge on how shadowing works so you don't run into weird issues later.
-- [Mod Types](/docs/scripting/mod-types) - Understand what each type of mod does and how to develop them properly.
+- [Mod Types](/docs/engine/mod-types) - Understand what each type of mod does and how to develop them properly.
 - [Hammerstone Framework](/hammerstone/introduction) - Hammerstone Framework is a library that's designed to help modders and provide a level of 'protection' from the Sapiens codebase.

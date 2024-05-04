@@ -55,7 +55,7 @@ Please also take note of your `GameResources` folder if you have changed the def
    - Enter the directory in which a new directory will be created that contains the project. Something like your 'Dev' or 'Sapiens Mods' directory that contains all your mods, not the actual mod directory.
    - Enter the name of your mod. This is a string in which you are free to type in anything. The string gets converted into a valid cmake ID and folder name, which will be used as name for your project's folder. Whitespaces are converted to dashes, and illegal characters such as any type of bracket are omitted.
    - Enter the description of your mod.
-   - Enter the mod type. Choose 'app' if you are making a localization mod. Choose 'world' for any other kind of mod. Read more about the difference [here.](/docs/engine/mod-types.md)
+   - Enter the mod type. Choose 'app' if you are making a localization mod. Choose 'world' for any other kind of mod. Read more about the difference [here](/docs/engine/mod-types.md).
    - Enter the name of the developer (you).
    - (Optional) Enter a website.
 6. Confirm, but double-check the location it will write files to, as well as the mod location where your mod will be copied to when building.
