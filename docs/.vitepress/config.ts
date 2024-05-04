@@ -85,7 +85,6 @@ export default defineConfig({
           {
             text: "Scripts",
             items: [
-              { text: "Mobs", link: "/docs/scripting/mobs" },
               { text: "Dev Tools", link: "/docs/scripting/cheat" },
               { text: "Game Saves", link: "/docs/scripting/game-saves" },
               { text: "Input", link: "/docs/scripting/input" },
