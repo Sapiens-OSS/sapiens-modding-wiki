@@ -1,6 +1,6 @@
 # Input
-::: tip
-We recommend you use Hammerstone for managing input. You can find the Hammerstone docs [here](/hammerstone/input-manager.md)
+::: tip Hammerstone Edition&#8482;
+We recommend you use Hammerstone for managing input. You can find the Hammerstone docs [here.](/hammerstone/input-manager.md)
 :::
 Input handling is the ability to listen and react to key strikes, mouse movements, and other physical-input.
 

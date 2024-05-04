@@ -1,7 +1,7 @@
 # Game Saves
 
-::: tip
-We recommend you use Hammerstone for managing state. You can find the Hammerstone docs [here](/hammerstone/save-state.md)
+::: tip Hammerstone Edition&#8482;
+We recommend you use Hammerstone for managing state. You can find the Hammerstone docs [here.](/hammerstone/save-state.md)
 :::
 
 ## Step by Step
