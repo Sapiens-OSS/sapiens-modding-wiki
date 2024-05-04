@@ -24,6 +24,10 @@ Before you can build a shader mod for Sapiens, you will need the ability to writ
 Unfortunately, we have not written guides for Linux or Mac users.
 :::
 
+::: warning
+**Note:** glslc cannot handle paths with spaces in the same. In order to use either the script or manual, you will need a path without spaces.
+:::
+
 ### Install the VulkanSDK
 
 You can download the VulkanSDK [here](https://vulkan.lunarg.com/sdk/home#windows).
