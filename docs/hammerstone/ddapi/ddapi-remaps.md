@@ -47,7 +47,7 @@ Object Sets are like 'groupings' for objects, such as all mobs, or all lit campf
 
 Hammerstone: `hammerstone:global_definitions/hs_object_sets`
 
-# No Remaps
+## No Remaps
 
 These files don't currently have a 'DDAPI' solution. In these cases, you should just define them normally:
  - animations.lua

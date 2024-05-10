@@ -1,30 +1,36 @@
 # Shaders
 
 Shaders in Sapiens come in two folders:
- - `glsl` folder contains the raw, uncompiled shaders.
- - `spv` contains the compiled shaders, that the game actually reads
 
-## Modding Shaders
+- `glsl` folder contains the raw, uncompiled shaders.
+- `spv` contains the compiled versions.
 
-To mod shaders, you simply need to put an asset into your mods `spv` folder, with a name matching one of the games shaders. This shader will be picked up by the game.
-
-## Shader Types
+## Shader types
 
 There are two shader types:
- - `frag`: These shaders essentially set the 'color' of the thing being shaded
- - `vert`: These shaders essentially set the 'shape' of the thing being shaded
 
-Dave uses both shader types heavily to create Sapiens.
+- `frag`: These shaders essentially set the 'color' of the thing being shaded
+- `vert`: These shaders essentially set the 'shape' of the thing being shaded
+
+## Creating shaders
+
+To mod shaders, you simply need to put a compiled shader into the `spv` folder at the root of your mod directory (create it if it doesn't exist). The name must match one of the games shaders. This shader will be picked up by the game.
 
 ## Getting Started with GLSL
 
-Before you can realistically ship a shader mod for Sapiens, you will need the ability to write and compile shaders. This tutorial will walk you through those steps.
+Before you can build a shader mod for Sapiens, you will need the ability to write and compile shaders. This tutorial will help you set up your development environment.
+
+::: tip This tutorial is for Windows
+Unfortunately, we have not written guides for Linux or Mac users.
+:::
+
+::: warning
+**Note:** glslc cannot handle paths with spaces in the same. In order to use either the script or manual, you will need a path without spaces.
+:::
 
 ### Install the VulkanSDK
 
 You can download the VulkanSDK [here](https://vulkan.lunarg.com/sdk/home#windows).
-
-Simply go through the installation wizard like normal.
 
 ### Compile your Shader
 
@@ -34,17 +40,17 @@ Here is a sample command:
 
 `C:/VulkanSDK/x.x.xxx.x/Bin/glslc.exe my_shader.frag -std=450core -o my_shader.frag.spv`
 
- - `my_shader.frag` This is the file where your shader
- - `-std=450core` This sets the version, since dave neglected to do so at the top of the shader files
- - `my_shader.frag.spv` This is the file name/location where the output will be placed
+- `my_shader.frag` This is the file where your shader
+- `-std=450core` This sets the version, since dave neglected to do so at the top of the shader files
+- `my_shader.frag.spv` This is the file name/location where the output will be placed
 
 ### Dependency Management
 
-Shaders in Sapiens often rely on *other shaders*. When compiling, you therefor need to ensure that any dependency `glsl` shaders are also available, in the expected folder structure.
+Shaders in Sapiens often rely on _other shaders_. When compiling, you therefor need to ensure that any dependency `glsl` shaders are also available, in the expected folder structure.
 
-### Compiler Helper
+## Compiler Helper
 
-I wrote a little script to make this whole process easier: [Sapiens Shader Compiler](https://gist.github.com/SirLich/1ada6df219ab9c1d2a92bcdcc4ca4335)
+There is a Python script available to streamline the shader compilation process: [SirLich's Sapiens Shader Compiler](https://gist.github.com/SirLich/1ada6df219ab9c1d2a92bcdcc4ca4335).
 
 To use the script, drop it into your mod folder. Then create your shaders in `glsl` folder, and also create a blank `spv` folder.
 
@@ -69,8 +75,6 @@ void main()
 }
 ```
 
-Compile this shader (see above), and place it into `mod/spv/lookAtTerrainMesh.frag.spv`.
+Compile this shader (see above), and place it into `/spv/lookAtTerrainMesh.frag.spv`.
 
-When you load into the game, hexegons should show as cyan.
-
-
+When you load into the game, the hexagons should show as cyan.

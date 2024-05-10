@@ -25,9 +25,9 @@ jobs:
         with:
           branch: wiki
           folder: docs/.vitepress/dist
-      - name: Index 🔍
-        uses: darrenjennings/algolia-docsearch-action@master
-        with:
-          algolia_application_id: 'QS6BR6DKN3'
-          algolia_api_key: ${{ secrets.algoliaSecret }}
-          file: 'algolia.json'
+#      - name: Index 🔍
+#        uses: darrenjennings/algolia-docsearch-action@master
+#        with:
+#          algolia_application_id: 'QS6BR6DKN3'
+#          algolia_api_key: ${{ secrets.algoliaSecret }}
+#          file: 'algolia.json'

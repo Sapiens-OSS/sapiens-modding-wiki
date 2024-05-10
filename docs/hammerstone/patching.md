@@ -21,7 +21,7 @@ The reason is that the more patches are applied to one file, the harder it is fo
 
 Please be careful and mindful when using patch mods! (Otherwise, have lots of fun and enjoy the power :) )
 
-# Creating patch mods
+## Creating patch mods
 
 To create a patch mod, create a "patches" folder at the root of your mod folder. Then, create a lua file matching the same path as the "script" file you want to patch as you would with regular script mods.
 For example, if you want to patch the game file "server/planManager.lua", your patch would be at "modFolder/patches/server/planManager.lua"
@@ -41,23 +41,23 @@ local patch = {
 
 return patch
 ```
-## Universal patches
+### Universal patches
 If you want to patch something in many files, you can make a 'Universal patch'. These kinds of patch MUST be placed at the root of the `patches` folder and contain a table named `appliesTo`.
 
 Each entry in this table represents the path of the module(s) to patch as a pattern. For example, if you want to patch everything under "mainThread/ui", use `mainThread/ui/.+`.
 
-## Chunk Files
+### Chunk Files
 If you have a lot of code to insert or replace, typing one long multiline string just isn't manageable. For this purpose, you can create separate lua files containing all that neat code and place it in "modFolder/chunks".
 The name of the file without the extension will become the name of the chunk.
 
-# Operations
+## Operations
 
 Operations are the "edits" you want to make to the original lua file. Hammerstone will run each operation sequentially. If an operation fails, unless it is allowed to fail, the whole patch will be abandonned and the original file will remain as is. 
 An operation can either be a table or a function.
 
 NOTE: Operations are an indexed array iterated through "ipairs". If you set the indices yourself (as I like to do to better be able to debug if the logs say "operation 'x' failed"), make sure they are sequential!
 
-## Function operations
+### Function operations
 
 This function only receives one parameter: the content of the file as it is currently patched. This function must return two things: the new patched file string and a success indicator.
 Ex:
@@ -70,7 +70,7 @@ operations = {
 }
 ```
 
-## Table operations
+### Table operations
 
 Table operations are a clean and short way to write edits. By default, all table operations will contain these fields:
 - `type` The type of operation (see Operation Types below)
@@ -190,15 +190,10 @@ startAt = {
 
 The `endAt` node always start their search after the results of `startAt`. This means that it's not necessary to repeat the nodes from `startAt`.
 
-# Hammerstone patches
+## Hammerstone's patches
 
-Hammerstone already patches some files for its own needs in order to better server you :)
+Hammerstone already patches some files for its own needs in order to better serve you.
 
 Some of these changes are minor, some are massive. By default, a copy of the patched files can be found in Hammerstone's mod folder under "patched" if you ever need to consult them. They are created when Hammerstone patches a module. This means that, for example, if you want to see if a certain UI module has been patched, you must first open up that UI in game so that its file and patch are loaded. 
 
 This file will contain ALL patches applied to the original file. If you only want to see the patches done by Hammerstone unload all other mods.
-
-# Concrete example
-To see a concrete example, check Hammerstone's source code and into "actionUI"
-
-Happy Patching!

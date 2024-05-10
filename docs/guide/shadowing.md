@@ -8,7 +8,7 @@ For example, if you wanted to override something in `world.lua`, you would place
 Shadows are more complex than just copying/pasting the game's source files and editing them. Please read further to understand how you can use Shadowing to manipulate game logic!
 :::
 
-:::info
+:::info Hammerstone Edition&#8482;
 If you're using Hammerstone, there is a [shadowing utility](/hammerstone/shadowing), which provides a nicer syntax for shadowing.
 :::
 
@@ -22,8 +22,10 @@ local mod = {
     loadOrder = 1 -- The load order determines which mods get loaded first.
 }
 
--- This function will be called the first time`'world.lua` is `mjrequired`. The `world` argument represents the original Lua module, defined in Sapiens codebase:
+-- This function will be called the first time`'world.lua` is `mjrequire`-ed. 
+-- The `world` argument represents the original Lua module, defined in Sapiens codebase.
 function mod:onload(world)
+	-- Your awesome code goes here
 end 
 
 return mod
@@ -37,6 +39,7 @@ In Lua an attribute is a property which is defined directly in the module defini
 
 ```lua
 local world = {
+	--- Other values as well...
 	isVR = false,
 	hasUsedMultiselect = false
 }
