@@ -17,10 +17,8 @@ h1 {
 }
 
 :root {
-  --vp-c-accent: rgb(218, 180, 11);
-  --vp-c-brand: #f97316;
-  --vp-c-brand-light: #f97316;
-  --vp-c-brand-lighter: #fb923c;
-  --vp-c-brand-dark: #c2410c;
-  --vp-c-brand-darker: #9a3412;
+  --vp-c-brand-1: #f97316;
+  --vp-c-brand-2: #c2410c;
+  --vp-c-brand-3: #9a3412;
+  --vp-c-brand-soft: var(--vp-custom-block-info-bg);
 }
