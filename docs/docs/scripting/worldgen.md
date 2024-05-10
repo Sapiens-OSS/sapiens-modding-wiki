@@ -52,7 +52,7 @@ spNoiseGet(noise1, spVec3Mul(noiseLoc, 1000), 8) * 1000; // <- Creates a world c
 
 ## Vertex Terrain Generation
 
-Vertex Terrain generation determines the height of every point in the world. This height is represented in the [pre-render coordinate scale](/docs/visuals/coordinates). The methods required for vertex generation are defined in `SPHeight.h`.
+Vertex Terrain generation determines the height of every point in the world. This height is represented in the [pre-render coordinate scale](/docs/engine/coordinates). The methods required for vertex generation are defined in `SPHeight.h`.
 
 ::: tip
 You can convert meters into the prerender scale by using the `SP_METERS_TO_PRERENDER` macro:

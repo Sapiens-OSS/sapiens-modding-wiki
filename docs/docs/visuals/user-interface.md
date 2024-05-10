@@ -3,7 +3,7 @@
 UI in Sapiens is fairly complex, and the extent of it has not been fully documented. Subsequently, we recommend Hammerstone's UI Manager to ease the burdens of creating UI.
 
 ::: tip Hammerstone Edition&#8482;
-We recommend you use Hammerstone for managing UI. You can find the Hammerstone docs [here](/hammerstone/ui-manager.md).
+We recommend you use Hammerstone for managing UI. You can find the Hammerstone docs [here](/hammerstone/systems/ui-manager.md).
 :::
 
 ## Getting Started

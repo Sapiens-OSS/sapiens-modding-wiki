@@ -12,7 +12,7 @@ Make sure that you set the 'Mode' to `Quaternion (WXYZ)` under Object Properties
 
 ## Understanding the format
 
-Sapiens models are generally made up of standard geometry, paired with metadata stored as empties. You can learn how materials work [here](/docs/visuals/materials).
+Sapiens models are generally made up of standard geometry, paired with metadata stored as empties. You can learn how materials work [here](/docs/models/materials).
 
 ![](/images/docs/model-format/example.png)
 
