@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from "vitepress";
 
 export default defineConfig({
   head: [
@@ -10,11 +10,11 @@ export default defineConfig({
   description: "Modding documentation for the Sapiens video game.",
   lastUpdated: true,
   sitemap: {
-    hostname: "https://wiki.sapiens.dev"
+    hostname: "https://wiki.sapiens.dev",
   },
   themeConfig: {
     search: {
-      provider: 'local'
+      provider: "local",
     },
     nav: [
       { text: "Sapiens Website", link: "https://www.playsapiens.com/" },
@@ -36,7 +36,8 @@ export default defineConfig({
         text: "Guides",
         items: [
           {
-            text: "Getting Started", items: [
+            text: "Getting Started",
+            items: [
               {
                 text: "Visual Studio Code",
                 link: "/guide/vscode-getting-started",
@@ -46,8 +47,7 @@ export default defineConfig({
                 link: "/guide/lua-getting-started",
               },
               { text: "C/C++", link: "/guide/c-getting-started" },
-
-            ]
+            ],
           },
           { text: "Using Lua Shadows", link: "/guide/shadowing" },
         ],
@@ -65,8 +65,8 @@ export default defineConfig({
                 link: "/docs/engine/threads",
               },
               { text: "Bridges", link: "/docs/engine/bridges" },
-
-            ]
+              { text: "Type Maps", link: "/docs/engine/type-maps" },
+            ],
           },
           {
             text: "Models",
@@ -79,8 +79,11 @@ export default defineConfig({
             text: "Visuals",
             items: [
               { text: "Shaders", link: "/docs/visuals/shaders" },
-              { text: "User Interface (UI)", link: "/docs/visuals/user-interface" },
-            ]
+              {
+                text: "User Interface (UI)",
+                link: "/docs/visuals/user-interface",
+              },
+            ],
           },
           {
             text: "Scripts",
@@ -90,7 +93,7 @@ export default defineConfig({
               { text: "Input", link: "/docs/scripting/input" },
               { text: "Timers", link: "/docs/scripting/timers" },
               { text: "World Generation", link: "/docs/scripting/worldgen" },
-              { text: "Object Sets", link: "/docs/scripting/object-sets" }
+              { text: "Object Sets", link: "/docs/scripting/object-sets" },
             ],
           },
           {
@@ -112,16 +115,19 @@ export default defineConfig({
             text: "Utilities",
             items: [
               { text: "Shadowing", link: "/hammerstone/utilities/shadowing" },
-              { text: "Logger", link: "/hammerstone/utilities/logger" }
-            ]
+              { text: "Logger", link: "/hammerstone/utilities/logger" },
+            ],
           },
           {
             text: "Systems",
             items: [
               { text: "UI Manager", link: "/hammerstone/systems/ui-manager" },
-              { text: "Input Manager", link: "/hammerstone/systems/input-manager" },
+              {
+                text: "Input Manager",
+                link: "/hammerstone/systems/input-manager",
+              },
               { text: "Save State", link: "/hammerstone/systems/save-state" },
-            ]
+            ],
           },
           { text: "Patching", link: "/hammerstone/patching" },
           {
@@ -155,7 +161,7 @@ export default defineConfig({
     logo: "/logo.png",
     siteTitle: "Sapiens Modding Wiki",
     footer: {
-      message: "Created with &hearts; by the Sapiens Modding Community"
+      message: "Created with &hearts; by the Sapiens Modding Community",
     },
   },
   plugins: [],
