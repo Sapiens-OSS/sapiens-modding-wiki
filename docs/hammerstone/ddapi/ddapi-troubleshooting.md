@@ -25,4 +25,4 @@ Objects in Sapiens need the "plans" to be added. Resources have their own plans.
 
 ### Object crashes when a Sapien picks it up
 
-Likely a storage issue.
+Likely a storage issue. Confirm that the object has a valid storage definition (defined in resource component)

@@ -2,21 +2,29 @@
 
 The 'DDAPI' is a data-driven API for creating Hammerstone mods: rather than working with the games code directly, you're instead authoring a "config" format which Hammerstone interprets.
 
+## Config Types
 
-Writing config files can be done in two formats: Lua and JSON. 
-Both are fully supported, yet the differences are that the json file has a light additional wrapper layer on the outside and a web editor;
- while Lua can add logic inside (useful for defining a template for instance).
+Writing config files can be done in two formats: Lua and JSON. Both are fully supported, yet come with some unique trade-offs. Unless stated otherwise, DDAPI examples use the JSON format.
 
-Unless stated otherwise, DDAPI examples use the JSON format.
+### JSON
 
-### Philosophy
+JSON is the default config format, and the first format that Hammerstone supported. All examples will use JSON. JSON is good when you want to do something simple, and want maximum editor help in defining the config files. A json schema is available, so you can get autocomplete in your editor of choice (e.g., VSCode).
+
+### Lua
+
+Lua configs were added later, when it became clear that JSON configs aren't suitable for all use-cases. Namely, in complex scenarios where you want to write lua code inline as part of the configs. For example, generating multiple items from the same bit of code, or doing some inline maths calculations.
+
+Lua is best suited when you know what you're doing, or you're trying to accomplish something very unique.
+
+## Philosophy
 
 In the base game of Sapiens, the data and logic for a "feature" is often spread across multiple files. For example, to create an apple, you might need the following:
- - `gameObject.lua` - Define the apple object
- - `resource.lua` - Give it a 'resource' definition for storage/crafting
- - `evolvingObject.lua` - Allow the apple to 'rot' away, or into a rotten variant
- - `storage.lua` - Allow the apple to be carried and stored in storage areas
- - ... and more!
+
+- `gameObject.lua` - Define the apple object
+- `resource.lua` - Give it a 'resource' definition for storage/crafting
+- `evolvingObject.lua` - Allow the apple to 'rot' away, or into a rotten variant
+- `storage.lua` - Allow the apple to be carried and stored in storage areas
+- ... and more!
 
 With Hammerstone, we reverse this relationship. We believe you should be able to define your data in a single place, with a well-defined API. To create
 an apple in Hammerstone, you would only need to create `apple.json`.
@@ -33,18 +41,9 @@ Inside this apple file, you define "components" describing the apple. For exampl
 }
 ```
 
-
-### Config Types
-
-At it's core, Hammerstone is a *json based API*. The reason we chose json is because it's a data-exchange format. That means there are a lot of tools like json schemas which
-we can leverage. If you use our schemas you can get in-editor autocomplete, documentation, tool-tips, and linting.
-
-However json isn't the best for complex items, which might require some programmatic-handling. In these cases you can also define your items in lua. We will read these lua files and evaluate them
-as such.
-
 # Getting Started with DDAPI
 
-To get started, you need a live copy of Hammerstone beta, and a text editor like VSCode. Then create a folder structure like this:
+To get started, you need a live copy of Hammerstone, and a text editor like VSCode. Then create a folder structure like this:
 
 ```
 mod-name
@@ -54,4 +53,4 @@ mod-name
 			my_object.json
 ```
 
-	
+Read further in the [DDAPI Object Guide](./ddapi-objects.md)

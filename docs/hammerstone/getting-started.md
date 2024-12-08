@@ -10,7 +10,7 @@ You should download/clone Hammerstone to your mods directory, e.g. `%appdata%\ma
 
 Hammerstone is a framework. The next steps for you depend entirely on what you're trying to create. Here are some systems you might want to explore:
 
-- Get started with logging with [Logger](./utilities/logger.md).
+- Get started with the Data Driven Framework with [DDAPI](./ddapi/ddapi-getting-started.md).
 - Get started with UI with [UI Manager](./systems/ui-manager.md).
 - Get started with input with [Input Manager](./systems/input-manager.md)
 - Get started with game saves with [Save State Manager](./systems/save-state.md)

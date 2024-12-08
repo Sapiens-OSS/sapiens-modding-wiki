@@ -2,9 +2,13 @@
 
 Objects can be created by defining a config file in `mod/hammerstone/objects/<name>.json`
 
+::: tip Use Cheats
+When testing your mods, it's very useful if you can quickly inspect and cheat in items. Since you've already started using Hammerstone, you might as well pull in [Creative Mode](https://github.com/SirLich/sapiens-creative-mode) as well for development.
+:::
+
 ## Hello World example
 
-Here is a simple example which creates a linked `resource` and `object`. It references base-game models, so you can safely copy/paste.
+Here is a simple example which creates a linked `resource` and `object`. It references base-game models, so you can safely copy/paste directly into your mod. After adding this file, the new item should appear in game.
 
 This will create a new item called `coconut_2`, which you can spawn and decorate with. It can be picked up and stored with the other coconuts (link to storage), but
 it has no other behaviors (cannot be eaten, or rot, or crafted with).
@@ -20,7 +24,7 @@ it has no other behaviors (cannot be eaten, or rot, or crafted with).
         "model": "coconut"
       },
       "hs_resource": {
-        "link_to_storage": "coconut"
+        "storage_identifier": "coconut"
       }
     }
   }
@@ -53,4 +57,5 @@ Here is a quick refresher:
 - Can be crafted with (i.e., you don't craft with a `birchBranch` you craft with a `branch` -the game figures the rest out)
 
 ## Schema
+
 Refer to the [JSON schema](https://github.com/Sapiens-OSS/hammerstone-schemas/blob/main/schemas/object.schema.json) for all the possible values.

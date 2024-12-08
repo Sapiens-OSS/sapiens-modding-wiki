@@ -1,6 +1,6 @@
 # DDAPI Remaps
 
-This page provides Hammerstone alternatives to shadowing base lua files. If a file isn't listed here, you likely need to 
+This page provides Hammerstone alternatives to shadowing base lua files. If a file isn't listed here, you likely need to
 create it, shadow it, and interact with Sapiens base code normally.
 
 ### gameObject.lua
@@ -20,7 +20,7 @@ Hammerstone: `hammerstone:object_definition/hs_resource`
 A craftable is a "recipe" for creating new game objects by combining or working with other game objects. For example you can craft 'campfireRoastedBeetroot'
 by roasting beets at a campfire.
 
-Hammerstone: `hammerstone:recipe_definition`
+Hammerstone: `hammerstone:object_definition/hs_craftable`
 
 ### evolvingObject.lua
 
@@ -31,7 +31,7 @@ Hammerstone: `hammerstone:object_definition/hs_evolving_object`
 
 ### harvestable.lua
 
-Harvestables are in-game objects which can be "harvested" for resources. The most common example would be animal carcases. 
+Harvestables are in-game objects which can be "harvested" for resources. The most common example would be animal carcases.
 
 Hammerstone: `hammerstone:object_definition/hs_harvestable`
 
@@ -50,5 +50,6 @@ Hammerstone: `hammerstone:global_definitions/hs_object_sets`
 ## No Remaps
 
 These files don't currently have a 'DDAPI' solution. In these cases, you should just define them normally:
- - animations.lua
- - sapienObjectSnapping.lua
+
+- animations.lua
+- sapienObjectSnapping.lua

@@ -19,6 +19,7 @@
         "serve": "npm run docs:serve"
     },
     "dependencies": {
+        "sapiens-modding-wiki": "file:",
         "vitepress-plugin-image-viewer": "^1.1.4"
     }
 }
