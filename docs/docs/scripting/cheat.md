@@ -9,7 +9,7 @@ In latest versions, these cheat tools are not available without modifying the ga
 
 To access to the debug menu, you can select it from the settings tab:
 
-![](/images/cheat/debug_settings.png)
+![](/images/cheat/debug_settings.webp)
 
 It is suggested that you enabled the debug display checkbox, which will enable the two following additional displays.
 
@@ -17,13 +17,13 @@ It is suggested that you enabled the debug display checkbox, which will enable t
 
 The debug display shows in the top right corner of your screen, and is similar to the `F3` view in games like Minecraft. It will show your FPS, currently queued order totals, among other useful debug information.
 
-![](/images/cheat/debug_display.png)
+![](/images/cheat/debug_display.webp)
 
 ### Context Aware Debugging
 
 The context aware debugger is a little "debug" button that will appear in the bottom left corner of your screen. It will allow you to perform a single "debug" action on the currently selected object.
 
-![](/images/cheat/context_debug.png)
+![](/images/cheat/context_debug.webp)
 
 **Note:** For most objects, the debug button will do nothing. Only specific contexts have any functionality.
 
@@ -34,11 +34,11 @@ The Lua console can be summoned by pressing `c` to summon the chat window, then 
 
 How to open console:
 
-![](/images/cheat/lua_console.png)
+![](/images/cheat/lua_console.webp)
 
 Some examples:
 
-![](/images/cheat/lua_examples.png)
+![](/images/cheat/lua_examples.webp)
 
 ## Lua Cheats
 

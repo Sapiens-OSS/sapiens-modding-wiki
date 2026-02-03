@@ -1,4 +1,4 @@
-![Hammerstone Logo](/images/hammerstone/hammerstone_wide.png)
+![Hammerstone Logo](/images/hammerstone/hammerstone_wide.webp)
 
 Hammerstone is a modding API and framework for Sapiens. It aims to improve compatibility between mods and provide several useful features to mod developers. It has no functionality by itself.
 

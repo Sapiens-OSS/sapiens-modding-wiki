@@ -44,13 +44,13 @@ Please also take note of your `GameResources` folder if you have changed the def
 ## Instructions
 
 1. Install the Sapiens Modding extension for VSCode in the VSCode marketplace.
-   ![Screenshot of VSCode Extension from within VSCode](/images/guide/vscode/instruction_1.png)
+   ![Screenshot of VSCode Extension from within VSCode](/images/guide/vscode/instruction_1.webp)
 2. Open your VSCode settings, and search for `modPath`. Enter the path to the Sapiens mod folder as you have noted it down in the prerequisite step.
-   ![Screenshot of the VSCode Extension modPath configuration](/images/guide/vscode/instruction_2.png)
+   ![Screenshot of the VSCode Extension modPath configuration](/images/guide/vscode/instruction_2.webp)
 3. (If you've changed the default installation directory) Search for `gameResourcesPath` in your VSCode settings. Enter the path to the Sapiens GameResources folder as your have noted it down in the prerequisite step.
-   ![Screenshot of the VSCode Extension gameResourcesPath configuration](/images/guide/vscode/instruction_3.png)
+   ![Screenshot of the VSCode Extension gameResourcesPath configuration](/images/guide/vscode/instruction_3.webp)
 4. Search using Ctrl+Shift+P for 'newProject'. An option to create a new Sapiens mod project will appear.
-   ![Screenshot of VSCode command palette with the newProject command searched](/images/guide/vscode/instruction_4.png)
+   ![Screenshot of VSCode command palette with the newProject command searched](/images/guide/vscode/instruction_4.webp)
 5. Follow the guide that shows up
    - Enter the directory in which a new directory will be created that contains the project. Something like your 'Dev' or 'Sapiens Mods' directory that contains all your mods, not the actual mod directory.
    - Enter the name of your mod. This is a string in which you are free to type in anything. The string gets converted into a valid cmake ID and folder name, which will be used as name for your project's folder. Whitespaces are converted to dashes, and illegal characters such as any type of bracket are omitted.

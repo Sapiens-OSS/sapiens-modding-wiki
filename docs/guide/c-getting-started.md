@@ -27,9 +27,9 @@ The easiest way to get started is by cloning either the [official example reposi
 The official example repository contains an example C Mod that can be found in `Examples\src\FlatTerrain`. 
 The `Windows\FlatTerrainMod.sln` can be opened in Visual Studio.
 When opening the project it may ask to be updated to the latest version, let it do that. If it doesn't ask it and building fails with `The build tools for Visual Studio 2017 (Platform Toolset = 'v141') cannot be found` you can manually upgrade the project by right clicking the solution and clicking `Retarget solution`.
-![](/images/docs/c-mods/visual-studio-retarget-solution.png)
+![](/images/docs/c-mods/visual-studio-retarget-solution.webp)
  the mod can be compiled by `Build -> Build FlatTerrainMod`. This will generate a `dll` file in `Windows\Build\`. This `dll` file should be moved into your mod's `lib` folder.
-![](/images/docs/c-mods/visual-studio-build-menu.png)
+![](/images/docs/c-mods/visual-studio-build-menu.webp)
 
 ## Template
 
@@ -51,7 +51,7 @@ git clone --recurse-submodules [your Git URL]
 Then configure the CMake project
 ```sh
 cd [Your GitHub repository name]
-cmake -DMOD_ID=MyCMod -DMOD_NAME="My C Mod" -DDESCRIPTION="An amazing mod that does things in C" -DDEVELOPER="Me!" -DDEVELOPER_URL="https://example.com" -DPREVIEW_FILE="preview.png" -DMOD_MAJOR_VERSION=1 -DMOD_MINOR_VERSION=2 -DMOD_PATCH_VERSION=3 . -B build
+cmake -DMOD_ID=MyCMod -DMOD_NAME="My C Mod" -DDESCRIPTION="An amazing mod that does things in C" -DDEVELOPER="Me!" -DDEVELOPER_URL="https://example.com" -DPREVIEW_FILE="preview.webp" -DMOD_MAJOR_VERSION=1 -DMOD_MINOR_VERSION=2 -DMOD_PATCH_VERSION=3 . -B build
 ```
 For Linux developers, swap `cmake` with `x86_64-w64-mingw32-cmake`.
 
@@ -61,7 +61,7 @@ Don't be afraid of the long line, it's defining a lot of values you should chang
 You can also configure the project using `cmake-gui` which comes shipped with CMake by default!
 
 Select the folder where you cloned to and create a folder where to build to (`build` in the screenshot below), then press configure.
-![](/images/docs/c-mods/cmake-gui.png)
+![](/images/docs/c-mods/cmake-gui.webp)
 
 In the window that opens select the Visual Studio version you installed and press `Finish`. 
 After this all settings show up in a nice gui!
@@ -100,7 +100,7 @@ CLion may ask you to authenticate with GitHub, press `Login` and follow the inst
 :::
 
 After cloning finishes a window pops up asking for configuration.
-![](/images/docs/c-mods/clion-open-project-wizard.png)
+![](/images/docs/c-mods/clion-open-project-wizard.webp)
 In the `Toolchain` make sure it uses `Visual Studio`, if `Visual Studio` is not available press `Manage toolchains` and add a `Visual Studio` toolchain.
 
 Press `Ok` to continue.

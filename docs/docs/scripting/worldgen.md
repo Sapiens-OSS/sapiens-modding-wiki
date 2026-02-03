@@ -129,7 +129,7 @@ SPVec4 spHeightGet(SPVec4 previousHeight,
 ```
 
 ::: details Result of the above code
-![](/images/docs/c-mods/flat-planet-result.png)
+![](/images/docs/c-mods/flat-planet-result.webp)
 :::
 
 ## Biome and Climate assignment

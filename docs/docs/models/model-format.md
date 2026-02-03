@@ -1,6 +1,6 @@
 # Model Format
 
-Sapiens models are stored in the `.glb` (glTF 2.0), inside of the `models` directory. They can be imported into Blender using **File -> Import -> glTF 2.0**.
+Sapiens models are stored in the `.glb` (glTF 2.0) format, inside of the `models` directory. They can be imported into Blender using **File -> Import -> glTF 2.0**.
 
 ## Setting up for Blender
 
@@ -10,11 +10,13 @@ You need to do this or your model won't scale correctly.
 
 Make sure that you set the 'Mode' to `Quaternion (WXYZ)` under Object Properties (orange square tab). Whenever you want to scale your model, make sure to use `Ctrl + A` and select 'All Transforms'.
 
+![](/images/docs/model-format/blender-transform-mode.webp)
+
 ## Understanding the format
 
 Sapiens models are generally made up of standard geometry, paired with metadata stored as empties. You can learn how materials work [here](/docs/models/materials).
 
-![](/images/docs/model-format/example.png)
+![](/images/docs/model-format/example.webp)
 
 ### Placeholder empties
 
